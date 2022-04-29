@@ -1,0 +1,18 @@
+Title:Main - [ PIDTest ] DAISEN C-Style for TJ3B  [ Ver.20190706 ]
+CN01:Ball
+CN02:Line
+CN03:L-Touch
+CN04:R-Touch
+CN05:C-Touch
+CN06:
+CN07:PING
+CN08:PING
+CN09:PING
+CN10:PING
+[0000]:sno:08,cno:07,val:111111-333310-002002,cmt:
+[0001]:sno:33,cno:33,val:000000-000000-000000,cmt:gV[VAR_S] = 1;
+[0002]:sno:33,cno:33,val:000000-000000-000000,cmt:gV[VAR_T] = 10;
+[0003]:sno:04,cno:01,val:000000-000000-000000,cmt:
+[0004]:sno:09,cno:09,val:000001-000000-000000,cmt:PIDêßå‰Ç‡Ç«Ç´
+[0005]:sno:09,cno:09,val:000002-000000-000000,cmt:Move-Stop
+[0006]:sno:00,cno:03,val:000000-000000-000000,cmt:
