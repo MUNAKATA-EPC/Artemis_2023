@@ -1,0 +1,19 @@
+Title:Main - [ main ] DAISEN C-Style for TJ3B  [ Ver.20190706 ]
+CN01:Ball
+CN02:Line
+CN03:L-Touch
+CN04:R-Touch
+CN05:C-Touch
+CN06:
+CN07:
+CN08:
+CN09:PING
+CN10:PING
+[0000]:sno:08,cno:07,val:111111-113310-002002,cmt:
+[0001]:sno:33,cno:33,val:000000-000000-000000,cmt:gV[VAR_M] = 60;
+[0002]:sno:33,cno:33,val:000000-000000-000000,cmt:gV[VAR_S] = 1;
+[0003]:sno:33,cno:33,val:000000-000000-000000,cmt:gV[VAR_T] = 10;
+[0004]:sno:04,cno:01,val:000000-000000-000000,cmt:
+[0005]:sno:09,cno:09,val:000001-000000-000000,cmt:pid
+[0006]:sno:09,cno:09,val:000002-000000-000000,cmt:stop
+[0007]:sno:00,cno:03,val:000000-000000-000000,cmt:
