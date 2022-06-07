@@ -1,6 +1,6 @@
 (sym_lib_table
-  (lib (name "tj3b pic")(type "KiCad")(uri "C:/Users/0ren5/Desktop/club_data/munachu-artemis/KiCad_Projects/Lib/tj3b_pic.kicad_sym")(options "")(descr ""))
-  (lib (name "open_mv")(type "KiCad")(uri "C:/Users/0ren5/Desktop/club_data/munachu-artemis/KiCad_Projects/Lib/open_mv.kicad_sym")(options "")(descr ""))
-  (lib (name "seeeduino_xiao")(type "KiCad")(uri "C:/Users/0ren5/Desktop/club_data/munachu-artemis/KiCad_Projects/Lib/seeeduino_xiao.kicad_sym")(options "")(descr ""))
-  (lib (name "ir_sensor")(type "KiCad")(uri "C:/Users/0ren5/Desktop/club_data/munachu-artemis/KiCad_Projects/Lib/ir_sensor.kicad_sym")(options "")(descr ""))
+  (lib (name "tj3b pic")(type "KiCad")(uri "${KIPRJMOD}/../Lib/tj3b_pic.kicad_sym")(options "")(descr ""))
+  (lib (name "open_mv")(type "KiCad")(uri "${KIPRJMOD}/../Lib/open_mv.kicad_sym")(options "")(descr ""))
+  (lib (name "seeeduino_xiao")(type "KiCad")(uri "${KIPRJMOD}/../Lib/seeeduino_xiao.kicad_sym")(options "")(descr ""))
+  (lib (name "ir_sensor")(type "KiCad")(uri "${KIPRJMOD}/../Lib/ir_sensor.kicad_sym")(options "")(descr ""))
 )
