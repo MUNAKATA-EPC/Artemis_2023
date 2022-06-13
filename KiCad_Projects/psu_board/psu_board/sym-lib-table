@@ -1,3 +1,3 @@
 (sym_lib_table
-  (lib (name "OKL-T_6-W12N-C")(type "Legacy")(uri "D:/部活関係/KiCadProjects/Hercules_2022-main/Hercules_2022-main/KiCad_Project/2022/Library/OKL-T_6-W12N-C/OKL-T_6-W12N-C.lib")(options "")(descr ""))
+  (lib (name "OKL-T_6-W12N-C")(type "Legacy")(uri "${KIPRJMOD}/OKL-T_6-W12N-C.lib")(options "")(descr ""))
 )
