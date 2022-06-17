@@ -1216,7 +1216,7 @@
     (uuid 2197c9be-58d1-4c42-8c39-5759355f3cec)
     (property "Reference" "F1" (id 0) (at 86.36 69.85 90))
     (property "Value" "Fuse" (id 1) (at 86.36 72.39 90))
-    (property "Footprint" "Fuse:Fuseholder_Keystone_3555-2" (id 2) (at 86.36 77.978 90)
+    (property "Footprint" "" (id 2) (at 86.36 77.978 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 86.36 76.2 0)
@@ -1666,7 +1666,7 @@
     (uuid cd410f59-c42e-4444-b1f7-75876f2dc297)
     (property "Reference" "U1" (id 0) (at 129.54 88.9 0))
     (property "Value" "OKL-T_6-W12N-C" (id 1) (at 129.54 91.44 0))
-    (property "Footprint" "CONV_OKL-T_6-W12N-C" (id 2) (at 118.11 92.71 0)
+    (property "Footprint" "" (id 2) (at 118.11 92.71 0)
       (effects (font (size 1.27 1.27)) (justify left bottom) hide)
     )
     (property "Datasheet" "" (id 3) (at 129.54 104.14 0)
@@ -1836,7 +1836,7 @@
       (reference "#PWR0112") (unit 1) (value "+7.5V") (footprint "")
     )
     (path "/1225119b-c748-4267-a0ec-ece61974b0e3"
-      (reference "BT1") (unit 1) (value "Battery") (footprint "")
+      (reference "BT1") (unit 1) (value "Battery") (footprint "Connector_JST:JST_EH_B2B-EH-A_1x02_P2.50mm_Vertical")
     )
     (path "/d9f3e0d8-7d2b-4a9d-9ced-0ae75299485c"
       (reference "C1") (unit 1) (value "C") (footprint "Capacitor_THT:C_Disc_D3.8mm_W2.6mm_P2.50mm")
@@ -1863,40 +1863,40 @@
       (reference "D2") (unit 1) (value "D") (footprint "Diode_THT:D_DO-41_SOD81_P7.62mm_Horizontal")
     )
     (path "/2197c9be-58d1-4c42-8c39-5759355f3cec"
-      (reference "F1") (unit 1) (value "Fuse") (footprint "Fuse:Fuseholder_Keystone_3555-2")
+      (reference "F1") (unit 1) (value "Fuse") (footprint "Lib:fuse_socket")
     )
     (path "/b5f584d8-e2f1-4466-bad5-fc454a16bd66"
-      (reference "J1") (unit 1) (value "Conn_01x02_Female") (footprint "")
+      (reference "J1") (unit 1) (value "Conn_01x02_Female") (footprint "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical")
     )
     (path "/61f99c06-3bbf-4774-a9aa-1ba3fc75384a"
-      (reference "J2") (unit 1) (value "Conn_01x02_Female") (footprint "")
+      (reference "J2") (unit 1) (value "Conn_01x02_Female") (footprint "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical")
     )
     (path "/ff4b59d2-a393-4239-b5ac-d0c0f747c6f4"
-      (reference "J3") (unit 1) (value "Conn_01x02_Female") (footprint "")
+      (reference "J3") (unit 1) (value "Conn_01x02_Female") (footprint "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical")
     )
     (path "/5699b960-e611-49fc-88b9-5b2baa2144b2"
-      (reference "MES1") (unit 1) (value "Voltmeter_DC") (footprint "")
+      (reference "MES1") (unit 1) (value "Voltmeter_DC") (footprint "Lib:voltage_counter")
     )
     (path "/cabf5c2a-03cd-4981-adc3-ed8179e7a3cf"
-      (reference "R1") (unit 1) (value "R") (footprint "")
+      (reference "R1") (unit 1) (value "R") (footprint "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal")
     )
     (path "/b2ad0b04-d548-41b9-b64b-32ecbc55afcf"
-      (reference "R2") (unit 1) (value "R") (footprint "")
+      (reference "R2") (unit 1) (value "R") (footprint "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal")
     )
     (path "/4df6e0f6-0be0-4ec6-9cf6-14d4a5dcfd8b"
-      (reference "R3") (unit 1) (value "R") (footprint "")
+      (reference "R3") (unit 1) (value "R") (footprint "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal")
     )
     (path "/b6edc29d-70fe-4228-af35-e92092307519"
-      (reference "RV1") (unit 1) (value "R_Potentiometer_Trim_US") (footprint "")
+      (reference "RV1") (unit 1) (value "R_Potentiometer_Trim_US") (footprint "Potentiometer_THT:Potentiometer_Bourns_3296W_Vertical")
     )
     (path "/9a578099-0604-41cb-a4d9-8a3416290072"
-      (reference "SW1") (unit 1) (value "SW_DIP_x01") (footprint "")
+      (reference "SW1") (unit 1) (value "SW_DIP_x01") (footprint "Lib:2MS1T2B4M2QES")
     )
     (path "/5a582268-29ed-44ce-9390-9e20ec9ca330"
-      (reference "SW2") (unit 1) (value "SW_DIP_x01") (footprint "")
+      (reference "SW2") (unit 1) (value "SW_DIP_x01") (footprint "Lib:2MS1T2B4M2QES")
     )
     (path "/cd410f59-c42e-4444-b1f7-75876f2dc297"
-      (reference "U1") (unit 1) (value "OKL-T_6-W12N-C") (footprint "CONV_OKL-T_6-W12N-C")
+      (reference "U1") (unit 1) (value "OKL-T_6-W12N-C") (footprint "Lib:DCDC-murata-6A")
     )
   )
 )
