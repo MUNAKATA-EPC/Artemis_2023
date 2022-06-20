@@ -1,4 +1,4 @@
-20160936759038295
+20165897696937806
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -57581,6 +57581,27 @@ Switch
 0
 3
 3
+Lib
+DCDC-murata-6A
+
+
+0
+18
+13
+Lib
+DS-850k
+
+
+0
+2
+2
+Lib
+fuse_socket
+
+
+0
+4
+2
 Lib
 voltage_counter
 
