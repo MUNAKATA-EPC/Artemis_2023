@@ -1,3 +1,4 @@
 (fp_lib_table
   (lib (name "line_sensor")(type "KiCad")(uri "C:/Users/0ren5/Desktop/club_data/munachu-artemis/KiCad/line_sensor/line_sensor")(options "")(descr ""))
+  (lib (name "Line_sennsor")(type "KiCad")(uri "C:/Users/0ren5/Desktop/club_data/munachu-artemis/KiCad_Projects/Lib/Line_sennsor.pretty")(options "")(descr ""))
 )
