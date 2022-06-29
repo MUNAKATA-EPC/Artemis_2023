@@ -1,6 +1,3 @@
 (sym_lib_table
-  (lib (name "New_Library")(type "Legacy")(uri "${KIPRJMOD}/New_Library.lib")(options "")(descr ""))
-  (lib (name "line_sennsor_sym")(type "KiCad")(uri "C:/Users/0ren5/Desktop/club_data/munachu-artemis/KiCad_Projects/Lib/line_sennsor_sym.kicad_sym")(options "")(descr ""))
-  (lib (name "line_sennsor")(type "KiCad")(uri "C:/Users/0ren5/Desktop/club_data/munachu-artemis/KiCad_Projects/Lib/line_sennsor.kicad_sym")(options "")(descr ""))
-  (lib (name "Line_sennsor")(type "KiCad")(uri "C:/Users/0ren5/Desktop/club_data/munachu-artemis/KiCad_Projects/Lib/Line_sennsor.kicad_sym")(options "")(descr ""))
+  (lib (name "Line_sennsor")(type "KiCad")(uri "F:/munatyuu artemis/munachu-artemis/KiCad_Projects/Lib/Line_sennsor.kicad_sym")(options "")(descr ""))
 )
