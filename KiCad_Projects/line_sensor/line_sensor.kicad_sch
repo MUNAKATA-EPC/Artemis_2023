@@ -2114,7 +2114,7 @@
     (property "Value" "Conn_01x04_Female" (id 1) (at 151.13 50.7999 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical" (id 2) (at 149.86 48.26 0)
+    (property "Footprint" "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical" (id 2) (at 149.86 48.26 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 149.86 48.26 0)
@@ -2650,7 +2650,7 @@
       (reference "D16") (unit 1) (value "LED") (footprint "LED_THT:LED_D3.0mm_Clear")
     )
     (path "/99a8bb08-4e59-4c61-8fc9-eb32e2df415d"
-      (reference "J1") (unit 1) (value "Conn_01x04_Female") (footprint "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical")
+      (reference "J1") (unit 1) (value "Conn_01x04_Female") (footprint "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical")
     )
     (path "/05d6ccc2-421b-4e9d-91cd-1ea66144224c"
       (reference "U1") (unit 1) (value "S4282-51") (footprint "Line_sennsor:Line_sennsor")
