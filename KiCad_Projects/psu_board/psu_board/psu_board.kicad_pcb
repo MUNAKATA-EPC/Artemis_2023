@@ -56,9 +56,9 @@
       (layerselection 0x00010fc_ffffffff)
       (disableapertmacros false)
       (usegerberextensions false)
-      (usegerberattributes true)
-      (usegerberadvancedattributes true)
-      (creategerberjobfile true)
+      (usegerberattributes false)
+      (usegerberadvancedattributes false)
+      (creategerberjobfile false)
       (svguseinch false)
       (svgprecision 6)
       (excludeedgelayer true)
@@ -81,9 +81,9 @@
       (subtractmaskfromsilk false)
       (outputformat 1)
       (mirror false)
-      (drillshape 1)
+      (drillshape 0)
       (scaleselection 1)
-      (outputdirectory "")
+      (outputdirectory "gbr/")
     )
   )
 
@@ -447,7 +447,7 @@
     (fp_line (start 4.95 3.4) (end 4.95 -2.35) (layer "F.Fab") (width 0.1) (tstamp d2746952-265b-4fdf-bc4b-5ef67e459ab3))
     (fp_line (start 4.95 -2.35) (end -2.45 -2.35) (layer "F.Fab") (width 0.1) (tstamp db1c34f8-f48b-4cb2-acab-c6e9251ebc3e))
     (fp_line (start -2.45 3.4) (end 4.95 3.4) (layer "F.Fab") (width 0.1) (tstamp f17c0580-e693-4f71-bbf9-e219eb514d9b))
-    (pad "1" thru_hole roundrect (at 0 0 30) (size 1.7 2) (drill 1) (layers *.Cu *.Mask) (roundrect_rratio 0.147059)
+    (pad "1" thru_hole roundrect (at 0 0 30) (size 1.7 2) (drill 1) (layers *.Cu *.Mask) (roundrect_rratio 0.1470588235)
       (net 3 "+7.5V") (pinfunction "Pin_1") (pintype "passive") (tstamp 373dde86-f83b-4c5c-b409-5a52950412ef))
     (pad "2" thru_hole oval (at 2.5 0 30) (size 1.7 2) (drill 1) (layers *.Cu *.Mask)
       (net 2 "GND") (pinfunction "Pin_2") (pintype "passive") (tstamp 4116a976-abe5-4629-8878-cc14a6f99fd9))
@@ -626,7 +626,7 @@
     (fp_line (start -1.95 1) (end -0.95 0) (layer "F.Fab") (width 0.1) (tstamp e8cb6cb3-dd2b-4328-8592-132e369ebb71))
     (fp_line (start 4.71 -3.7) (end 4.71 -2) (layer "F.Fab") (width 0.1) (tstamp f58742f8-e57e-4646-a6f5-0463e0eceeb8))
     (fp_line (start -0.75 -3.7) (end 4.71 -3.7) (layer "F.Fab") (width 0.1) (tstamp f9e60890-c09c-4221-9409-43a2ec4885e8))
-    (pad "1" thru_hole roundrect (at 0 0 315) (size 2.7 2.7) (drill 1.7) (layers *.Cu *.Mask) (roundrect_rratio 0.092593)
+    (pad "1" thru_hole roundrect (at 0 0 315) (size 2.7 2.7) (drill 1.7) (layers *.Cu *.Mask) (roundrect_rratio 0.09259296296)
       (net 1 "Net-(BT1-Pad1)") (pinfunction "+") (pintype "passive") (tstamp fb4e7351-d265-4999-adf6-bc7596c21cf3))
     (pad "2" thru_hole circle (at 3.96 0 315) (size 2.7 2.7) (drill 1.7) (layers *.Cu *.Mask)
       (net 2 "GND") (pinfunction "-") (pintype "passive") (tstamp 119c633c-175b-4b38-bbc1-1a076032c16e))
@@ -884,7 +884,7 @@
     (fp_line (start 0 -1.35) (end 0.625 -2.35) (layer "F.Fab") (width 0.1) (tstamp a5263369-2c01-4dac-b958-3e638366f71c))
     (fp_line (start 4.95 -2.35) (end -2.45 -2.35) (layer "F.Fab") (width 0.1) (tstamp ac0200f4-e2da-4ea5-8cd0-def4ee5fc815))
     (fp_line (start 4.95 3.4) (end 4.95 -2.35) (layer "F.Fab") (width 0.1) (tstamp c91f30d2-9b57-4dc7-a024-35d346e7dc0c))
-    (pad "1" thru_hole roundrect (at 0 0 30) (size 1.7 2) (drill 1) (layers *.Cu *.Mask) (roundrect_rratio 0.147059)
+    (pad "1" thru_hole roundrect (at 0 0 30) (size 1.7 2) (drill 1) (layers *.Cu *.Mask) (roundrect_rratio 0.1470588235)
       (net 3 "+7.5V") (pinfunction "Pin_1") (pintype "passive") (tstamp 099f432f-6b33-4fc2-ad85-9094deacc3ae))
     (pad "2" thru_hole oval (at 2.5 0 30) (size 1.7 2) (drill 1) (layers *.Cu *.Mask)
       (net 2 "GND") (pinfunction "Pin_2") (pintype "passive") (tstamp 1d052fd6-0df4-4ca4-83d4-db40ab1fa7a8))
@@ -1153,7 +1153,7 @@
     (fp_line (start 0 -1.35) (end 0.625 -2.35) (layer "F.Fab") (width 0.1) (tstamp a1a51e7f-7644-46a8-b0f4-7fe52681b7f2))
     (fp_line (start -2.45 -2.35) (end -2.45 3.4) (layer "F.Fab") (width 0.1) (tstamp c0d37b61-ad3e-4025-ae5c-ca56d44fc3f8))
     (fp_line (start -2.45 3.4) (end 4.95 3.4) (layer "F.Fab") (width 0.1) (tstamp c11fcedf-4dfa-4fdf-aba0-73759e09c32d))
-    (pad "1" thru_hole roundrect (at 0 0 30) (size 1.7 2) (drill 1) (layers *.Cu *.Mask) (roundrect_rratio 0.147059)
+    (pad "1" thru_hole roundrect (at 0 0 30) (size 1.7 2) (drill 1) (layers *.Cu *.Mask) (roundrect_rratio 0.1470588235)
       (net 4 "+5V") (pinfunction "Pin_1") (pintype "passive") (tstamp 001cfadf-1a9a-4825-aa39-16497e24f61a))
     (pad "2" thru_hole oval (at 2.5 0 30) (size 1.7 2) (drill 1) (layers *.Cu *.Mask)
       (net 2 "GND") (pinfunction "Pin_2") (pintype "passive") (tstamp a8e369c6-cb54-4128-93fb-815dc9ccd631))
@@ -3892,7 +3892,6 @@
   (gr_arc (start 129.987331 85.171386) (mid 131.562907 84.342756) (end 133.33065 84.552867) (layer "Edge.Cuts") (width 0.2) (tstamp a11c9cbc-6b23-4372-be92-5489517fa5c9))
   (gr_line (start 167.315781 124.382796) (end 164.923061 120.238483) (layer "Edge.Cuts") (width 0.2) (tstamp b03c9f8f-e091-4025-8f35-c4a6290036fe))
   (gr_rect (start 126.746 113.792) (end 149.606 123.952) (layer "Edge.Cuts") (width 0.1) (fill none) (tstamp cdaf95aa-d122-4dbe-a9ec-a0d319195fb5))
-  (gr_circle (center 155.73395 34.322476) (end 155.73395 34.422476) (layer "Edge.Cuts") (width 0.0001) (fill solid) (tstamp e0c2897c-68a4-44aa-a2aa-fda96e7fcf19))
   (gr_circle (center 131.138075 86.849069) (end 131.138075 88.099069) (layer "Edge.Cuts") (width 0.2) (fill none) (tstamp e8c32a67-d4ca-4735-ae4a-2b1ba274d2de))
   (gr_line (start 118.787621 100.613737) (end 124.621252 106.447368) (layer "Edge.Cuts") (width 0.2) (tstamp ff7a968f-7640-4ce3-9f4f-aae4581d5fc1))
 
@@ -5267,7 +5266,6 @@
       9c5d369c-d6f9-4243-a861-5074137c3724
       a11c9cbc-6b23-4372-be92-5489517fa5c9
       b03c9f8f-e091-4025-8f35-c4a6290036fe
-      e0c2897c-68a4-44aa-a2aa-fda96e7fcf19
       e8c32a67-d4ca-4735-ae4a-2b1ba274d2de
       ff7a968f-7640-4ce3-9f4f-aae4581d5fc1
     )
