@@ -25,7 +25,7 @@ const byte L3GD20_Z_H = 0x2D;
 #define analogpin 1
 #define outputpin 0
 #define resetpin 6
-#define CAL_TIMEMS 1000
+#define CAL_TIMEMS 30000
 #define UPDATE_MS 10
 
 float degdata = 0;
@@ -127,14 +127,18 @@ void loop() {
 
   GetDegdata();
 
-  long outputdata = (degdata / 400) + 1024;
+  long outputdata = (degdata / 4096) + 512;
   if(outputdata > 1023 ){
-    outputdata = 0;
+    outputdata = 1023;
   } else if(outputdata < 0){
-    outputdata = 1023;     
+    outputdata = 0;     
   }
-  
-  analogWrite(outputpin, outputdata);
+
+  Serial.print(caldata);
+  Serial.print("\t");
+  Serial.print(degdata);
+  Serial.print("\t");
+  Serial.println(outputdata);
 
   delay(UPDATE_MS);
 }
