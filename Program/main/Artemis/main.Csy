@@ -1,0 +1,15 @@
+Title:Main - [ main ] DAISEN C-Style for TJ3B  [ Ver.20190706 ]
+CN01:IR_Ring
+CN02:Gyro_Sensor
+CN03:Court_Deg
+CN04:Goal_Deg
+CN05:Goal_Distance
+CN06:Line_Ring
+CN07:
+CN08:
+CN09:
+CN10:
+[0000]:sno:08,cno:07,val:111111-111110-002002,cmt:
+[0001]:sno:04,cno:01,val:000000-000000-000000,cmt:
+[0002]:sno:09,cno:09,val:000001-000000-000000,cmt:pid_modoki
+[0003]:sno:00,cno:03,val:000000-000000-000000,cmt:
