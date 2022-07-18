@@ -1,0 +1,17 @@
+Title:Sub-2 [ right ] DAISEN C-Style for TJ3B  [ Ver.20190706 ]
+CN01:IR_FLeft
+CN02:IR_FRIght
+CN03:IR_Left
+CN04:IR_Right
+CN05:Line
+CN06:IR_Front
+CN07:PING
+CN08:PING
+CN09:PING
+CN10:PING
+[0000]:sno:08,cno:07,val:111111-333310-002002,cmt:
+[0001]:sno:31,cno:31,val:220002-000040-000000,cmt:
+[0002]:sno:31,cno:31,val:230000-000055-000000,cmt:
+[0003]:sno:31,cno:31,val:240000-000050-000000,cmt:
+[0004]:sno:31,cno:31,val:250002-000050-000000,cmt:
+[0005]:sno:38,cno:38,val:407408-409410-999999,cmt:
