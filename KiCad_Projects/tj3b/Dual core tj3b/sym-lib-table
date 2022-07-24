@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name "tj3b_pic")(type "KiCad")(uri "F:/munatyuu artemis/munachu-artemis/KiCad_Projects/Lib/tj3b_pic.kicad_sym")(options "")(descr ""))
+  (lib (name "type-c_sirial")(type "KiCad")(uri "F:/munatyuu artemis/munachu-artemis/KiCad_Projects/Lib/type-c_sirial.kicad_sym")(options "")(descr ""))
+)
