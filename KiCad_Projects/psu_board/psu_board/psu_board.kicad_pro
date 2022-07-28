@@ -384,7 +384,7 @@
       "idf": "",
       "netlist": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "psu_board.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""
