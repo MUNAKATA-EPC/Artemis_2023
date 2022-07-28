@@ -1,4 +1,4 @@
-20165897696937806
+20182459184517821
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -57582,6 +57582,13 @@ Switch
 3
 3
 Lib
+Akizuki_Logic_Level_converter
+
+
+0
+12
+12
+Lib
 DCDC-murata-6A
 
 
@@ -57596,12 +57603,75 @@ DS-850k
 2
 2
 Lib
+LCD
+
+
+0
+7
+7
+Lib
+LCDmodule
+
+
+0
+7
+5
+Lib
+MPU6050
+
+
+0
+10
+8
+Lib
+OpenMV
+
+
+0
+18
+16
+Lib
+R_Varlable
+
+
+0
+3
+3
+Lib
+Seeeduino XIAO-MOUDLE14P-2.54-21X17.8MM
+
+
+0
+20
+20
+Lib
+TSSP58038_IR
+
+
+0
+3
+3
+Lib
+Type-C_Sirial_Board
+
+
+0
+10
+10
+Lib
 fuse_socket
 
 
 0
 4
 2
+Lib
+seeeduinoXIAO
+
+
+0
+14
+14
 Lib
 voltage_counter
 

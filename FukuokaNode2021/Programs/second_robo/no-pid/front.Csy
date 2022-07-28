@@ -1,0 +1,25 @@
+Title:Sub-1 [ front ] DAISEN C-Style for TJ3B  [ Ver.20190706 ]
+CN01:IR_frontLeft
+CN02:IR_frontRight
+CN03:IR_left
+CN04:IR_right
+CN05:Line_sensor
+CN06:IR_front
+CN07:USS_Front
+CN08:USS_right
+CN09:USS_left
+CN10:USS_back
+[0000]:sno:08,cno:07,val:111111-333310-002002,cmt:
+[0001]:sno:01,cno:15,val:000010-000000-000000,cmt:前
+[0002]:sno:38,cno:38,val:253255-250263-999999,cmt:
+[0003]:sno:02,cno:15,val:050040-000000-000000,cmt:右前
+[0004]:sno:38,cno:38,val:053255-250263-999999,cmt:
+[0005]:sno:02,cno:15,val:135045-000000-000000,cmt:右後ろ
+[0006]:sno:38,cno:38,val:053255-050263-999999,cmt:
+[0007]:sno:02,cno:15,val:225045-000000-000000,cmt:左後ろ
+[0008]:sno:38,cno:38,val:253055-250063-999999,cmt:
+[0009]:sno:02,cno:15,val:310040-000000-000000,cmt:左前
+[0010]:sno:38,cno:38,val:253255-250063-999999,cmt:
+[0011]:sno:02,cno:15,val:360010-000000-000000,cmt:前
+[0012]:sno:38,cno:38,val:253255-250263-999999,cmt:
+[0013]:sno:00,cno:02,val:000000-000000-000000,cmt:

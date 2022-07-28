@@ -28,6 +28,7 @@ void user_sub_7(void);
 void user_sub_2(void);
 void user_sub_3(void);
 void user_sub_4(void);
+void user_sub_6(void);
 void user_main(void);
 //--------------------------------------------------------------------------------
 // Program Name : pid_modoki.C
@@ -145,6 +146,21 @@ void user_sub_4(void)
   pwm_out();
 }
 //--------------------------------------------------------------------------------
+// Program Name : slow_back.C
+//--------------------------------------------------------------------------------
+void user_sub_6(void)
+{
+  gV[VAR_W] = 33;
+  gV[VAR_X] = 35;
+  gV[VAR_Y] = 30;
+  gV[VAR_Z] = 43;
+  gPwm[0] = gV[VAR_H] < 0 ? (gV[VAR_H] * -1) | 0x80 : gV[VAR_H];
+  gPwm[1] = gV[VAR_I] < 0 ? (gV[VAR_I] * -1) | 0x80 : gV[VAR_I];
+  gPwm[2] = gV[VAR_J] < 0 ? (gV[VAR_J] * -1) | 0x80 : gV[VAR_J];
+  gPwm[3] = gV[VAR_K] < 0 ? (gV[VAR_K] * -1) | 0x80 : gV[VAR_K];
+  pwm_out();
+}
+//--------------------------------------------------------------------------------
 // Program Name : main.C
 //--------------------------------------------------------------------------------
 void user_main(void)
@@ -165,7 +181,7 @@ void user_main(void)
       gPwm[2] = 0x00 | 0x80;
       gPwm[3] = 0x00 | 0x80;
       pwm_out();
-    } else if (get_timer(T1) < 400L) {
+    } else if (get_timer(T1) < 300L) {
       user_sub_8();
     } else if (get_timer(T1) < 1000L) {
       if (get_ping(CN8) < 300) {
@@ -218,7 +234,7 @@ void user_main(void)
       } else if (gAD[CN6] < 920) {
         user_sub_7();
       } else {
-        user_sub_5();
+        user_sub_6();
       }
     }
   }

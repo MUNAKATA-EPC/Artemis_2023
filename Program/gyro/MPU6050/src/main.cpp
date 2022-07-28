@@ -10,7 +10,7 @@
 #define DELAY_MS   10
 
 #define OUTPUT_PIN 0
-#define BUTTON_PIN 1
+#define BUTTON_PIN 2
 
 int current_time;
 int last_time;
@@ -51,7 +51,7 @@ void setup() {
 void loop() {
   ReadGyro();
 
-  if(digitalRead(BUTTON_PIN) == HIGH){
+  if(analogRead(BUTTON_PIN) >= 1020){
     Calibration(CAL_TIMEMS);
   }
 
@@ -60,6 +60,12 @@ void loop() {
   analogWrite(OUTPUT_PIN, output_data);
 
   delay(DELAY_MS);
+
+  Serial.print(cal_val);
+  Serial.print(" ");
+  Serial.print(output_data);
+  Serial.print(" ");
+  Serial.println(analogRead(2));
 }
 
 ///MPU6050の値を読み取り、度数法に計算し直します。
@@ -101,8 +107,6 @@ void Calibration(int timems){
   DoCalibration = true;   //キャリブレーション中かどうかの判定変数
   deg = 0;
 
-  Serial.println("####[Calibration Started]####");
-
   for(int i = 0; i < (timems / DELAY_MS); i++)
   {
     ReadGyro();
@@ -110,10 +114,6 @@ void Calibration(int timems){
   }
 
   cal_val = deg / (float)(timems / DELAY_MS);
-
-  Serial.print("####[Calibration Success! value = ");
-  Serial.print(cal_val);
-  Serial.println("]####");
 
   DoCalibration = false;
   deg = 0;
