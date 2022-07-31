@@ -383,8 +383,8 @@
       "idf": "",
       "netlist": "",
       "specctra_dsn": "",
-      "step": "",
-      "vrml": ""
+      "step": "line_sensor.step",
+      "vrml": "line_sensor.wrl"
     },
     "page_layout_descr_file": ""
   },
