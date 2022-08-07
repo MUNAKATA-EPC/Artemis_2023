@@ -1,61 +1,120 @@
 #include <Arduino.h>
-
-//Wireライブラリのinclude
 #include <Wire.h>
 
 // MPU-6050のアドレス、レジスタ設定値
-#define MPU6050_WHO_AM_I     0x75   //読み取り専用
-#define MPU6050_PWR_MGMT_1   0x6B   //読み書き
-#define MPU_ADDRESS  0x68           //レジスタアドレス
+#define MPU6050_WHO_AM_I     0x75  // Read Only
+#define MPU6050_PWR_MGMT_1   0x6B  // Read and Write
+#define MPU_ADDRESS  0x68
 
-#define OUTPUT_PIN 0                //アウトプットピンの指定
-#define RESET_BUTTON 2              //リセットピンのポート指定
+#define CAL_TIMEMS 1000
+#define DELAY_MS   10
 
-#define CAL_TIME 1                  //キャリブレーションタイムの指定
-#define DELAY_TIME 10
+#define OUTPUT_PIN 0
+#define BUTTON_PIN 2
 
-volatile uint8_t data[14];          //センサからのデータ格納用配列
+int current_time;
+int last_time;
 
-int current_time;                   //前回読み込み時の時間取得起動時の時間
-int last_time;                      //現在の時間取得
+float deg;
+float cal_val;
 
-//MPU6050からのデータ読み込み
-void ReadData(){
-    Wire.beginTransmission(0x68);
-    Wire.write(0x3B);
-    Wire.endTransmission(false);
-    Wire.requestFrom(0x68, 14, true);
+bool DoCalibration;
 
-    static int i = 0;
-    while (Wire.available()) {
-        data[i++] = Wire.read();      //データを読み込む
-    }
+void Update();
+void ReadGyro();
+void Calibration(int timems);
 
-    int16_t gxRaw = data[12] << 8 | data[13];   //角速度の生データ取得
-
-    current_time = micros();                    //現在の時間を代入
-
-    last_time = current_time;                   //前回の時間保存変数に現在の時間を代入
-
-    Serial.println(gxRaw);
-}
-
+// デバイス初期化時に実行される
 void setup() {
-    Wire.begin();                   //Wireライブラリの使用開始
-    Serial.begin(9600);             //PCとの通信を開始
+  analogWriteResolution(10);
 
-    //ピンモード指定
-    pinMode(OUTPUT_PIN, OUTPUT);
-    pinMode(RESET_BUTTON, INPUT);
+  Serial.begin(9600);
+  Wire.begin();
 
-    current_time = micros();        //現在の時間取得
+  pinMode(BUTTON_PIN, INPUT);
+
+  // 初回の読み出し
+  Wire.beginTransmission(MPU_ADDRESS);
+  Wire.write(MPU6050_WHO_AM_I);  //MPU6050_PWR_MGMT_1
+  Wire.write(0x00);
+  Wire.endTransmission();
+
+  // 動作モードの読み出し
+  Wire.beginTransmission(MPU_ADDRESS);
+  Wire.write(MPU6050_PWR_MGMT_1);  //MPU6050_PWR_MGMT_1レジスタの設定
+  Wire.write(0x00);
+  Wire.endTransmission();
+
+  Calibration(5000);
 }
 
 void loop() {
-    ReadData();
+  ReadGyro();
 
-    if(digitalRead(RESET_BUTTON) == HIGH)
-    {
-        Serial.println(digitalRead(RESET_BUTTON));
-    }
+  if(analogRead(BUTTON_PIN) >= 1020){
+    Calibration(CAL_TIMEMS);
+  }
+
+  long output_data = (deg / 36000) * 1023;
+
+  analogWrite(OUTPUT_PIN, output_data);
+
+  delay(DELAY_MS);
+
+  Serial.print(cal_val);
+  Serial.print(" ");
+  Serial.print(output_data);
+  Serial.print(" ");
+  Serial.println(analogRead(2));
+}
+
+///MPU6050の値を読み取り、度数法に計算し直します。
+void ReadGyro(){
+  Wire.beginTransmission(0x68);
+  Wire.write(0x3B);
+  Wire.endTransmission(false);
+  Wire.requestFrom(0x68, 14, true);
+  
+  current_time = micros();
+  int data[14];
+  int i = 0;
+  while (Wire.available()){
+    data[i++] = Wire.read();
+  }
+
+  int16_t gxRaw = data[12] << 8 | data[13];
+
+  float gyro_x = gxRaw / 131.0;   //FS_SEL_0 131 LSB / (°/s)
+
+  if(DoCalibration)
+  {
+    deg += (gyro_x) * ((current_time - last_time)) / 10000.0;
+  }
+  else
+  {
+    deg += (gyro_x - cal_val) * ((current_time - last_time)) / 10000.0;
+
+    if(deg >= 36000)
+      deg = 0;
+    else if(deg < 0)
+      deg = 36000;
+  }
+
+  last_time = current_time;
+}
+
+void Calibration(int timems){
+  DoCalibration = true;   //キャリブレーション中かどうかの判定変数
+  deg = 0;
+
+  for(int i = 0; i < (timems / DELAY_MS); i++)
+  {
+    ReadGyro();
+    delay(DELAY_MS);
+  }
+
+  cal_val = deg / (float)(timems / DELAY_MS);
+
+  DoCalibration = false;
+  deg = 0;
 }

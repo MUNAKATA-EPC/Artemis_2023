@@ -22,11 +22,11 @@
 // Functions
 //--------------------------------------------------------------------------------
 void user_sub_1(void);
-void user_sub_2(void);
 void user_sub_6(void);
 void user_sub_9(void);
 void user_sub_4(void);
 void user_sub_8(void);
+void user_sub_2(void);
 void user_sub_3(void);
 void user_sub_5(void);
 void user_sub_10(void);
@@ -53,43 +53,14 @@ void user_sub_1(void)
   gV[VAR_K] = gV[VAR_Z] - gV[VAR_A];
 }
 //--------------------------------------------------------------------------------
-// Program Name : back.C
-//--------------------------------------------------------------------------------
-void user_sub_2(void)
-{
-  if (gAD[CN5] < 409) {
-    gV[VAR_W] = -30;
-    gV[VAR_X] = -30;
-    gV[VAR_Y] = -30;
-    gV[VAR_Z] = -30;
-  } else {
-    gV[VAR_W] = -25;
-    gV[VAR_X] = -25;
-    gV[VAR_Y] = -25;
-    gV[VAR_Z] = -25;
-  }
-  gPwm[0] = gV[VAR_H] < 0 ? (gV[VAR_H] * -1) | 0x80 : gV[VAR_H];
-  gPwm[1] = gV[VAR_I] < 0 ? (gV[VAR_I] * -1) | 0x80 : gV[VAR_I];
-  gPwm[2] = gV[VAR_J] < 0 ? (gV[VAR_J] * -1) | 0x80 : gV[VAR_J];
-  gPwm[3] = gV[VAR_K] < 0 ? (gV[VAR_K] * -1) | 0x80 : gV[VAR_K];
-  pwm_out();
-}
-//--------------------------------------------------------------------------------
 // Program Name : front.C
 //--------------------------------------------------------------------------------
 void user_sub_6(void)
 {
-  if (gAD[CN5] < 388) {
-    gV[VAR_W] = 20;
-    gV[VAR_X] = 20;
-    gV[VAR_Y] = 20;
-    gV[VAR_Z] = 20;
-  } else {
-    gV[VAR_W] = 25;
-    gV[VAR_X] = 25;
-    gV[VAR_Y] = 25;
-    gV[VAR_Z] = 25;
-  }
+  gV[VAR_W] = 35;
+  gV[VAR_X] = 35;
+  gV[VAR_Y] = 35;
+  gV[VAR_Z] = 35;
   gPwm[0] = gV[VAR_H] < 0 ? (gV[VAR_H] * -1) | 0x80 : gV[VAR_H];
   gPwm[1] = gV[VAR_I] < 0 ? (gV[VAR_I] * -1) | 0x80 : gV[VAR_I];
   gPwm[2] = gV[VAR_J] < 0 ? (gV[VAR_J] * -1) | 0x80 : gV[VAR_J];
@@ -116,10 +87,10 @@ void user_sub_9(void)
 //--------------------------------------------------------------------------------
 void user_sub_4(void)
 {
-  gV[VAR_W] = - 25;
-  gV[VAR_X] = 29;
-  gV[VAR_Y] = 29;
-  gV[VAR_Z] = - 25;
+  gV[VAR_W] = - 30;
+  gV[VAR_X] = 30;
+  gV[VAR_Y] = 30;
+  gV[VAR_Z] = - 30;
   gPwm[0] = gV[VAR_H] < 0 ? (gV[VAR_H] * -1) | 0x80 : gV[VAR_H];
   gPwm[1] = gV[VAR_I] < 0 ? (gV[VAR_I] * -1) | 0x80 : gV[VAR_I];
   gPwm[2] = gV[VAR_J] < 0 ? (gV[VAR_J] * -1) | 0x80 : gV[VAR_J];
@@ -135,6 +106,21 @@ void user_sub_8(void)
   gV[VAR_X] = 0;
   gV[VAR_Y] = 0;
   gV[VAR_Z] = - 30;
+  gPwm[0] = gV[VAR_H] < 0 ? (gV[VAR_H] * -1) | 0x80 : gV[VAR_H];
+  gPwm[1] = gV[VAR_I] < 0 ? (gV[VAR_I] * -1) | 0x80 : gV[VAR_I];
+  gPwm[2] = gV[VAR_J] < 0 ? (gV[VAR_J] * -1) | 0x80 : gV[VAR_J];
+  gPwm[3] = gV[VAR_K] < 0 ? (gV[VAR_K] * -1) | 0x80 : gV[VAR_K];
+  pwm_out();
+}
+//--------------------------------------------------------------------------------
+// Program Name : back.C
+//--------------------------------------------------------------------------------
+void user_sub_2(void)
+{
+  gV[VAR_W] = -35;
+  gV[VAR_X] = -35;
+  gV[VAR_Y] = -35;
+  gV[VAR_Z] = -35;
   gPwm[0] = gV[VAR_H] < 0 ? (gV[VAR_H] * -1) | 0x80 : gV[VAR_H];
   gPwm[1] = gV[VAR_I] < 0 ? (gV[VAR_I] * -1) | 0x80 : gV[VAR_I];
   gPwm[2] = gV[VAR_J] < 0 ? (gV[VAR_J] * -1) | 0x80 : gV[VAR_J];
@@ -161,10 +147,10 @@ void user_sub_3(void)
 //--------------------------------------------------------------------------------
 void user_sub_5(void)
 {
-  gV[VAR_W] = 25;
-  gV[VAR_X] = - 29;
-  gV[VAR_Y] = - 29;
-  gV[VAR_Z] = 25;
+  gV[VAR_W] = 30;
+  gV[VAR_X] = - 30;
+  gV[VAR_Y] = - 30;
+  gV[VAR_Z] = 30;
   gPwm[0] = gV[VAR_H] < 0 ? (gV[VAR_H] * -1) | 0x80 : gV[VAR_H];
   gPwm[1] = gV[VAR_I] < 0 ? (gV[VAR_I] * -1) | 0x80 : gV[VAR_I];
   gPwm[2] = gV[VAR_J] < 0 ? (gV[VAR_J] * -1) | 0x80 : gV[VAR_J];
@@ -208,65 +194,91 @@ void user_main(void)
 {
   while (TRUE) {
     user_sub_1();
-    user_sub_2();
-  }
-  while (TRUE) {
-    user_sub_1();
     if (gAD[CN6] < 102) {
       if (gV[VAR_M] == 0) {
         clr_timer(0);
         gV[VAR_M] = 1;
       }
     }
-    if (gV[VAR_M] == 1) {
-      if (get_timer(T1) < 200L) {
-        gPwm[0] = 0x00 | 0x80;
-        gPwm[1] = 0x00 | 0x80;
-        gPwm[2] = 0x00 | 0x80;
-        gPwm[3] = 0x00 | 0x80;
-        pwm_out();
-      } else if (get_timer(T1) < 500L) {
-        if (gAD[CN3] < 245) {
+    if (get_timer(T1) < 200L) {
+      gPwm[0] = 0x00 | 0x80;
+      gPwm[1] = 0x00 | 0x80;
+      gPwm[2] = 0x00 | 0x80;
+      gPwm[3] = 0x00 | 0x80;
+      pwm_out();
+    } else if (get_timer(T1) < 500L) {
+      if (gAD[CN3] < 245) {
+        user_sub_6();
+      } else if (gAD[CN3] < 276) {
+        user_sub_9();
+      } else if (gAD[CN3] < 317) {
+        user_sub_4();
+      } else if (gAD[CN3] < 419) {
+        user_sub_8();
+      } else if (gAD[CN3] < 460) {
+        user_sub_2();
+      } else if (gAD[CN3] < 552) {
+        user_sub_3();
+      } else if (gAD[CN3] < 716) {
+        user_sub_5();
+      } else if (gAD[CN3] < 777) {
+        user_sub_10();
+      } else if (gAD[CN3] < 797) {
+        user_sub_6();
+      }
+    } else {
+      gV[VAR_M] = 0;
+      if (gAD[CN1] < 716) {
+        gV[VAR_O] = 0;
+        if (gAD[CN1] < 61) {
           user_sub_6();
-        } else if (gAD[CN3] < 276) {
-          user_sub_9();
-        } else if (gAD[CN3] < 317) {
+        } else if (gAD[CN1] < 102) {
           user_sub_4();
-        } else if (gAD[CN3] < 419) {
+        } else if (gAD[CN1] < 153) {
           user_sub_8();
-        } else if (gAD[CN3] < 460) {
+        } else if (gAD[CN1] < 214) {
           user_sub_2();
-        } else if (gAD[CN3] < 552) {
+        } else if (gAD[CN1] < 358) {
           user_sub_3();
-        } else if (gAD[CN3] < 716) {
+        } else if (gAD[CN1] < 460) {
+          user_sub_8();
+        } else if (gAD[CN1] < 572) {
+          user_sub_2();
+        } else if (gAD[CN1] < 593) {
+          user_sub_3();
+        } else if (gAD[CN1] < 644) {
           user_sub_5();
-        } else if (gAD[CN3] < 777) {
-          user_sub_10();
-        } else if (gAD[CN3] < 797) {
+        } else if (gAD[CN1] < 695) {
           user_sub_6();
         }
       } else {
-        gV[VAR_M] = 0;
-      }
-    } else {
-      if (gAD[CN1] < 61) {
-        user_sub_6();
-      } else if (gAD[CN1] < 102) {
-        user_sub_4();
-      } else if (gAD[CN1] < 214) {
-        user_sub_2();
-      } else if (gAD[CN1] < 358) {
-        user_sub_3();
-      } else if (gAD[CN1] < 450) {
-        user_sub_8();
-      } else if (gAD[CN1] < 572) {
-        user_sub_2();
-      } else if (gAD[CN1] < 644) {
-        user_sub_5();
-      } else if (gAD[CN1] < 695) {
-        user_sub_6();
-      } else {
-        user_sub_7();
+        if (gV[VAR_O] == 0) {
+          clr_timer(1);
+          gV[VAR_O] = 1;
+        }
+        if (get_timer(T2) < 2500L) {
+          if (gAD[CN3] < 245) {
+            user_sub_6();
+          } else if (gAD[CN3] < 276) {
+            user_sub_9();
+          } else if (gAD[CN3] < 317) {
+            user_sub_4();
+          } else if (gAD[CN3] < 419) {
+            user_sub_8();
+          } else if (gAD[CN3] < 460) {
+            user_sub_2();
+          } else if (gAD[CN3] < 521) {
+            user_sub_3();
+          } else if (gAD[CN3] < 716) {
+            user_sub_5();
+          } else if (gAD[CN3] < 777) {
+            user_sub_10();
+          } else if (gAD[CN3] < 797) {
+            user_sub_6();
+          }
+        } else {
+          user_sub_7();
+        }
       }
     }
   }

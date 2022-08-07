@@ -6,9 +6,9 @@ from pyb import LED, Pin, Timer
 # area   = 色取りをした範囲の面積
 # 必然的にpixelsのほうが値は小さくなる…はず。
 
-threshold_for_court = (33, 92, -7, 24, -26, 73) # コートの色取り用変数
+threshold_for_court = (29, 70, 5, 21, -6, 22)  # コートの色取り用変数
 #threshold_for_goal  = (39, 44, -4, 4, -39, -23)# ゴールの色取り用変数(青色)
-threshold_for_goal = (43, 68, 13, 27, 8, 26) # ゴールの色取り用変数(黄色)
+threshold_for_goal  = (42, 73, 20, 33, 29, 57) # ゴールの色取り用変数(黄色)
 screen_center = [160, 120]                  # 画面の中央座標
 
 sensor.reset()
@@ -23,7 +23,6 @@ sensor.set_auto_whitebal(False,(-5.874588, -6.02073, -3.887871)) # must be turne
 clock = time.clock()
 
 timer = Timer(4, freq=1000)
-
 port1 = timer.channel(1, Timer.PWM, pin=Pin("P7"))
 port2 = timer.channel(2, Timer.PWM, pin=Pin("P8"))
 port3 = timer.channel(3, Timer.PWM, pin=Pin("P9"))
@@ -104,7 +103,7 @@ while(True):
         cy_goal[read_count_goal] = blob.cy()
         area_goal[read_count_goal] = blob.area()
 
-        #img.draw_rectangle(blob.rect(), thickness=1)         # コートの色取り可能範囲の枠描画
+        img.draw_rectangle(blob.rect(), thickness=1)         # コートの色取り可能範囲の枠描画
 
     # コートの色取り値の内最大のものをコートとして扱う。
     maxium_cx_goal = (max(cx_goal[:]))
@@ -118,9 +117,9 @@ while(True):
             break
 
     #img.draw_cross(maxium_cx_goal, maxium_cy_goal)    # ゴールの中心を交差線で描画
-    #img.draw_line(screen_center[0], screen_center[1], maxium_cx_goal, maxium_cy_goal, thickness=2)  # 画面中心からコート中心へのライン描画
+    #+mg.draw_line(screen_center[0], screen_center[1], maxium_cx_goal, maxium_cy_goal, thickness=2)  # 画面中心からコート中心へのライン描画
 
-    goal_deg = math.atan2((maxium_cx_goal - screen_center[0]), (maxium_cy_goal - screen_center[1]))
+    goal_deg = math.atan2(-(maxium_cx_goal - screen_center[0]), -(maxium_cy_goal - screen_center[1]))
     if goal_deg < 0:
         goal_deg = (2 * math.pi) - abs(goal_deg)
     goal_deg = (math.floor(goal_deg / (2 * math.pi) * 100))
@@ -136,6 +135,6 @@ while(True):
     port2.pulse_width_percent(goal_deg)
     port3.pulse_width_percent(int(goal_distance))
 
-    print(court_deg)
+    print(goal_deg)
 
     #==========================================================
