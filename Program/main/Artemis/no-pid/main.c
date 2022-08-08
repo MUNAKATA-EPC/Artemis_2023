@@ -42,10 +42,10 @@ void user_sub_1(void)
     gV[VAR_A] = gV[VAR_A] - 720;
   }
   gV[VAR_A] = gV[VAR_A] / 3;
-  if (gV[VAR_A] > 14) {
-    gV[VAR_A] = 14;
-  } else if (gV[VAR_A] < - 14) {
-    gV[VAR_A] = - 14;
+  if (gV[VAR_A] > 25) {
+    gV[VAR_A] = 25;
+  } else if (gV[VAR_A] < - 25) {
+    gV[VAR_A] = - 25;
   }
   gV[VAR_H] = gV[VAR_W] + gV[VAR_A];
   gV[VAR_I] = gV[VAR_X] - gV[VAR_A];
@@ -252,33 +252,7 @@ void user_main(void)
           user_sub_6();
         }
       } else {
-        if (gV[VAR_O] == 0) {
-          clr_timer(1);
-          gV[VAR_O] = 1;
-        }
-        if (get_timer(T2) < 2500L) {
-          if (gAD[CN3] < 245) {
-            user_sub_6();
-          } else if (gAD[CN3] < 276) {
-            user_sub_9();
-          } else if (gAD[CN3] < 317) {
-            user_sub_4();
-          } else if (gAD[CN3] < 419) {
-            user_sub_8();
-          } else if (gAD[CN3] < 460) {
-            user_sub_2();
-          } else if (gAD[CN3] < 521) {
-            user_sub_3();
-          } else if (gAD[CN3] < 716) {
-            user_sub_5();
-          } else if (gAD[CN3] < 777) {
-            user_sub_10();
-          } else if (gAD[CN3] < 797) {
-            user_sub_6();
-          }
-        } else {
-          user_sub_7();
-        }
+        user_sub_7();
       }
     }
   }
