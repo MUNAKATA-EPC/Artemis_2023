@@ -67,7 +67,7 @@
                 ]
             },
             "defines": [
-                "PLATFORMIO=60002",
+                "PLATFORMIO=60103",
                 "ARDUINO_SAMD_ZERO",
                 "__SAMD21__",
                 "__SAMD21G18A__",

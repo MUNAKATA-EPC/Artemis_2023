@@ -6,15 +6,18 @@ from pyb import LED, Pin, Timer
 # area   = 色取りをした範囲の面積
 # 必然的にpixelsのほうが値は小さくなる…はず。
 
-threshold_for_court = (33, 92, -7, 24, -26, 73) # コートの色取り用変数
+threshold_for_court = (43, 64, -62, -29, 24, 53) # コートの色取り用変数
 #threshold_for_goal  = (39, 44, -4, 4, -39, -23)# ゴールの色取り用変数(青色)
-threshold_for_goal = (43, 68, 13, 27, 8, 26) # ゴールの色取り用変数(黄色)
-screen_center = [160, 120]                  # 画面の中央座標
+threshold_for_goal = (40, 75, -17, 12, 38, 73) # ゴールの色取り用変数(黄色)
+screen_center = [160 + 18, 120 - 10]                  # 画面の中央座標
 
 sensor.reset()
 sensor.set_pixformat(sensor.RGB565)#カラースケール
 sensor.set_framesize(sensor.QVGA)#解像度
 sensor.skip_frames(time = 250)#描写速度
+#sensor.set_contrast(0)#コントラスト
+#sensor.set_brightness(-3)#明るさ
+#sensor.set_saturation(3)#彩3~-3
 sensor.skip_frames(time = 250)#描写速度
 sensor.set_auto_gain(False) # must be turned off for color tracking
 sensor.set_auto_exposure(False)
@@ -104,7 +107,7 @@ while(True):
         cy_goal[read_count_goal] = blob.cy()
         area_goal[read_count_goal] = blob.area()
 
-        #img.draw_rectangle(blob.rect(), thickness=1)         # コートの色取り可能範囲の枠描画
+        img.draw_rectangle(blob.rect(), thickness=1)         # コートの色取り可能範囲の枠描画
 
     # コートの色取り値の内最大のものをコートとして扱う。
     maxium_cx_goal = (max(cx_goal[:]))
@@ -117,8 +120,8 @@ while(True):
             maxium_cy_goal = cy_goal[i]
             break
 
-    #img.draw_cross(maxium_cx_goal, maxium_cy_goal)    # ゴールの中心を交差線で描画
-    #img.draw_line(screen_center[0], screen_center[1], maxium_cx_goal, maxium_cy_goal, thickness=2)  # 画面中心からコート中心へのライン描画
+    img.draw_cross(maxium_cx_goal, maxium_cy_goal)    # ゴールの中心を交差線で描画
+    img.draw_line(screen_center[0], screen_center[1], maxium_cx_goal, maxium_cy_goal, thickness=2)  # 画面中心からコート中心へのライン描画
 
     goal_deg = math.atan2((maxium_cx_goal - screen_center[0]), (maxium_cy_goal - screen_center[1]))
     if goal_deg < 0:
@@ -136,6 +139,6 @@ while(True):
     port2.pulse_width_percent(goal_deg)
     port3.pulse_width_percent(int(goal_distance))
 
-    print(court_deg)
+    print(goal_deg)
 
     #==========================================================

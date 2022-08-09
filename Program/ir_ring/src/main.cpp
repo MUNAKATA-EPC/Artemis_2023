@@ -3,10 +3,12 @@
 #include <stdlib.h>
 
 #define OUTPUT_PIN 0
+#define PWM_PIN 1
 
 //IR_SENSORの許可できる最大反応値を代入します。
-const int PermissionRange = 920;  //about 90% (1024 * 0.9)
-int IndexPoint;                   //最終出力時のIRの場所
+const int PermissionRange = 920;    //about 90% (1024 * 0.9)
+int BallDeg;                        //最終出力時のボールの角度
+int BallDistance;                   //最終出力時のボールの距離
 
 typedef struct{
   int index;
@@ -34,14 +36,9 @@ int CompareIRValue(const void* n1, const void* n2){
 void setup() {
   analogWriteResolution(10);  //0-255 to 0~1023
 
-  pinMode(1, INPUT);
-  pinMode(2, INPUT);
-  pinMode(3, INPUT);
-  pinMode(4, INPUT);
-  pinMode(5, INPUT);
-  pinMode(6, INPUT);
-  pinMode(7, INPUT);
-  pinMode(8, INPUT);
+  for(int i = 2; i < 2 + 8; i++){
+    pinMode(i, INPUT);
+  }
 
   Serial.begin(9600);
 }
@@ -54,23 +51,24 @@ void loop() {
 
   //降順ソートした場合に、センサーの値が許容範囲値におさまっている場合、各電圧を出力します。
   if(IR_Sen[0].value < PermissionRange){
-    if(IR_Sen[0].index == 8 && IR_Sen[1].index == 1)  //IRの場所が1番目の場合
-      IndexPoint = 1;
+    if(IR_Sen[0].index == 8 && IR_Sen[1].index == 1)  //IRの場所が1番目の場合{
+      BallDeg = 1;
     else if(IR_Sen[0].index == 1 && IR_Sen[1].index == 8)  //IRの場所が1番目の場合
-      IndexPoint = 1;
+      BallDeg = 1;
     else if(IR_Sen[0].index > IR_Sen[1].index) //一番反応しているIRの場所が二番目より右側の場合
-      IndexPoint = IR_Sen[0].index * 2 - 1;
+      BallDeg = IR_Sen[0].index * 2 - 1;
     else if(IR_Sen[0].index < IR_Sen[1].index) //一番反応しているIRの場所が二番目より左側の場合
-      IndexPoint = IR_Sen[0].index * 2;
+      BallDeg = IR_Sen[0].index * 2;
 
-    analogWrite(OUTPUT_PIN,  OutputValue(IndexPoint));
+    BallDistance = (IR_Sen[0].value + IR_Sen[1].value) / 2;
+    analogWrite(OUTPUT_PIN,  OutputValue(BallDeg));
   }
   else { //許容範囲値におさまっていなかった場合、最大電圧値を出力します。
-    IndexPoint = 0;
+    BallDeg = 0;
     analogWrite(OUTPUT_PIN, 1023);
   }
 
-  Serial.println(IndexPoint);
+  Serial.println(IR_Sen[0].value);
 
   delay(10);
 }
@@ -78,7 +76,7 @@ void loop() {
 
 //各ポートのIRセンサーの値を読み取り、構造体のvalue変数に代入します。
 void Read_IR(){
-  for(int i = 0; i < 8; i++){
+  for(int i = 1; i < 9; i++){
     IR_Sen[i].index = i + 1;    //毎ループごとに配列のIndex値が変化するので代入。
     IR_Sen[i].value = analogRead(i + 1);
   }
