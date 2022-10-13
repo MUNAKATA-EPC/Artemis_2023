@@ -1,0 +1,15 @@
+Designator,Val,Package,Mid X,Mid Y,Rotation,Layer
+C1,22pf,C_0402_1005Metric,4.32,-10.5,0,top
+C2,22pf,C_0402_1005Metric,2.86,-7.49,90,top
+C4,1uf,C_0402_1005Metric,8.4,-9.95,90,top
+D3,LED,LED_0402_1005Metric,10.2,-9.8,90,top
+D4,LED,LED_0402_1005Metric,12.2,-9.8,90,top
+D5,LED,LED_0402_1005Metric,11.2,-9.8,90,top
+J2,USB_B_Micro,USB_Micro-B_Molex_47346-0001,8,-3.9,180,top
+R11,1k,R_0402_1005Metric,10.2,-7.8,90,top
+R12,1k,R_0402_1005Metric,12.2,-7.8,90,top
+R13,1k,R_0402_1005Metric,11.2,-7.8,90,top
+R20,22,R_0402_1005Metric,8.2,-7.8,90,top
+R21,22,R_0402_1005Metric,9.2,-7.8,90,top
+U1,ATmega32U4-MU,QFN-44-1EP_7x7mm_P0.5mm_EP5.2x5.2mm,8.63,-15.94,270,top
+Y1,16MHz,Crystal_SMD_3225-4Pin_3.2x2.5mm,5.5,-8.3,0,top

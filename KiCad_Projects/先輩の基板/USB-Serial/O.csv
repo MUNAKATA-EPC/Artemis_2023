@@ -1,0 +1,10 @@
+Comment,Designator,Footprint,LCSC
+C_Small,C1,Capacitor_SMD:C_0603_1608Metric,C194427
+C_Small,"C2,C3",Capacitor_SMD:C_0805_2012Metric,C126469
+LED,"D1,D2",LED_SMD:LED_0603_1608Metric,C84263
+Fuse,F1,Fuse:Fuse_0603_1608Metric,C116602
+USB_C_Receptacle_USB2.0,J1,Connector_USB:USB_C_Receptacle_XKB_U262-16XN-4BVC11,C2760486
+Conn_01x05,J2,Connector_JST:JST_XH_S5B-XH-A_1x05_P2.50mm_Horizontal,
+R,"R1,R2,R4",Resistor_SMD:R_0402_1005Metric,C25905
+R,R3,Resistor_SMD:R_0603_1608Metric,C105428
+CH340E,U1,Package_SO:MSOP-10_3x3mm_P0.5mm,C99652

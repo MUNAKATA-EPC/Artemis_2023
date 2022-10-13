@@ -1,0 +1,24 @@
+Drill report for C:\Users\tabit\OneDrive\デスクトップ\data1\New_main\ATmega\ATXIAO\main.kicad_pcb
+Created on 2022/08/19 23:51:59
+
+Copper Layer Stackup:
+    =============================================================
+    L1 :  F.Cu                      front
+    L2 :  B.Cu                      back
+
+
+Drill file 'main.drl' contains
+    plated through holes:
+    =============================================================
+    T1  0.300mm  0.0118"  (26 holes)
+    T2  0.400mm  0.0157"  (5 holes)
+    T3  1.000mm  0.0394"  (16 holes)
+
+    Total plated holes count 47
+
+
+Not plated through holes are merged with plated holes
+    unplated through holes:
+    =============================================================
+
+    Total unplated holes count 0

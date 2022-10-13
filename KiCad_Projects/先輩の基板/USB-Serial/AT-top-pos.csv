@@ -1,0 +1,13 @@
+Designator,Val,Package,Mid X,Mid Y,Rotation,Layer
+C1,C_Small,C_0603_1608Metric,13.58,-13.4,270,top
+C2,C_Small,C_0805_2012Metric,11.62,-10.05,270,top
+C3,C_Small,C_0805_2012Metric,9.6,-10.05,90,top
+D1,LED,LED_0603_1608Metric,7.39,-16.5425,90,top
+D2,LED,LED_0603_1608Metric,9.17,-16.5225,90,top
+F1,Fuse,Fuse_0603_1608Metric,13.59,-10.24,90,top
+J1,USB_C_Receptacle_USB2.0,USB_C_Receptacle_XKB_U262-16XN-4BVC11,7.4,-3.1,180,top
+R1,R,R_0402_1005Metric,1.53,-6.91,270,top
+R2,R,R_0402_1005Metric,13.91,-6.79,0,top
+R3,R,R_0603_1608Metric,11.39,-16.54,90,top
+R4,R,R_0402_1005Metric,9.45,-13.97,270,top
+U1,CH340E,MSOP-10_3x3mm_P0.5mm,5.15,-10.22,0,top
