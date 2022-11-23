@@ -8,8 +8,8 @@
         {
             "name": "PlatformIO",
             "includePath": [
-                "c:/Users/0ren5/Desktop/club_data/munachu-artemis/Program/ir_ring/include",
-                "c:/Users/0ren5/Desktop/club_data/munachu-artemis/Program/ir_ring/src",
+                "c:/Users/0ren5/desktop/club_data/Munachu_Artemis/Program/ir_ring/include",
+                "c:/Users/0ren5/desktop/club_data/Munachu_Artemis/Program/ir_ring/src",
                 "C:/Users/0ren5/.platformio/packages/framework-cmsis/CMSIS/Core/Include",
                 "C:/Users/0ren5/.platformio/packages/framework-cmsis-atmel/CMSIS/Device/ATMEL",
                 "C:/Users/0ren5/.platformio/packages/framework-arduino-samd-seeed/cores/arduino",
@@ -18,6 +18,7 @@
                 "C:/Users/0ren5/.platformio/packages/framework-arduino-samd-seeed/cores/arduino/TinyUSB/Adafruit_TinyUSB_ArduinoCore/tinyusb/src",
                 "C:/Users/0ren5/.platformio/packages/framework-cmsis/CMSIS/DSP/Include",
                 "C:/Users/0ren5/.platformio/packages/framework-arduino-samd-seeed/variants/XIAO_m0",
+                "c:/Users/0ren5/desktop/club_data/Munachu_Artemis/Program/ir_ring/.pio/libdeps/seeed_xiao/Unity/src",
                 "C:/Users/0ren5/.platformio/packages/framework-arduino-samd-seeed/libraries/Adafruit_ZeroDMA",
                 "C:/Users/0ren5/.platformio/packages/framework-arduino-samd-seeed/libraries/Adafruit_ZeroDMA/utility",
                 "C:/Users/0ren5/.platformio/packages/framework-arduino-samd-seeed/libraries/EnergySaving/src",
@@ -38,8 +39,8 @@
             "browse": {
                 "limitSymbolsToIncludedHeaders": true,
                 "path": [
-                    "c:/Users/0ren5/Desktop/club_data/munachu-artemis/Program/ir_ring/include",
-                    "c:/Users/0ren5/Desktop/club_data/munachu-artemis/Program/ir_ring/src",
+                    "c:/Users/0ren5/desktop/club_data/Munachu_Artemis/Program/ir_ring/include",
+                    "c:/Users/0ren5/desktop/club_data/Munachu_Artemis/Program/ir_ring/src",
                     "C:/Users/0ren5/.platformio/packages/framework-cmsis/CMSIS/Core/Include",
                     "C:/Users/0ren5/.platformio/packages/framework-cmsis-atmel/CMSIS/Device/ATMEL",
                     "C:/Users/0ren5/.platformio/packages/framework-arduino-samd-seeed/cores/arduino",
@@ -48,6 +49,7 @@
                     "C:/Users/0ren5/.platformio/packages/framework-arduino-samd-seeed/cores/arduino/TinyUSB/Adafruit_TinyUSB_ArduinoCore/tinyusb/src",
                     "C:/Users/0ren5/.platformio/packages/framework-cmsis/CMSIS/DSP/Include",
                     "C:/Users/0ren5/.platformio/packages/framework-arduino-samd-seeed/variants/XIAO_m0",
+                    "c:/Users/0ren5/desktop/club_data/Munachu_Artemis/Program/ir_ring/.pio/libdeps/seeed_xiao/Unity/src",
                     "C:/Users/0ren5/.platformio/packages/framework-arduino-samd-seeed/libraries/Adafruit_ZeroDMA",
                     "C:/Users/0ren5/.platformio/packages/framework-arduino-samd-seeed/libraries/Adafruit_ZeroDMA/utility",
                     "C:/Users/0ren5/.platformio/packages/framework-arduino-samd-seeed/libraries/EnergySaving/src",
@@ -67,12 +69,13 @@
                 ]
             },
             "defines": [
-                "PLATFORMIO=60103",
+                "PLATFORMIO=60105",
                 "ARDUINO_SAMD_ZERO",
                 "__SAMD21__",
                 "__SAMD21G18A__",
                 "ARM_MATH_CM0PLUS",
                 "SEEED_XIAO_M0",
+                "ARDUINO_SEEED_XIAO_M0",
                 "ARDUINO=10805",
                 "F_CPU=48000000L",
                 "USBCON",

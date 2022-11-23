@@ -1,0 +1,26 @@
+Title:Sub-1 [ pid-modoki ] DAISEN C-Style for TJ3B  [ Ver.20190706 ]
+CN01:ir_ring
+CN02:gyro_sensor
+CN03:court_deg
+CN04:goal_deg
+CN05:goal_distance
+CN06:line_sensor
+CN07:
+CN08:
+CN09:
+CN10:
+[0000]:sno:08,cno:07,val:111111-111110-000002,cmt:
+[0001]:sno:31,cno:32,val:000000-000037-000000,cmt:
+[0002]:sno:01,cno:31,val:005000-000360-000000,cmt:
+[0003]:sno:31,cno:31,val:000012-000720-000000,cmt:
+[0004]:sno:00,cno:02,val:000000-000000-000000,cmt:
+[0005]:sno:31,cno:31,val:000014-000003-000000,cmt:
+[0006]:sno:01,cno:31,val:005000-000025-000000,cmt:
+[0007]:sno:31,cno:31,val:000000-000025-000000,cmt:
+[0008]:sno:02,cno:31,val:003002-000025-000000,cmt:
+[0009]:sno:31,cno:31,val:000002-000025-000000,cmt:
+[0010]:sno:00,cno:02,val:000000-000000-000000,cmt:
+[0011]:sno:31,cno:32,val:070231-000001-000000,cmt:
+[0012]:sno:31,cno:32,val:080242-000001-000000,cmt:
+[0013]:sno:31,cno:32,val:090251-000001-000000,cmt:
+[0014]:sno:31,cno:32,val:100262-000001-000000,cmt:
