@@ -6,22 +6,30 @@ from pyb import LED, Pin, Timer
 # area   = 色取りをした範囲の面積
 # 必然的にpixelsのほうが値は小さくなる…はず。
 
-threshold_for_court = (34, 66, 32, 77, 64, 79) # コートの色取り用変数
-#threshold_for_goal  = (39, 44, -4, 4, -39, -23)# ゴールの色取り用変数(青色)
-threshold_for_goal = (40, 75, -17, 12, 38, 73) # ゴールの色取り用変数(黄色)
-screen_center = [160 + 18, 120 - 10]                  # 画面の中央座標
+threshold_for_court = (55, 81, -84, -61, 50, 71) # コートの色取り用変数
+threshold_for_goal = (29, 70, -35, 6, 46, 72) # ゴールの色取り用変数(黄色)
+screen_center = [160 + 6, 138]                  # 画面の中央座標
+
+red_led   = LED(1)                  #下２１行目までLEDのセットアップ
+green_led = LED(2)
+blue_led  = LED(3)
 
 sensor.reset()
 sensor.set_pixformat(sensor.RGB565)#カラースケール
 sensor.set_framesize(sensor.QVGA)#解像度
 sensor.skip_frames(time = 250)#描写速度
 sensor.set_contrast(0)#コントラスト
-sensor.set_brightness(-3)#明るさ
+sensor.set_brightness(-1)#明るさ
 sensor.set_saturation(3)#彩3~-3
-sensor.skip_frames(time = 250)#描写速度
 sensor.set_auto_gain(False) # must be turned off for color tracking
 sensor.set_auto_exposure(False)
 sensor.set_auto_whitebal(False,(-5.874588, -6.02073, -3.887871)) # must be turned off for color tracking,(-5.874588, -6.02073, -1.887871)
+
+green_led.on();
+red_led.on();
+time.sleep_ms(500);
+green_led.off();
+red_led.off();
 
 clock = time.clock()
 

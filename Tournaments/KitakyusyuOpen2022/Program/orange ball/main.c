@@ -163,8 +163,8 @@ void user_sub_5(void)
 void user_sub_10(void)
 {
   gV[VAR_W] = 30;
-  gV[VAR_X] = 0;
-  gV[VAR_Y] = 0;
+  gV[VAR_X] = 15;
+  gV[VAR_Y] = 15;
   gV[VAR_Z] = 30;
   gPwm[0] = gV[VAR_H] < 0 ? (gV[VAR_H] * -1) | 0x80 : gV[VAR_H];
   gPwm[1] = gV[VAR_I] < 0 ? (gV[VAR_I] * -1) | 0x80 : gV[VAR_I];
