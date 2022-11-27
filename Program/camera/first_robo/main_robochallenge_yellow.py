@@ -6,8 +6,8 @@ from pyb import LED, Pin, Timer
 # area   = 色取りをした範囲の面積
 # 必然的にpixelsのほうが値は小さくなる…はず。
 
-threshold_for_court = (55, 81, -84, -61, 50, 71) # コートの色取り用変数
-threshold_for_goal = (29, 70, -35, 6, 46, 72) # ゴールの色取り用変数(黄色)
+threshold_for_court = (73, 88, -85, -58, 34, 58) # コートの色取り用変数
+threshold_for_goal = (58, 100, -34, 127, 49, 127) # ゴールの色取り用変数(黄色)
 screen_center = [160 + 6, 138]                  # 画面の中央座標
 
 red_led = LED(1);
@@ -19,8 +19,8 @@ sensor.set_pixformat(sensor.RGB565)#カラースケール
 sensor.set_framesize(sensor.QVGA)#解像度
 sensor.skip_frames(time = 250)#描写速度
 sensor.set_contrast(0)#コントラスト
-sensor.set_brightness(-1)#明るさ
-sensor.set_saturation(3)#彩3~-3
+sensor.set_brightness(0)#明るさ
+sensor.set_saturation(0)#彩3~-3
 sensor.set_auto_gain(False) # must be turned off for color tracking
 sensor.set_auto_exposure(False)
 sensor.set_auto_whitebal(False,(-5.874588, -6.02073, -3.887871)) # must be turned off for color tracking,(-5.874588, -6.02073, -1.887871)
@@ -34,6 +34,8 @@ red_led.off()
 green_led.off()
 
 timer = Timer(4, freq=1000)
+
+
 
 port1 = timer.channel(1, Timer.PWM, pin=Pin("P7"))
 port2 = timer.channel(2, Timer.PWM, pin=Pin("P8"))
@@ -114,6 +116,10 @@ while(True):
         cx_goal[read_count_goal] = blob.cx()
         cy_goal[read_count_goal] = blob.cy()
         area_goal[read_count_goal] = blob.area()
+
+        img.draw_rectangle(blob.rect(), thickness=1)         # コートの色取り可能範囲の枠描画
+        img.draw_cross(blob.cx(), blob.cy())    # コートの中心を交差線で描画
+        img.draw_line(screen_center[0], screen_center[1], blob.cx(), blob.cy(), thickness=2)  # 画面中心からコート中心へのライン描画
 
     # コートの色取り値の内最大のものをコートとして扱う。
     maxium_cx_goal = (max(cx_goal[:]))

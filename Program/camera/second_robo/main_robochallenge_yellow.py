@@ -11,7 +11,7 @@ green_led = LED(2);
 blue_led = LED(3);
 
 threshold_for_court = (73, 88, -93, -47, -128, 86) # コートの色取り用変数
-threshold_for_goal = (29, 70, -35, 6, 46, 72) # ゴールの色取り用変数(黄色)
+threshold_for_goal = (56, 100, -62, 127, 63, 127) # ゴールの色取り用変数(黄色)
 screen_center = [140 + 5, 110 + 3]                  # 画面の中央座標
 
 sensor.reset()
