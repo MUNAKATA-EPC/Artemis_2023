@@ -1,0 +1,13 @@
+### Module positions - created on Tue Oct 18 17:34:38 2022 ###
+### Printed by Pcbnew version (6.0.5)
+## Unit = mm, Angle = deg.
+## Side : bottom
+# Ref     Val       Package                 PosX       PosY       Rot  Side
+C1        C_Small   C_0402_1005Metric    30.4268    53.8036   90.0000  bottom
+C2        C_Small   C_0402_1005Metric    12.6468    53.8036   90.0000  bottom
+C3        C_Small   C_0402_1005Metric   -12.7532    53.7756   90.0000  bottom
+C4        C_Small   C_0402_1005Metric   -30.5332    53.8036   90.0000  bottom
+C5        C_Small   C_0402_1005Metric    -0.0532    50.3746    0.0000  bottom
+C6        C_Small   C_0402_1005Metric    16.9983    37.0467    0.0000  bottom
+C7        C_Small   C_0402_1005Metric   -16.9885    37.1495    0.0000  bottom
+## End

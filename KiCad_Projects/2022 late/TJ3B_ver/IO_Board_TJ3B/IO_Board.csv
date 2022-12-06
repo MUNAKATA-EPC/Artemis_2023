@@ -1,0 +1,12 @@
+Comment,Designator,Footprint,LCSC
+"C_Small","C1,C2,C3","Capacitor_SMD:C_01005_0402Metric","C194427"
+"LED","D1,D2","LED_SMD:LED_0402_1005Metric","C130725"
+"Fuse","F1","Fuse:Fuse_0603_1608Metric","C116602"
+"USB_C_Receptacle_USB2.0","J1","Connector_USB:USB_C_Receptacle_XKB_U262-16XN-4BVC11","C2760486"
+"Conn_01x06_Female","J2","Connector_JST:JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical",""
+"Conn_01x02_Female","J3","Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical",""
+"R","R1,R2,R4","Resistor_SMD:R_0402_1005Metric","C159886"
+"R","R3","Resistor_SMD:R_0603_1608Metric","C105428"
+"SW_Push","SW1,SW2","Button_Switch_THT:SW_PUSH_6mm_H5mm",""
+"SW_DIP_x01","SW3","Lib:DS-850k",""
+"CH340E","U1","Package_SO:MSOP-10_3x3mm_P0.5mm","C99652"
