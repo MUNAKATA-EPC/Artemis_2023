@@ -1,0 +1,17 @@
+Title:Sub-13 [ back_slow ] DAISEN C-Style for TJ3B  [ Ver.20190403 ]
+CN01:IR_Deg
+CN02:IR_Distance
+CN03:
+CN04:Ç≤Å[ÇÈÇÃäpìx
+CN05:Ç≤Å[ÇÈÇÃãóó£
+CN06:Line
+CN07:Gyro
+CN08:
+CN09:
+CN10:
+[0000]:sno:08,cno:07,val:111111-111110-000002,cmt:
+[0001]:sno:31,cno:31,val:220002-000025-000000,cmt:
+[0002]:sno:31,cno:31,val:230002-000025-000000,cmt:
+[0003]:sno:31,cno:31,val:240002-000025-000000,cmt:
+[0004]:sno:31,cno:31,val:250002-000025-000000,cmt:
+[0005]:sno:38,cno:38,val:407408-409410-999999,cmt:

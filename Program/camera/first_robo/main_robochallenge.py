@@ -8,7 +8,7 @@ from pyb import LED, Pin, Timer
 
 threshold_for_court = (55, 81, -84, -61, 50, 71) # コートの色取り用変数
 threshold_for_goal = (29, 70, -35, 6, 46, 72) # ゴールの色取り用変数(黄色)
-screen_center = [160 + 6, 138]                  # 画面の中央座標
+screen_center = [153, 138]                  # 画面の中央座標
 
 red_led = LED(1);
 green_led = LED(2);
@@ -19,7 +19,7 @@ sensor.set_pixformat(sensor.RGB565)#カラースケール
 sensor.set_framesize(sensor.QVGA)#解像度
 sensor.skip_frames(time = 250)#描写速度
 sensor.set_contrast(0)#コントラスト
-sensor.set_brightness(-1)#明るさ
+sensor.set_brightness(-3)#明るさ
 sensor.set_saturation(3)#彩3~-3
 sensor.set_auto_gain(False) # must be turned off for color tracking
 sensor.set_auto_exposure(False)
