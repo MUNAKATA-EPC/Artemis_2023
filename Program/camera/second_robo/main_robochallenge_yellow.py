@@ -10,8 +10,9 @@ red_led = LED(1);
 green_led = LED(2);
 blue_led = LED(3);
 
-threshold_for_court = (73, 88, -93, -47, -128, 86) # コートの色取り用変数
-threshold_for_goal = (56, 100, -62, 127, 63, 127) # ゴールの色取り用変数(黄色)
+
+threshold_for_court = (55, 81, -84, -61, 50, 71) # コートの色取り用変数
+threshold_for_goal = (33, 49, 49, 77, 36, 69) # ゴールの色取り用変数(黄色)
 screen_center = [140 + 5, 110 + 3]                  # 画面の中央座標
 
 sensor.reset()
@@ -22,7 +23,8 @@ sensor.set_contrast(0)#コントラスト
 sensor.set_brightness(-1)#明るさ
 sensor.set_saturation(3)#彩3~-3
 sensor.set_auto_gain(False) # must be turned off for color tracking
-sensor.set_auto_exposure(False)
+sensor.set_auto_exposure(False
+)
 sensor.set_auto_whitebal(False,(-5.874588, -6.02073, -3.887871)) # must be turned off for color tracking,(-5.874588, -6.02073, -1.887871)
 
 red_led.on();

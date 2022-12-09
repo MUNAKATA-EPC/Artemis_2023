@@ -1,4 +1,19 @@
 //--------------------------------------------------------------------------------
+// Title: Main - [ main_second ]
+// Build:DAISEN C-Style for TJ3B  [ Ver.20190706 ] - [ Build_V190617 ]
+//--------------------------------------------------------------------------------
+// SetupVal:111111-111110-000002,cmt:
+// CN01:IR_Deg
+// CN02:IR_Distance
+// CN03:
+// CN04:
+// CN05:
+// CN06:Line
+// CN07:Gyro
+// CN08:
+// CN09:
+// CN10:
+//--------------------------------------------------------------------------------
 #include "D_Main.h"
 #include "D_I2C.h"
 #include "D_SIO.h"
@@ -19,7 +34,6 @@ void user_sub_10(void);
 void user_sub_3(void);
 void user_sub_7(void);
 void user_sub_13(void);
-void user_sub_14(void);
 void user_main(void);
 //--------------------------------------------------------------------------------
 // Program Name : pid-modoki.C
@@ -207,24 +221,9 @@ void user_sub_7(void)
   pwm_out();
 }
 //--------------------------------------------------------------------------------
-// Program Name : back_slow.C
-//--------------------------------------------------------------------------------
-void user_sub_13(void)
-{
-  gV[VAR_W] = - 25;
-  gV[VAR_X] = - 25;
-  gV[VAR_Y] = - 25;
-  gV[VAR_Z] = - 25;
-  gPwm[0] = gV[VAR_H] < 0 ? (gV[VAR_H] * -1) | 0x80 : gV[VAR_H];
-  gPwm[1] = gV[VAR_I] < 0 ? (gV[VAR_I] * -1) | 0x80 : gV[VAR_I];
-  gPwm[2] = gV[VAR_J] < 0 ? (gV[VAR_J] * -1) | 0x80 : gV[VAR_J];
-  gPwm[3] = gV[VAR_K] < 0 ? (gV[VAR_K] * -1) | 0x80 : gV[VAR_K];
-  pwm_out();
-}
-//--------------------------------------------------------------------------------
 // Program Name : stop.C
 //--------------------------------------------------------------------------------
-void user_sub_14(void)
+void user_sub_13(void)
 {
   gV[VAR_W] = 0;
   gV[VAR_X] = 0;
@@ -344,66 +343,32 @@ void user_main(void)
             user_sub_5();
           } else if (gAD[CN1] < 613) {
             user_sub_6();
-          } else if (gAD[CN1] < 716) {
+          } else if (gAD[CN1] < 797) {
             user_sub_7();
           }
-        } else if (gAD[CN2] < 542) {
-          if (gAD[CN1] < 61) {
-            user_sub_2();
-          } else if (gAD[CN1] < 143) {
-            if (gAD[CN2] < 480) {
-              user_sub_3();
-            } else {
-              user_sub_8();
-            }
-          } else if (gAD[CN1] < 235) {
-            user_sub_11();
-          } else if (gAD[CN1] < 286) {
-            user_sub_4();
-          } else if (gAD[CN1] < 306) {
-            user_sub_5();
-          } else if (gAD[CN1] < 368) {
-            user_sub_6();
-          } else if (gAD[CN1] < 429) {
-            user_sub_11();
-          } else if (gAD[CN1] < 491) {
-            user_sub_5();
-          } else if (gAD[CN1] < 521) {
-            user_sub_5();
-          } else if (gAD[CN1] < 562) {
-            user_sub_12();
-          } else if (gAD[CN1] < 593) {
-            user_sub_6();
-          } else if (gAD[CN1] < 624) {
-            user_sub_9();
-          }
         } else {
-          if (gAD[CN4] > 501) {
-            if (gAD[CN4] < 531) {
-              if (gAD[CN5] < 634) {
-                if (gAD[CN5] < 480) {
-                  user_sub_5();
-                } else {
-                  user_sub_13();
-                }
-              } else {
-                user_sub_14();
-              }
-            } else {
-              user_sub_4();
-            }
+          if (gAD[CN4] > 562) {
+            user_sub_12();
+          } else if (gAD[CN4] < 460) {
+            user_sub_11();
           } else {
-            if (gAD[CN4] < 460) {
-              user_sub_6();
+            if (gAD[CN5] > 562) {
+              user_sub_5();
             } else {
-              if (gAD[CN5] < 634) {
-                if (gAD[CN5] < 480) {
-                  user_sub_5();
+              if (gAD[CN2] < 511) {
+                if (gAD[CN1] < 51) {
+                  user_sub_13();
+                } else if (gAD[CN1] < 245) {
+                  user_sub_11();
+                } else if (gAD[CN1] < 572) {
+                  user_sub_13();
+                } else if (gAD[CN1] < 777) {
+                  user_sub_12();
                 } else {
                   user_sub_13();
                 }
               } else {
-                user_sub_14();
+                user_sub_13();
               }
             }
           }

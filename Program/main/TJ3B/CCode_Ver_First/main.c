@@ -20,7 +20,7 @@
 #include "D_EIO.h"
 //--------------------------------------------------------------------------------
 
-#define GAIN_P 0.05
+#define GAIN_P 0.1
 #define GAIN_I 1
 #define GAIN_D 1.5
 
@@ -175,8 +175,8 @@ void user_main(void)
           Move((IR_Deg - 45) / 655.0 * 360.0 + adddeg, ((IR_Deg <= 100 || IR_Deg >= 650) && IR_Distance <= 500) ? 20 : 35);
         }
         else{
-          int adddeg = 40;
-          if(IR_Deg < 450)
+          int adddeg = 50;
+                    if(IR_Deg < 530)
             adddeg = 60;
           Move((IR_Deg - 45) / 655.0 * 360.0 - adddeg, ((IR_Deg <= 100 || IR_Deg >= 650) && IR_Distance <= 500) ? 20 : 35);
         }
