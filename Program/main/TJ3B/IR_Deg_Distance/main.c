@@ -21,8 +21,8 @@
 //--------------------------------------------------------------------------------
 // Functions
 //--------------------------------------------------------------------------------
-void user_sub_1(void);
 void user_sub_13(void);
+void user_sub_1(void);
 void user_sub_2(void);
 void user_sub_8(void);
 void user_sub_11(void);
@@ -35,6 +35,27 @@ void user_sub_10(void);
 void user_sub_3(void);
 void user_sub_7(void);
 void user_main(void);
+//--------------------------------------------------------------------------------
+// Program Name : goalpid-modoki.C
+//--------------------------------------------------------------------------------
+void user_sub_13(void)
+{
+  gV[VAR_A] = gAD[CN4] - 240;
+  if (gV[VAR_A] > 300) {
+    gV[VAR_A] = gV[VAR_A] - 600;
+  }
+  gV[VAR_A] = gV[VAR_A] / 6;
+  gV[VAR_F] = gV[VAR_A];
+  if (gV[VAR_F] > 12) {
+    gV[VAR_F] = 12;
+  } else if (gV[VAR_F] < - 12) {
+    gV[VAR_F] = - 12;
+  }
+  gV[VAR_H] = gV[VAR_W] - gV[VAR_F];
+  gV[VAR_I] = gV[VAR_X] + gV[VAR_F];
+  gV[VAR_J] = gV[VAR_Y] - gV[VAR_F];
+  gV[VAR_K] = gV[VAR_Z] + gV[VAR_F];
+}
 //--------------------------------------------------------------------------------
 // Program Name : pid-modoki.C
 //--------------------------------------------------------------------------------
@@ -54,21 +75,6 @@ void user_sub_1(void)
   gV[VAR_I] = gV[VAR_X] - gV[VAR_A];
   gV[VAR_J] = gV[VAR_Y] + gV[VAR_A];
   gV[VAR_K] = gV[VAR_Z] - gV[VAR_A];
-}
-//--------------------------------------------------------------------------------
-// Program Name : stop.C
-//--------------------------------------------------------------------------------
-void user_sub_13(void)
-{
-  gV[VAR_W] = 0;
-  gV[VAR_X] = 0;
-  gV[VAR_Y] = 0;
-  gV[VAR_Z] = 0;
-  gPwm[0] = gV[VAR_H] < 0 ? (gV[VAR_H] * -1) | 0x80 : gV[VAR_H];
-  gPwm[1] = gV[VAR_I] < 0 ? (gV[VAR_I] * -1) | 0x80 : gV[VAR_I];
-  gPwm[2] = gV[VAR_J] < 0 ? (gV[VAR_J] * -1) | 0x80 : gV[VAR_J];
-  gPwm[3] = gV[VAR_K] < 0 ? (gV[VAR_K] * -1) | 0x80 : gV[VAR_K];
-  pwm_out();
 }
 //--------------------------------------------------------------------------------
 // Program Name : front.C
@@ -195,10 +201,10 @@ void user_sub_9(void)
 //--------------------------------------------------------------------------------
 void user_sub_10(void)
 {
-  gV[VAR_W] = 20;
-  gV[VAR_X] = 20;
-  gV[VAR_Y] = 20;
-  gV[VAR_Z] = 20;
+  gV[VAR_W] = 25;
+  gV[VAR_X] = 25;
+  gV[VAR_Y] = 25;
+  gV[VAR_Z] = 25;
   gPwm[0] = gV[VAR_H] < 0 ? (gV[VAR_H] * -1) | 0x80 : gV[VAR_H];
   gPwm[1] = gV[VAR_I] < 0 ? (gV[VAR_I] * -1) | 0x80 : gV[VAR_I];
   gPwm[2] = gV[VAR_J] < 0 ? (gV[VAR_J] * -1) | 0x80 : gV[VAR_J];
@@ -210,10 +216,10 @@ void user_sub_10(void)
 //--------------------------------------------------------------------------------
 void user_sub_3(void)
 {
-  gV[VAR_W] = - 20;
-  gV[VAR_X] = 20;
-  gV[VAR_Y] = 20;
-  gV[VAR_Z] = - 20;
+  gV[VAR_W] = - 25;
+  gV[VAR_X] = 25;
+  gV[VAR_Y] = 25;
+  gV[VAR_Z] = - 25;
   gPwm[0] = gV[VAR_H] < 0 ? (gV[VAR_H] * -1) | 0x80 : gV[VAR_H];
   gPwm[1] = gV[VAR_I] < 0 ? (gV[VAR_I] * -1) | 0x80 : gV[VAR_I];
   gPwm[2] = gV[VAR_J] < 0 ? (gV[VAR_J] * -1) | 0x80 : gV[VAR_J];
@@ -225,10 +231,10 @@ void user_sub_3(void)
 //--------------------------------------------------------------------------------
 void user_sub_7(void)
 {
-  gV[VAR_W] = 20;
-  gV[VAR_X] = - 20;
-  gV[VAR_Y] = - 20;
-  gV[VAR_Z] = 20;
+  gV[VAR_W] = 25;
+  gV[VAR_X] = - 25;
+  gV[VAR_Y] = - 25;
+  gV[VAR_Z] = 25;
   gPwm[0] = gV[VAR_H] < 0 ? (gV[VAR_H] * -1) | 0x80 : gV[VAR_H];
   gPwm[1] = gV[VAR_I] < 0 ? (gV[VAR_I] * -1) | 0x80 : gV[VAR_I];
   gPwm[2] = gV[VAR_J] < 0 ? (gV[VAR_J] * -1) | 0x80 : gV[VAR_J];
@@ -241,22 +247,45 @@ void user_sub_7(void)
 void user_main(void)
 {
   while (TRUE) {
-    user_sub_1();
+    if (gAD[CN8] > 818) {
+      if (gV[VAR_L] == 0) {
+        user_sub_13();
+      } else {
+        user_sub_1();
+      }
+    } else {
+      user_sub_1();
+    }
     if (gAD[CN6] < 102) {
       if (gV[VAR_L] == 0) {
         clr_timer(0);
         gV[VAR_L] = 1;
       }
     } else {
-      if (get_timer(T1) < 300L) {
-        user_sub_13();
-      } else if (get_timer(T1) < 800L) {
+      if (get_timer(T1) < 0L) {
+      } else if (get_timer(T1) < 400L) {
         if (gAD[CN3] < 286) {
           user_sub_2();
         } else if (gAD[CN3] < 409) {
-          user_sub_8();
+          if (gAD[CN1] < 51) {
+            if (gAD[CN8] > 920) {
+              user_sub_8();
+            } else {
+              user_sub_2();
+            }
+          } else {
+            user_sub_8();
+          }
         } else if (gAD[CN3] < 439) {
-          user_sub_11();
+          if (gAD[CN1] < 51) {
+            if (gAD[CN8] > 920) {
+              user_sub_8();
+            } else {
+              user_sub_2();
+            }
+          } else {
+            user_sub_11();
+          }
         } else if (gAD[CN3] < 470) {
           user_sub_4();
         } else if (gAD[CN3] < 511) {

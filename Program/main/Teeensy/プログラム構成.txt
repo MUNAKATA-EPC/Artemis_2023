@@ -1,0 +1,17 @@
+main.cpp : メインプログラム
+
+モーター動作 : Motor.h
+・制御用関数(各モーターの値代入,角度、速度代入)
+・PID制御 : PID.h
+センサー値計算 : Sensor.h
+・IR
+・ライン
+・ジャイロ
+・カメラ
+LCD表示 : LCD.h
+・スイッチの読み取り
+・センサーの値表示
+・文字の表示
+その他(NeoPixel, Buzzer) : Neopixel.h, Buzzer.h
+・NeoPixel
+・Buzzer
