@@ -1,0 +1,7 @@
+(sym_lib_table
+  (lib (name "teensy")(type "Legacy")(uri "D:/部活関係/Munachu_Artemis/KiCad_Projects/Lib/teensy_library-master/teensy.lib")(options "")(descr ""))
+  (lib (name "ir_sensor")(type "KiCad")(uri "D:/部活関係/Munachu_Artemis/KiCad_Projects/Lib/ir_sensor.kicad_sym")(options "")(descr ""))
+  (lib (name "mpu6050")(type "KiCad")(uri "D:/部活関係/Munachu_Artemis/KiCad_Projects/Lib/mpu6050.kicad_sym")(options "")(descr ""))
+  (lib (name "open_mv")(type "KiCad")(uri "D:/部活関係/Munachu_Artemis/KiCad_Projects/Lib/open_mv.kicad_sym")(options "")(descr ""))
+  (lib (name "Logic_Level_Converter")(type "KiCad")(uri "D:/部活関係/Munachu_Artemis/KiCad_Projects/Lib/Logic_Level_Converter.kicad_sym")(options "")(descr ""))
+)

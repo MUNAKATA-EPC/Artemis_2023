@@ -1,0 +1,28 @@
+Drill report for main_board_TJ3B.kicad_pcb
+Created on 2022/11/08 23:01:02
+
+Copper Layer Stackup:
+    =============================================================
+    L1 :  F.Cu                      front
+    L2 :  B.Cu                      back
+
+
+Drill file 'main_board_TJ3B-PTH.drl' contains
+    plated through holes:
+    =============================================================
+    T1  0.400mm  0.0157"  (75 holes)
+    T2  0.762mm  0.0300"  (30 holes)
+    T3  0.800mm  0.0315"  (30 holes)
+    T4  0.950mm  0.0374"  (18 holes)
+    T5  1.000mm  0.0394"  (56 holes)
+    T6  1.090mm  0.0429"  (3 holes)
+    T7  1.100mm  0.0433"  (10 holes)
+
+    Total plated holes count 222
+
+
+Drill file 'main_board_TJ3B-NPTH.drl' contains
+    unplated through holes:
+    =============================================================
+
+    Total unplated holes count 0

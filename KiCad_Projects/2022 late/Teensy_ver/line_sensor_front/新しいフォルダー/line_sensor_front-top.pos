@@ -1,0 +1,21 @@
+### Module positions - created on Tue Oct 18 17:34:38 2022 ###
+### Printed by Pcbnew version (6.0.5)
+## Unit = mm, Angle = deg.
+## Side : top
+# Ref     Val                Package                                 PosX       PosY       Rot  Side
+D1        LED                LED_D3.0mm_Clear                    -35.5068    52.5286   90.0000  top
+D2        LED                LED_D3.0mm_Clear                    -17.7268    52.5336   90.0000  top
+D3        LED                LED_D3.0mm_Clear                     17.8332    52.5286   90.0000  top
+D4        LED                LED_D3.0mm_Clear                     35.6132    52.5286   90.0000  top
+D5        LED                LED_D3.0mm_Clear                      0.0532    52.5286   90.0000  top
+D6        LED                LED_D3.0mm_Clear                    -21.5597    33.9410  122.5000  top
+D7        LED                LED_D3.0mm_Clear                     21.3083    33.3483   57.5000  top
+J1        Conn_01x04_Female  PinHeader_1x04_P2.54mm_Horizontal     3.8632    41.4146  -90.0000  top
+U1        Line_sennsor       Line_sennsor                        -25.3468    60.1556    0.0000  top
+U2        Line_sennsor       Line_sennsor                         -7.5668    60.1556    0.0000  top
+U3        Line_sennsor       Line_sennsor                          7.6732    60.1556    0.0000  top
+U4        Line_sennsor       Line_sennsor                         25.4532    60.1556    0.0000  top
+U5        Line_sennsor       Line_sennsor                          0.0532    53.5516    0.0000  top
+U6        Line_sennsor       Line_sennsor                        -14.2194    45.2752   17.5000  top
+U7        Line_sennsor       Line_sennsor                         14.3209    45.2432  -17.5000  top
+## End

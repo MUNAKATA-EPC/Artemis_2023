@@ -1,0 +1,25 @@
+Drill report for line_sensor_right.kicad_pcb
+Created on 2022/10/18 17:48:58
+
+Copper Layer Stackup:
+    =============================================================
+    L1 :  F.Cu                      front
+    L2 :  B.Cu                      back
+
+
+Drill file 'line_sensor_right.drl' contains
+    plated through holes:
+    =============================================================
+    T1  0.400mm  0.0157"  (17 holes)
+    T2  0.762mm  0.0300"  (24 holes)
+    T3  0.900mm  0.0354"  (12 holes)
+    T4  1.000mm  0.0394"  (5 holes)
+
+    Total plated holes count 58
+
+
+Not plated through holes are merged with plated holes
+    unplated through holes:
+    =============================================================
+
+    Total unplated holes count 0

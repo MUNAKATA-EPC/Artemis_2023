@@ -1,0 +1,5 @@
+Comment,Designator,Footprint,LCSC
+"C_Small","C1,C2,C3,C4,C5,C6,C7","Capacitor_SMD:C_0402_1005Metric","C507422"
+"LED","D1,D2,D3,D4,D5,D6,D7","LED_THT:LED_D3.0mm_Clear",""
+"Conn_01x04_Female","J1","Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Horizontal",""
+"Line_sennsor","U1,U2,U3,U4,U5,U6,U7","Line_sennsor:Line_sennsor",""

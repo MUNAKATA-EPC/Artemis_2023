@@ -1,7 +1,15 @@
 {
   "board": {
     "active_layer": 0,
+<<<<<<< Updated upstream
     "active_layer_preset": "",
+=======
+<<<<<<< HEAD
+    "active_layer_preset": "All Copper Layers",
+=======
+    "active_layer_preset": "",
+>>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
+>>>>>>> Stashed changes
     "auto_track_width": true,
     "hidden_nets": [],
     "high_contrast_mode": 0,
