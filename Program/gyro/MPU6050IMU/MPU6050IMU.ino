@@ -55,8 +55,8 @@ void setup() {
     mpu.initialize();
     mpu.dmpInitialize();
 
-    mpu.setZGyroOffset(5);
-    mpu.setZAccelOffset(5550);
+    mpu.setZGyroOffset(47); //64
+    mpu.setZAccelOffset(560); //724
 
     if (devStatus == 0) {
       mpu.CalibrateAccel(6);

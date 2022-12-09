@@ -10,8 +10,8 @@ red_led = LED(1);
 green_led = LED(2);
 blue_led = LED(3);
 
-threshold_for_court = (54, 72, -77, -22, 56, 80) # コートの色取り用変数
-threshold_for_goal = (54, 68, -5, 23, 62, 76) # ゴールの色取り用変数(黄色)
+threshold_for_court = (73, 88, -93, -47, -128, 86) # コートの色取り用変数
+threshold_for_goal = (56, 100, -62, 127, 63, 127) # ゴールの色取り用変数(黄色)
 screen_center = [140 + 5, 110 + 3]                  # 画面の中央座標
 
 sensor.reset()
@@ -126,11 +126,10 @@ while(True):
             maxium_cy_goal = cy_goal[i]
             break
 
-    goal_deg = math.atan2((maxium_cx_goal - screen_center[0]), (maxium_cy_goal - screen_center[1])) + math.pi;
-    goal_deg = (math.floor(goal_deg/ (2 * math.pi) * 100))
-
-    if maxium_area_goal == 0:
-        goal_deg = 0;
+    goal_deg = math.atan2((maxium_cx_goal - screen_center[0]), (maxium_cy_goal - screen_center[1]))
+    if goal_deg < 0:
+        goal_deg = (2 * math.pi) - abs(goal_deg)
+    goal_deg = (math.floor(goal_deg / (2 * math.pi) * 100))
 
     goal_distance = math.sqrt(math.pow((maxium_cx_goal - screen_center[0]), 2) + math.pow((maxium_cy_goal - screen_center[1]), 2)) - 50;
 

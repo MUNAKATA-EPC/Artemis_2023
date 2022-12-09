@@ -566,6 +566,17 @@
     (uuid f73f0ad2-ed33-4a55-a4c3-82b18bf2e289)
   )
 
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+  (polyline (pts (xy 166.37 111.76) (xy 212.09 111.76))
+    (stroke (width 0) (type default) (color 0 0 0 0))
+    (uuid 10088c37-cbd2-49bc-8c60-da70f1ddf8cd)
+  )
+
+=======
+>>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
+>>>>>>> Stashed changes
   (wire (pts (xy 135.255 121.92) (xy 135.255 119.38))
     (stroke (width 0) (type default) (color 0 0 0 0))
     (uuid 10a963e6-1736-43f7-9a9f-ebd075f1ef2e)
@@ -574,6 +585,21 @@
     (stroke (width 0) (type default) (color 0 0 0 0))
     (uuid 2555de3b-6d78-4ce1-bba1-27251a3a597f)
   )
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+  (polyline (pts (xy 166.37 111.76) (xy 166.37 125.73))
+    (stroke (width 0) (type default) (color 0 0 0 0))
+    (uuid 299c3611-8a38-4748-817a-d219d2647567)
+  )
+  (polyline (pts (xy 212.09 125.73) (xy 212.09 111.76))
+    (stroke (width 0) (type default) (color 0 0 0 0))
+    (uuid 4ac27069-d0a2-4bab-8e25-48ebfaa5c046)
+  )
+
+=======
+>>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
+>>>>>>> Stashed changes
   (wire (pts (xy 199.39 88.265) (xy 199.39 85.725))
     (stroke (width 0) (type default) (color 0 0 0 0))
     (uuid 57b9f26b-f1ad-455f-ad8e-9e2a419c8b55)
@@ -602,6 +628,17 @@
     (stroke (width 0) (type default) (color 0 0 0 0))
     (uuid a8267810-c6cd-41ec-921e-fc5fb7733796)
   )
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+  (polyline (pts (xy 166.37 125.73) (xy 212.09 125.73))
+    (stroke (width 0) (type default) (color 0 0 0 0))
+    (uuid ade83673-1657-4c73-b386-0d6f2df13a9b)
+  )
+
+=======
+>>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
+>>>>>>> Stashed changes
   (wire (pts (xy 196.215 85.725) (xy 199.39 85.725))
     (stroke (width 0) (type default) (color 0 0 0 0))
     (uuid b286b278-29dc-4ccd-b273-81989a20a006)
@@ -623,6 +660,25 @@
     (uuid f198ff81-6351-4877-a7a5-072f36639cb4)
   )
 
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+  (text "LED" (at 198.12 104.14 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 462f46e8-ffa5-4e41-ad98-f9ce4cac6b93)
+  )
+  (text "メインへ\n" (at 214.63 119.38 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 73f146b0-2a9a-4e61-97df-98d5f599f387)
+  )
+  (text "フォトIC" (at 213.36 88.9 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid f6eb505d-31fb-4e9a-a95e-ac97f92c86a9)
+  )
+
+=======
+>>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
+>>>>>>> Stashed changes
   (global_label "Kathode" (shape input) (at 182.88 101.6 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 239a34b0-9954-4824-a4ae-1a46f857cd78)
@@ -658,6 +714,19 @@
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+  (global_label "Vout" (shape input) (at 184.15 121.92 180) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify right))
+    (uuid 7c7306a3-9c79-4ccf-b27a-28588ba6a8c6)
+    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 177.6245 121.9994 0)
+      (effects (font (size 1.27 1.27)) (justify right) hide)
+    )
+  )
+=======
+>>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
+>>>>>>> Stashed changes
   (global_label "Brightness" (shape input) (at 182.88 104.14 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 7f861113-9aff-4c48-810d-00b0c7698657)
@@ -665,6 +734,11 @@
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
   (global_label "Touch" (shape input) (at 184.15 121.92 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid 841c89d5-91aa-4af9-8cfc-4d7ea34b7f38)
@@ -672,6 +746,10 @@
       (effects (font (size 1.27 1.27)) (justify right) hide)
     )
   )
+<<<<<<< Updated upstream
+=======
+>>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
+>>>>>>> Stashed changes
   (global_label "FET 1" (shape input) (at 113.665 86.995 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid a0226fa0-c434-4e11-be1a-e8a01dfa7cd6)
@@ -697,13 +775,29 @@
   (symbol (lib_id "Device:C_Small") (at 196.215 88.265 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 0901b119-ceac-4afd-832d-57034db407b6)
+<<<<<<< Updated upstream
     (property "Reference" "C?" (id 0) (at 193.04 89.535 0)
+=======
+<<<<<<< HEAD
+    (property "Reference" "C1" (id 0) (at 193.04 89.535 0)
+=======
+    (property "Reference" "C?" (id 0) (at 193.04 89.535 0)
+>>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
+>>>>>>> Stashed changes
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "C_Small" (id 1) (at 193.675 84.455 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
+<<<<<<< Updated upstream
     (property "Footprint" "Capacitor_THT:C_Disc_D3.8mm_W2.6mm_P2.50mm" (id 2) (at 196.215 88.265 0)
+=======
+<<<<<<< HEAD
+    (property "Footprint" "Capacitor_SMD:C_0402_1005Metric" (id 2) (at 196.215 88.265 0)
+=======
+    (property "Footprint" "Capacitor_THT:C_Disc_D3.8mm_W2.6mm_P2.50mm" (id 2) (at 196.215 88.265 0)
+>>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
+>>>>>>> Stashed changes
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 196.215 88.265 0)
@@ -716,13 +810,29 @@
   (symbol (lib_id "Device:R") (at 122.555 114.3 90) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 0977ba3b-342a-4782-bc72-7f4e00824fc0)
+<<<<<<< Updated upstream
     (property "Reference" "R?" (id 0) (at 123.825 112.395 90)
+=======
+<<<<<<< HEAD
+    (property "Reference" "R1" (id 0) (at 123.825 112.395 90)
+=======
+    (property "Reference" "R?" (id 0) (at 123.825 112.395 90)
+>>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
+>>>>>>> Stashed changes
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100" (id 1) (at 124.46 114.3 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
+<<<<<<< Updated upstream
     (property "Footprint" "" (id 2) (at 122.555 116.078 90)
+=======
+<<<<<<< HEAD
+    (property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal" (id 2) (at 122.555 116.078 90)
+=======
+    (property "Footprint" "" (id 2) (at 122.555 116.078 90)
+>>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
+>>>>>>> Stashed changes
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 122.555 114.3 0)
@@ -735,7 +845,15 @@
   (symbol (lib_id "power:+5V") (at 184.15 116.84 90) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 13b45114-434b-4104-98f7-746bad323cf8)
+<<<<<<< Updated upstream
     (property "Reference" "#PWR?" (id 0) (at 187.96 116.84 0)
+=======
+<<<<<<< HEAD
+    (property "Reference" "#PWR02" (id 0) (at 187.96 116.84 0)
+=======
+    (property "Reference" "#PWR?" (id 0) (at 187.96 116.84 0)
+>>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
+>>>>>>> Stashed changes
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (id 1) (at 179.7558 116.459 90))
@@ -751,9 +869,21 @@
   (symbol (lib_id "Connector:Conn_01x03_Female") (at 111.125 99.06 180) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 2b3e7b40-c066-4a8d-9b14-685d39a832fb)
+<<<<<<< Updated upstream
     (property "Reference" "J?" (id 0) (at 111.76 91.44 0))
     (property "Value" "Conn_01x03_Female" (id 1) (at 111.76 93.98 0))
     (property "Footprint" "" (id 2) (at 111.125 99.06 0)
+=======
+<<<<<<< HEAD
+    (property "Reference" "J2" (id 0) (at 111.76 91.44 0))
+    (property "Value" "Conn_01x03_Female" (id 1) (at 111.76 93.98 0))
+    (property "Footprint" "Connector_JST:JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical" (id 2) (at 111.125 99.06 0)
+=======
+    (property "Reference" "J?" (id 0) (at 111.76 91.44 0))
+    (property "Value" "Conn_01x03_Female" (id 1) (at 111.76 93.98 0))
+    (property "Footprint" "" (id 2) (at 111.125 99.06 0)
+>>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
+>>>>>>> Stashed changes
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 111.125 99.06 0)
@@ -767,9 +897,21 @@
   (symbol (lib_id "Connector:Conn_01x02_Female") (at 108.585 86.995 180) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 3443886f-a143-4337-acb9-8e38cf22db2b)
+<<<<<<< Updated upstream
     (property "Reference" "J?" (id 0) (at 109.22 79.375 0))
     (property "Value" "Conn_01x02_Female" (id 1) (at 109.22 81.915 0))
     (property "Footprint" "" (id 2) (at 108.585 86.995 0)
+=======
+<<<<<<< HEAD
+    (property "Reference" "J1" (id 0) (at 109.22 79.375 0))
+    (property "Value" "Conn_01x02_Female" (id 1) (at 109.22 81.915 0))
+    (property "Footprint" "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical" (id 2) (at 108.585 86.995 0)
+=======
+    (property "Reference" "J?" (id 0) (at 109.22 79.375 0))
+    (property "Value" "Conn_01x02_Female" (id 1) (at 109.22 81.915 0))
+    (property "Footprint" "" (id 2) (at 108.585 86.995 0)
+>>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
+>>>>>>> Stashed changes
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 108.585 86.995 0)
@@ -782,13 +924,29 @@
   (symbol (lib_id "Connector:Conn_01x02_Female") (at 140.335 99.06 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 434a9d72-8a5b-4635-a875-0ba8989cd00a)
+<<<<<<< Updated upstream
     (property "Reference" "J?" (id 0) (at 141.605 99.0599 0)
+=======
+<<<<<<< HEAD
+    (property "Reference" "J3" (id 0) (at 141.605 99.0599 0)
+=======
+    (property "Reference" "J?" (id 0) (at 141.605 99.0599 0)
+>>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
+>>>>>>> Stashed changes
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Conn_01x02_Female" (id 1) (at 141.605 101.5999 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
+<<<<<<< Updated upstream
     (property "Footprint" "" (id 2) (at 140.335 99.06 0)
+=======
+<<<<<<< HEAD
+    (property "Footprint" "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical" (id 2) (at 140.335 99.06 0)
+=======
+    (property "Footprint" "" (id 2) (at 140.335 99.06 0)
+>>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
+>>>>>>> Stashed changes
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 140.335 99.06 0)
@@ -801,13 +959,29 @@
   (symbol (lib_id "Device:R") (at 135.255 105.41 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 43bad28e-0ab9-4fa0-b616-2ce96278db55)
+<<<<<<< Updated upstream
     (property "Reference" "R?" (id 0) (at 137.16 105.41 0)
+=======
+<<<<<<< HEAD
+    (property "Reference" "R3" (id 0) (at 137.16 105.41 0)
+=======
+    (property "Reference" "R?" (id 0) (at 137.16 105.41 0)
+>>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
+>>>>>>> Stashed changes
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "1" (id 1) (at 134.62 105.41 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
+<<<<<<< Updated upstream
     (property "Footprint" "" (id 2) (at 133.477 105.41 90)
+=======
+<<<<<<< HEAD
+    (property "Footprint" "Lib:5W 1Ω sement" (id 2) (at 133.477 105.41 90)
+=======
+    (property "Footprint" "" (id 2) (at 133.477 105.41 90)
+>>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
+>>>>>>> Stashed changes
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 135.255 105.41 0)
@@ -820,7 +994,15 @@
   (symbol (lib_id "power:GND") (at 199.39 88.265 90) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 7ad5d457-da50-4fc8-84a4-a2575f58c106)
+<<<<<<< Updated upstream
     (property "Reference" "#PWR?" (id 0) (at 205.74 88.265 0)
+=======
+<<<<<<< HEAD
+    (property "Reference" "#PWR04" (id 0) (at 205.74 88.265 0)
+=======
+    (property "Reference" "#PWR?" (id 0) (at 205.74 88.265 0)
+>>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
+>>>>>>> Stashed changes
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (id 1) (at 203.2 88.2649 90)
@@ -838,13 +1020,29 @@
   (symbol (lib_id "Connector:Conn_01x04_Female") (at 189.23 116.84 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 7ad63560-2ec7-485f-a962-d6fd659142c7)
+<<<<<<< Updated upstream
     (property "Reference" "J?" (id 0) (at 191.135 116.8399 0)
+=======
+<<<<<<< HEAD
+    (property "Reference" "J6" (id 0) (at 191.135 116.8399 0)
+=======
+    (property "Reference" "J?" (id 0) (at 191.135 116.8399 0)
+>>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
+>>>>>>> Stashed changes
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Conn_01x04_Female" (id 1) (at 191.135 119.3799 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
+<<<<<<< Updated upstream
     (property "Footprint" "" (id 2) (at 189.23 116.84 0)
+=======
+<<<<<<< HEAD
+    (property "Footprint" "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical" (id 2) (at 189.23 116.84 0)
+=======
+    (property "Footprint" "" (id 2) (at 189.23 116.84 0)
+>>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
+>>>>>>> Stashed changes
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 189.23 116.84 0)
@@ -859,9 +1057,21 @@
   (symbol (lib_id "Connector:Conn_01x02_Female") (at 177.8 104.14 180) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 91ce8bdd-d1d8-4e60-86a3-ab5007d3e1a8)
+<<<<<<< Updated upstream
     (property "Reference" "J?" (id 0) (at 178.435 96.52 0))
     (property "Value" "Conn_01x02_Female" (id 1) (at 178.435 99.06 0))
     (property "Footprint" "" (id 2) (at 177.8 104.14 0)
+=======
+<<<<<<< HEAD
+    (property "Reference" "J5" (id 0) (at 178.435 96.52 0))
+    (property "Value" "Conn_01x02_Female" (id 1) (at 178.435 99.06 0))
+    (property "Footprint" "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical" (id 2) (at 177.8 104.14 0)
+=======
+    (property "Reference" "J?" (id 0) (at 178.435 96.52 0))
+    (property "Value" "Conn_01x02_Female" (id 1) (at 178.435 99.06 0))
+    (property "Footprint" "" (id 2) (at 177.8 104.14 0)
+>>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
+>>>>>>> Stashed changes
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 177.8 104.14 0)
@@ -874,13 +1084,29 @@
   (symbol (lib_id "Device:Q_NMOS_GDS") (at 132.715 114.3 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 9e0c582d-507c-4247-84f4-c9f2aa679120)
+<<<<<<< Updated upstream
     (property "Reference" "Q?" (id 0) (at 138.43 113.0299 0)
+=======
+<<<<<<< HEAD
+    (property "Reference" "Q1" (id 0) (at 138.43 113.0299 0)
+=======
+    (property "Reference" "Q?" (id 0) (at 138.43 113.0299 0)
+>>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
+>>>>>>> Stashed changes
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Q_NMOS_GDS" (id 1) (at 138.43 115.5699 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
+<<<<<<< Updated upstream
     (property "Footprint" "" (id 2) (at 137.795 111.76 0)
+=======
+<<<<<<< HEAD
+    (property "Footprint" "Lib:FS70SMJ" (id 2) (at 137.795 111.76 0)
+=======
+    (property "Footprint" "" (id 2) (at 137.795 111.76 0)
+>>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
+>>>>>>> Stashed changes
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 132.715 114.3 0)
@@ -894,13 +1120,29 @@
   (symbol (lib_id "Device:R") (at 127 118.11 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid b5d439ae-0bea-4c71-a6ae-9e17e55ab872)
+<<<<<<< Updated upstream
     (property "Reference" "R?" (id 0) (at 128.905 118.11 0)
+=======
+<<<<<<< HEAD
+    (property "Reference" "R2" (id 0) (at 128.905 118.11 0)
+=======
+    (property "Reference" "R?" (id 0) (at 128.905 118.11 0)
+>>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
+>>>>>>> Stashed changes
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "10K" (id 1) (at 127 120.015 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
+<<<<<<< Updated upstream
     (property "Footprint" "" (id 2) (at 125.222 118.11 90)
+=======
+<<<<<<< HEAD
+    (property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal" (id 2) (at 125.222 118.11 90)
+=======
+    (property "Footprint" "" (id 2) (at 125.222 118.11 90)
+>>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
+>>>>>>> Stashed changes
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 127 118.11 0)
@@ -913,7 +1155,15 @@
   (symbol (lib_id "power:GND") (at 184.15 114.3 270) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid d1116976-ef10-4761-8e38-ba9e4b2f72ea)
+<<<<<<< Updated upstream
     (property "Reference" "#PWR?" (id 0) (at 177.8 114.3 0)
+=======
+<<<<<<< HEAD
+    (property "Reference" "#PWR01" (id 0) (at 177.8 114.3 0)
+=======
+    (property "Reference" "#PWR?" (id 0) (at 177.8 114.3 0)
+>>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
+>>>>>>> Stashed changes
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (id 1) (at 179.7558 114.427 90))
@@ -929,9 +1179,21 @@
   (symbol (lib_id "Connector:Conn_01x04_Female") (at 177.8 90.805 180) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid d5008f20-7b9c-490d-a8eb-542c0517a76b)
+<<<<<<< Updated upstream
     (property "Reference" "J?" (id 0) (at 178.435 80.645 0))
     (property "Value" "Conn_01x04_Female" (id 1) (at 178.435 83.185 0))
     (property "Footprint" "" (id 2) (at 177.8 90.805 0)
+=======
+<<<<<<< HEAD
+    (property "Reference" "J4" (id 0) (at 178.435 80.645 0))
+    (property "Value" "Conn_01x04_Female" (id 1) (at 178.435 83.185 0))
+    (property "Footprint" "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical" (id 2) (at 177.8 90.805 0)
+=======
+    (property "Reference" "J?" (id 0) (at 178.435 80.645 0))
+    (property "Value" "Conn_01x04_Female" (id 1) (at 178.435 83.185 0))
+    (property "Footprint" "" (id 2) (at 177.8 90.805 0)
+>>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
+>>>>>>> Stashed changes
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 177.8 90.805 0)
@@ -946,7 +1208,15 @@
   (symbol (lib_id "power:+5V") (at 198.755 90.805 270) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid f9da73d2-0840-4082-be73-b6420fd9d557)
+<<<<<<< Updated upstream
     (property "Reference" "#PWR?" (id 0) (at 194.945 90.805 0)
+=======
+<<<<<<< HEAD
+    (property "Reference" "#PWR03" (id 0) (at 194.945 90.805 0)
+=======
+    (property "Reference" "#PWR?" (id 0) (at 194.945 90.805 0)
+>>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
+>>>>>>> Stashed changes
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (id 1) (at 202.565 90.8049 90)
@@ -966,6 +1236,55 @@
   )
 
   (symbol_instances
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+    (path "/d1116976-ef10-4761-8e38-ba9e4b2f72ea"
+      (reference "#PWR01") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/13b45114-434b-4104-98f7-746bad323cf8"
+      (reference "#PWR02") (unit 1) (value "+5V") (footprint "")
+    )
+    (path "/f9da73d2-0840-4082-be73-b6420fd9d557"
+      (reference "#PWR03") (unit 1) (value "+5V") (footprint "")
+    )
+    (path "/7ad5d457-da50-4fc8-84a4-a2575f58c106"
+      (reference "#PWR04") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/0901b119-ceac-4afd-832d-57034db407b6"
+      (reference "C1") (unit 1) (value "C_Small") (footprint "Capacitor_SMD:C_0402_1005Metric")
+    )
+    (path "/3443886f-a143-4337-acb9-8e38cf22db2b"
+      (reference "J1") (unit 1) (value "Conn_01x02_Female") (footprint "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical")
+    )
+    (path "/2b3e7b40-c066-4a8d-9b14-685d39a832fb"
+      (reference "J2") (unit 1) (value "Conn_01x03_Female") (footprint "Connector_JST:JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical")
+    )
+    (path "/434a9d72-8a5b-4635-a875-0ba8989cd00a"
+      (reference "J3") (unit 1) (value "Conn_01x02_Female") (footprint "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical")
+    )
+    (path "/d5008f20-7b9c-490d-a8eb-542c0517a76b"
+      (reference "J4") (unit 1) (value "Conn_01x04_Female") (footprint "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical")
+    )
+    (path "/91ce8bdd-d1d8-4e60-86a3-ab5007d3e1a8"
+      (reference "J5") (unit 1) (value "Conn_01x02_Female") (footprint "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical")
+    )
+    (path "/7ad63560-2ec7-485f-a962-d6fd659142c7"
+      (reference "J6") (unit 1) (value "Conn_01x04_Female") (footprint "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical")
+    )
+    (path "/9e0c582d-507c-4247-84f4-c9f2aa679120"
+      (reference "Q1") (unit 1) (value "Q_NMOS_GDS") (footprint "Lib:FS70SMJ")
+    )
+    (path "/0977ba3b-342a-4782-bc72-7f4e00824fc0"
+      (reference "R1") (unit 1) (value "100") (footprint "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal")
+    )
+    (path "/b5d439ae-0bea-4c71-a6ae-9e17e55ab872"
+      (reference "R2") (unit 1) (value "10K") (footprint "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal")
+    )
+    (path "/43bad28e-0ab9-4fa0-b616-2ce96278db55"
+      (reference "R3") (unit 1) (value "1") (footprint "Lib:5W 1Ω sement")
+=======
+>>>>>>> Stashed changes
     (path "/13b45114-434b-4104-98f7-746bad323cf8"
       (reference "#PWR?") (unit 1) (value "+5V") (footprint "")
     )
@@ -1010,6 +1329,10 @@
     )
     (path "/b5d439ae-0bea-4c71-a6ae-9e17e55ab872"
       (reference "R?") (unit 1) (value "10K") (footprint "")
+<<<<<<< Updated upstream
+=======
+>>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
+>>>>>>> Stashed changes
     )
   )
 )

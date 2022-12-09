@@ -11,7 +11,7 @@ green_led = LED(2);
 blue_led = LED(3);
 
 threshold_for_court = (73, 88, -93, -47, -128, 86) # コートの色取り用変数
-threshold_for_goal = (19, 72, -35, 42, -77, 6) # ゴールの色取り用変数(青色)
+threshold_for_goal = (45, 60, -39, 8, -47, 1) # ゴールの色取り用変数(青色)
 screen_center = [140 + 5, 120 + 3]                  # 画面の中央座標
 sensor.reset()
 sensor.set_pixformat(sensor.RGB565)#カラースケール
@@ -31,8 +31,6 @@ timer = Timer(4, freq=1000)
 blue_led.on();
 time.sleep_ms(500);
 blue_led.off();
-green_led.on();
-red_led.on();
 
 port1 = timer.channel(1, Timer.PWM, pin=Pin("P7"))
 port2 = timer.channel(2, Timer.PWM, pin=Pin("P8"))
