@@ -21,7 +21,7 @@ sensor.set_framesize(sensor.QVGA)#解像度
 sensor.skip_frames(time = 250)#描写速度
 sensor.set_contrast(0)#コントラスト
 sensor.set_brightness(-1)#明るさ
-sensor.set_saturation(3)#彩3~-3
+sensor.set_saturation(3)#彩3~-uc
 sensor.set_auto_gain(False) # must be turned off for color tracking
 sensor.set_auto_exposure(False
 )
