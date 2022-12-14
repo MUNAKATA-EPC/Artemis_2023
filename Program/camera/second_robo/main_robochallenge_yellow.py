@@ -11,8 +11,8 @@ green_led = LED(2);
 blue_led = LED(3);
 
 
-threshold_for_court = (55, 81, -84, -61, 50, 71) # コートの色取り用変数
-threshold_for_goal = (33, 49, 49, 77, 36, 69) # ゴールの色取り用変数(黄色)
+threshold_for_court = (59, 87, -86, -52, 34, 71) # コートの色取り用変数
+threshold_for_goal = (31, 43, -41, -9, -24, 8) # ゴールの色取り用変数(黄色)
 screen_center = [140 + 5, 110 + 3]                  # 画面の中央座標
 
 sensor.reset()
@@ -20,11 +20,11 @@ sensor.set_pixformat(sensor.RGB565)#カラースケール
 sensor.set_framesize(sensor.QVGA)#解像度
 sensor.skip_frames(time = 250)#描写速度
 sensor.set_contrast(0)#コントラスト
-sensor.set_brightness(-1)#明るさ
-sensor.set_saturation(3)#彩3~-uc
+sensor.set_brightness(0)#明るさ
+sensor.set_saturation(0)#彩3~-uc
+
 sensor.set_auto_gain(False) # must be turned off for color tracking
-sensor.set_auto_exposure(False
-)
+sensor.set_auto_exposure(False)
 sensor.set_auto_whitebal(False,(-5.874588, -6.02073, -3.887871)) # must be turned off for color tracking,(-5.874588, -6.02073, -1.887871)
 
 red_led.on();
@@ -117,6 +117,11 @@ while(True):
         cy_goal[read_count_goal] = blob.cy()
         area_goal[read_count_goal] = blob.area()
 
+        img.draw_rectangle(blob.rect(), thickness=1)         # コートの色取り可能範囲の枠描画
+        img.draw_cross(blob.cx(), blob.cy())    # コートの中心を交差線で描画
+        img.draw_line(screen_center[0], screen_center[1], blob.cx(), blob.cy(), thickness=2)  # 画面中心からコート中心へのライン描画
+
+
     # コートの色取り値の内最大のものをコートとして扱う。
     maxium_cx_goal = (max(cx_goal[:]))
     maxium_cy_goal = (max(cy_goal[:]))
@@ -132,6 +137,9 @@ while(True):
     if goal_deg < 0:
         goal_deg = (2 * math.pi) - abs(goal_deg)
     goal_deg = (math.floor(goal_deg / (2 * math.pi) * 100))
+
+    if maxium_area_goal == 0:
+        goal_deg = 50;
 
     goal_distance = math.sqrt(math.pow((maxium_cx_goal - screen_center[0]), 2) + math.pow((maxium_cy_goal - screen_center[1]), 2)) - 50;
 

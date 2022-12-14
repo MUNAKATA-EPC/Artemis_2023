@@ -3,6 +3,7 @@
 #include <U8g2lib.h>
 #include <Adafruit_NeoPixel.h>
 
+#include "neopixel.h"
 #include "sensor.h"
 #include "timer.h"
 #include "motor.h"
@@ -17,6 +18,7 @@ void setup() {
 
   //Initialize each Sensors
   Setup_Sensors();
+  Setup_Neopixel();
 
   //Initialize DSR1202
   dsr1202.Init();

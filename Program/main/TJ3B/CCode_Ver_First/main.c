@@ -20,12 +20,14 @@
 #include "D_EIO.h"
 //--------------------------------------------------------------------------------
 
-#define GAIN_P 0.1
+#define GAIN_P 0.2
 #define GAIN_I 1
 #define GAIN_D 1.5
 
-#define MOTOR_LIMIT 30
+#define MOTOR_LIMIT 25
 #define PID_LIMIT 30
+
+#define IR_MAX 576.0
 
 #define PI 3.14159
 
@@ -37,7 +39,7 @@ void Move(int Deg, int Power);
 void Move_Power(int MotorA, int MotorB, int MotorC, int MotorD);
 
 //Žp¨§ŒäŒnŠÖ”
-void Calc_PID(void);
+void Calc_PID(int add);
 void Calc_GoalPID(void);
 
 //ƒ{[ƒ‹ƒZƒ“ƒTŒn“•Ï”Ši”[
@@ -66,6 +68,8 @@ int val_P;
 int val_I;
 int val_D;
 
+int Robo_Deg;
+
 BOOL bMove_Line;
 
 //ƒ‚[ƒ^[‚Ì’l‚ðŠi”[
@@ -88,7 +92,7 @@ void Read_Sensors(){
 
   //ƒJƒƒ‰Œn“•Ï”Ši”[
   Court_Deg = gAD[CN3];
-  Goal_Deg = gAD[CN4];
+        Goal_Deg = gAD[CN4] - 230;
   Goal_Distance = gAD[CN5];
 
   //‚»‚Ì‘¼ŠeŽíƒZƒ“ƒT•Ï”Ši”[
@@ -111,7 +115,7 @@ void Move_Power(int MotorA, int MotorB, int MotorC, int MotorD){
   int Motors[4];
     
   Motors[0] = MotorA + Operation_PID;
-  Motors[0] = RemoveHighLow(Motors[0], MOTOR_LIMIT, -MOTOR_LIMIT);
+  Motors[1] = RemoveHighLow(Motors[0], MOTOR_LIMIT, -MOTOR_LIMIT);
   Motors[1] = MotorB - Operation_PID;
   Motors[1] = RemoveHighLow(Motors[1], MOTOR_LIMIT, -MOTOR_LIMIT);
   Motors[2] = MotorC + Operation_PID;
@@ -127,8 +131,8 @@ void Move_Power(int MotorA, int MotorB, int MotorC, int MotorD){
 }
 
 //PID§Œä‚ÌŒvŽZ
-void Calc_PID(void){  
-  val_P = Gyro_Deg;
+void Calc_PID(int add){  
+  val_P = Gyro_Deg + add;
 
   if(val_P > 400){
     val_P = val_P - 800;
@@ -148,42 +152,44 @@ void Calc_PID(void){
   Operation_PID = RemoveHighLow(Operation_PID, PID_LIMIT, -PID_LIMIT);
 }
 
+void Calc_GoalPID(void) {
+  val_P = Goal_Deg;
+  if(val_P > 300){
+    val_P = val_P - 600;
+  }
+  deviation = 0 - Goal_Deg;
+  val_D = deviation - deviation_old;
+  deviation_old = deviation;
+  
+          Operation_PID = val_P / 3 + val_D;
+    Operation_PID = -RemoveHighLow(Operation_PID, 20, -20);
+}
+
 void user_main(void)
 {  
+  Robo_Deg = 0;
   while(TRUE){
     Read_Sensors();
-    Calc_PID();
+    Calc_GoalPID();
     
-    if(Line_Val <= 100) {
-      if(!bMove_Line){
-        clr_timer(0);
-        bMove_Line = true;
+    if(IR_Deg < 800) { //”½‰ž‚µ‚Ä‚¢‚é‚©”Û‚©
+      if(IR_Deg < 50) {
+        Move(0, 30);
+      }
+      else if(IR_Deg > 700){
+        Move(0, 30);
+      }
+      else if(IR_Deg < 420) {
+              int adddeg = 30;
+        Move((IR_Deg / 740.0 * 360.0) + adddeg, 35);
+      }
+      else{
+        int adddeg = 30;
+        Move((IR_Deg / 740.0 * 360.0) - adddeg, 35);
       }
     }
-    if(get_timer(T1) <= 600L) {
-      Move((Court_Deg - 180) / 620.0 * 360, 30);
-    } else {
-          bMove_Line = false;
-      if(IR_Deg < 750) { //”½‰ž‚µ‚Ä‚¢‚é‚©”Û‚©
-        if(IR_Deg < 50) {
-          Move(0, 30);
-        }
-        else if(IR_Deg < 370) {
-          int adddeg = 40;
-          if(IR_Deg > 310)
-             adddeg = 60;
-          Move((IR_Deg - 45) / 655.0 * 360.0 + adddeg, ((IR_Deg <= 100 || IR_Deg >= 650) && IR_Distance <= 500) ? 20 : 35);
-        }
-        else{
-          int adddeg = 50;
-                    if(IR_Deg < 530)
-            adddeg = 60;
-          Move((IR_Deg - 45) / 655.0 * 360.0 - adddeg, ((IR_Deg <= 100 || IR_Deg >= 650) && IR_Distance <= 500) ? 20 : 35);
-        }
-      }
-      else {
-        Move(0, 0);
-      }
+    else {
+      Move(0, 0);
     }
   }
 }

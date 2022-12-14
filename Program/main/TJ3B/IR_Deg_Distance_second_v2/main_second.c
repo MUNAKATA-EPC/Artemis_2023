@@ -90,10 +90,10 @@ void user_sub_8(void)
 //--------------------------------------------------------------------------------
 void user_sub_11(void)
 {
-  gV[VAR_W] = - 32;
-  gV[VAR_X] = 32;
-  gV[VAR_Y] = 32;
-  gV[VAR_Z] = - 32;
+  gV[VAR_W] = - 30;
+  gV[VAR_X] = 30;
+  gV[VAR_Y] = 30;
+  gV[VAR_Z] = - 30;
   gPwm[0] = gV[VAR_H] < 0 ? (gV[VAR_H] * -1) | 0x80 : gV[VAR_H];
   gPwm[1] = gV[VAR_I] < 0 ? (gV[VAR_I] * -1) | 0x80 : gV[VAR_I];
   gPwm[2] = gV[VAR_J] < 0 ? (gV[VAR_J] * -1) | 0x80 : gV[VAR_J];
@@ -150,10 +150,10 @@ void user_sub_6(void)
 //--------------------------------------------------------------------------------
 void user_sub_12(void)
 {
-  gV[VAR_W] = 35;
-  gV[VAR_X] = - 35;
-  gV[VAR_Y] = - 35;
-  gV[VAR_Z] = 35;
+  gV[VAR_W] = 30;
+  gV[VAR_X] = - 30;
+  gV[VAR_Y] = - 30;
+  gV[VAR_Z] = 30;
   gPwm[0] = gV[VAR_H] < 0 ? (gV[VAR_H] * -1) | 0x80 : gV[VAR_H];
   gPwm[1] = gV[VAR_I] < 0 ? (gV[VAR_I] * -1) | 0x80 : gV[VAR_I];
   gPwm[2] = gV[VAR_J] < 0 ? (gV[VAR_J] * -1) | 0x80 : gV[VAR_J];
@@ -248,13 +248,8 @@ void user_main(void)
         gV[VAR_L] = 1;
       }
     } else {
-      if (get_timer(T1) < 300L) {
-        gPwm[0] = 0x00 | 0x80;
-        gPwm[1] = 0x00 | 0x80;
-        gPwm[2] = 0x00 | 0x80;
-        gPwm[3] = 0x00 | 0x80;
-        pwm_out();
-      } else if (get_timer(T1) < 800L) {
+      if (get_timer(T1) < 0L) {
+      } else if (get_timer(T1) < 500L) {
         if (gAD[CN3] < 286) {
           user_sub_2();
         } else if (gAD[CN3] < 368) {
@@ -274,7 +269,7 @@ void user_main(void)
         }
       } else {
         gV[VAR_L] = 0;
-        if (gAD[CN2] < 450) {
+        if (gAD[CN2] < 460) {
           if (gAD[CN1] < 51) {
             if (gAD[CN5] < 439) {
               if (gAD[CN4] < 225) {
@@ -347,15 +342,15 @@ void user_main(void)
             user_sub_7();
           }
         } else {
-          if (gAD[CN4] > 562) {
+          if (gAD[CN4] > 542) {
             user_sub_12();
           } else if (gAD[CN4] < 460) {
             user_sub_11();
           } else {
-            if (gAD[CN5] > 562) {
+            if (gAD[CN5] > 603) {
               user_sub_5();
             } else {
-              if (gAD[CN2] < 511) {
+              if (gAD[CN2] < 542) {
                 if (gAD[CN1] < 51) {
                   user_sub_13();
                 } else if (gAD[CN1] < 245) {

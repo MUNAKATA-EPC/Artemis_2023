@@ -6,8 +6,9 @@ from pyb import LED, Pin, Timer
 # area   = 色取りをした範囲の面積
 # 必然的にpixelsのほうが値は小さくなる…はず。
 
-threshold_for_court = (76, 93, -88, -78, 65, 92) # コートの色取り用変数
-threshold_for_goal = (76, 94, -11, 20, 78, 94) # ゴールの色取り用変数(黄色)
+
+threshold_for_court = (66, 79, -77, -30, 26, 59) # コートの色取り用変数
+threshold_for_goal = (48, 65, -27, -7, 50, 72) # ゴールの色取り用変数(黄色)
 screen_center = [155, 115]                  # 画面の中央座標
 
 red_led = LED(1);
@@ -19,8 +20,8 @@ sensor.set_pixformat(sensor.RGB565)#カラースケール
 sensor.set_framesize(sensor.QVGA)#解像度
 sensor.skip_frames(time = 250)#描写速度
 sensor.set_contrast(0)#コントラスト
-sensor.set_brightness(-1)#明るさ
-sensor.set_saturation(3)#彩3~-3
+sensor.set_brightness(0)#明るさ
+sensor.set_saturation(0)#彩3~-3
 sensor.set_auto_gain(False) # must be turned off for color tracking
 sensor.set_auto_exposure(False)
 sensor.set_auto_whitebal(False,(-5.874588, -6.02073, -3.887871)) # must be turned off for color tracking,(-5.874588, -6.02073, -1.887871)
@@ -83,7 +84,7 @@ while(True):
         cy_court[read_count_court] = blob.cy()
         area_court[read_count_court] = blob.area()
 
-        img.draw_rectangle(blob.rect(), thickness=1)         # コートの色取り可能範囲の枠描画
+        #img.draw_rectangle(blob.rect(), thickness=1)         # コートの色取り可能範囲の枠描画
         img.draw_cross(blob.cx(), blob.cy())    # コートの中心を交差線で描画
         img.draw_line(screen_center[0], screen_center[1], blob.cx(), blob.cy(), thickness=2)  # 画面中心からコート中心へのライン描画
 
@@ -105,7 +106,7 @@ while(True):
 
     #=======================ゴール色取りライン=======================
 
-    for blob in img.find_blobs([threshold_for_goal], pixels_threshold=20, area_threshold=20, merge=True):
+    for blob in img.find_blobs([threshold_for_goal], pixels_threshold=2, area_threshold=2], merge=True):
         if read_count_goal >= 9:              # ゴールの色を10回以上取った場合、それ以上ゴールの色取りをしない。
             break
         else:                                   # まだゴールの色取りが10回行われていない場合、読み取り回数を増やす。
@@ -114,6 +115,11 @@ while(True):
         cx_goal[read_count_goal] = blob.cx()
         cy_goal[read_count_goal] = blob.cy()
         area_goal[read_count_goal] = blob.area()
+
+        img.draw_rectangle(blob.rect(), thickness=1)         # コートの色取り可能範囲の枠描画
+        img.draw_cross(blob.cx(), blob.cy())    # コートの中心を交差線で描画
+        img.draw_line(screen_center[0], screen_center[1], blob.cx(), blob.cy(), thickness=2)  # 画面中心からコート中心へのライン描画
+
 
     # コートの色取り値の内最大のものをコートとして扱う。
     maxium_cx_goal = (max(cx_goal[:]))
