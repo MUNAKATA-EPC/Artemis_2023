@@ -4,13 +4,16 @@
 #include <Adafruit_NeoPixel.h>
 
 #include "neopixel.h"
+#include "buzzer.h"
 #include "sensor.h"
 #include "timer.h"
 #include "motor.h"
+#include "kicker.h"
 #include "lcd.h"
 #include "pid.h"
 
 DSR1202 dsr1202(1);
+Kicker kicker(4, 5);
 
 void setup() {
   analogWriteResolution(10);  //0-255 to 0-1024
@@ -19,6 +22,8 @@ void setup() {
   //Initialize each Sensors
   Setup_Sensors();
   Setup_Neopixel();
+
+  Setup_buzzer();
 
   //Initialize DSR1202
   dsr1202.Init();
@@ -29,6 +34,12 @@ void loop() {
   Read_IR();
   Read_Gyro();
   Read_Camera();
+
+  //bright neopixel
+  Bright_NeoPixel();
+
+  kicker.loop();
+  kicker.push();
 
   delay(10);
 }

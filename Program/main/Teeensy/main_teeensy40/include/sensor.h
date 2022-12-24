@@ -64,7 +64,7 @@ void Read_LINE(){
 void Read_Camera(){
   if(Serial4.available() != 0){
     if(Serial4.read() == 255) {
-      Serial.println(Serial4.read());
+      //Serial.println(Serial4.read());
     }
   }
 }

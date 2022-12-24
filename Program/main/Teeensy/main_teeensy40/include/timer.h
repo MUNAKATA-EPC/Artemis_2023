@@ -2,21 +2,21 @@ class Timer{
 private:
     int _start_val;
     int value;
-    bool ticked;
+    bool ticking;
 public:
     void tick(){
-        if(ticked)
-            value = micros() - _start_val;
+        if(ticking)
+            value = millis() - _start_val;
     }
     void start(){
-        _start_val = micros();
-        ticked = true;
+        _start_val = millis();
+        ticking = true;
     }
     void stop(){
-        ticked = false;
+        ticking = false;
     }
     void reset(){
-        ticked = false;
+        ticking = false;
         value = 0;
     }
     int get_value(){

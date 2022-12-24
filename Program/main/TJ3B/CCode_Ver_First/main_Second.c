@@ -1,8 +1,8 @@
 //--------------------------------------------------------------------------------
-// Title: Main - [ NewFile-00 ]
+// Title: Main - [ main_Second.c ]
 // Build:DAISEN C-Style for TJ3B  [ Ver.20190706 ] - [ Build_V190617 ]
 //--------------------------------------------------------------------------------
-// SetupVal:111111-110000-000000,cmt:
+// SetupVal:111111-111110-000002,cmt:
 // CN01:Ball
 // CN02:Line
 // CN03:L-Touch
@@ -11,8 +11,8 @@
 // CN06:
 // CN07:
 // CN08:
-// CN09:RED3
-// CN10:RED2
+// CN09:
+// CN10:
 //--------------------------------------------------------------------------------
 #include "D_Main.h"
 #include "D_I2C.h"
@@ -21,12 +21,12 @@
 //--------------------------------------------------------------------------------
 // Program Name : 
 //--------------------------------------------------------------------------------
-#define GAIN_P 0.2
+#define GAIN_P 0.15
 #define GAIN_I 1
-#define GAIN_D 1.5
+#define GAIN_D 1
 
-#define MOTOR_LIMIT 30
-#define PID_LIMIT 30
+#define MOTOR_LIMIT 40
+#define PID_LIMIT 25
 
 #define PI 3.14159
 
@@ -41,9 +41,14 @@ void Move_Power(int MotorA, int MotorB, int MotorC, int MotorD);
 void Calc_PID(void);
 void Calc_GoalPID(void);
 
+//ボール追いかけスピード計算
+int Calc_MotorSpeed(void);
+
 //ボールセンサ系統変数格納
 int IR_Deg;
 int IR_Distance;
+int before_IR_Deg;  //前回のボールの角度
+int before_IR_Distance;   //前回のボールの距離
 
 //カメラ系統変数格納
 int Court_Deg;
@@ -61,6 +66,8 @@ int Operation_I;
 int Operation_D;      //各要素ごとの操作量
 int deviation;
 int deviation_old;   //現在、前回の角度差
+int deviation_goal;
+int deviation_old_goal;   //現在、前回の角度差
 int before_deg;   //前回の角度
 int Operation_PID;
 int val_P;
@@ -68,7 +75,6 @@ int val_I;
 int val_D;
 
 BOOL bMove_Line;
-
 //モーターの値を格納
 int Motors_Power[4];  //それぞれ1ch~4chを表す
   
@@ -84,6 +90,8 @@ int RemoveHighLow(int value, int High, int Low){
 
 void Read_Sensors(){
   //ボールセンサ系統変数格納
+  before_IR_Deg = IR_Deg;
+  before_IR_Distance = IR_Distance;
   IR_Deg = gAD[CN1];
   IR_Distance = gAD[CN2];
 
@@ -149,11 +157,47 @@ void Calc_PID(void){
   Operation_PID = RemoveHighLow(Operation_PID, PID_LIMIT, -PID_LIMIT);
 }
 
+void Calc_GoalPID(void) {
+  val_P = Goal_Deg * 1.3;
+  if(val_P > 400){
+    val_P = val_P - 800;
+  }
+  deviation_goal = 0 - val_P;
+  val_D = deviation_goal - deviation_old_goal;
+  deviation_old_goal = deviation_goal;
+      
+  Operation_PID = val_P * 0.15 + val_D;
+  Operation_PID = -RemoveHighLow(Operation_PID, 20, -20);
+}
+
+int Calc_MotorSpeed(){
+  if(IR_Distance >= 570)
+    return 40;
+  else if(IR_Distance >= 450)
+    return 35;
+  
+  return 25;
+}
+
 void user_main(void)
 {  
   while(TRUE){
     Read_Sensors();
     Calc_PID();
+    
+    if(IR_Deg <= 800){
+        if(IR_Deg <= 50 - ((660 - IR_Distance) * 0.04)  || IR_Deg >= 710 + ((660 - IR_Distance) * 0.04)){
+          Move(0, 0);
+        }
+        else if(IR_Deg <= 360){
+          Move(90, 45);
+        }
+        else{
+          Move(-90, 45);
+        }
+    } else {
+      Move(0, 0);
+    }
   }
 }
 

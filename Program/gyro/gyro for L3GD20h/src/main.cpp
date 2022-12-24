@@ -25,7 +25,7 @@ const byte L3GD20_Z_H = 0x2D;
 #define analogpin 1
 #define outputpin 0
 #define resetpin 6
-#define CAL_TIMEMS 30000
+#define CAL_TIMEMS 500
 #define UPDATE_MS 10
 
 float degdata = 0;
@@ -90,7 +90,7 @@ void Calibration(){
 
   degdata = 0;
   bCalNow = false;
-
+  
   Serial.print("####[Calibration Ended value = ");
   Serial.print(caldata);
   Serial.print("]####");
@@ -115,8 +115,6 @@ void setup() {
                       //   ++------ DR1-DR0: ODR 95[HZ]
 
   Writegyro(L3GD20_CTRL4, B00110000);
-
-  Calibration();
 }
 
 void loop() {
@@ -127,18 +125,16 @@ void loop() {
 
   GetDegdata();
 
-  long outputdata = (degdata / 4096) + 512;
+  long outputdata = (degdata / 512) + 512;
   if(outputdata > 1023 ){
     outputdata = 1023;
   } else if(outputdata < 0){
     outputdata = 0;     
   }
 
-  Serial.print(caldata);
-  Serial.print("\t");
-  Serial.print(degdata);
-  Serial.print("\t");
   Serial.println(outputdata);
+
+  analogWrite(outputpin, outputdata);
 
   delay(UPDATE_MS);
 }
