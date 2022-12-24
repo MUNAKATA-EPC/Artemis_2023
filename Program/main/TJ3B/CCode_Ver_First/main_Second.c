@@ -1,7 +1,7 @@
-//--------------------------------------------------------------------------------
-// Title: Main - [ main_Second.c ]
-// Build:DAISEN C-Style for TJ3B  [ Ver.20190706 ] - [ Build_V190617 ]
-//--------------------------------------------------------------------------------
+#include "D_Main.h"
+#include "D_I2C.h"
+#include "D_SIO.h"
+#include "D_EIO.h"
 // SetupVal:111111-111110-000002,cmt:
 // CN01:Ball
 // CN02:Line
@@ -185,17 +185,25 @@ void user_main(void)
     Read_Sensors();
     Calc_PID();
     
-    if(IR_Deg <= 800){
-        if(IR_Deg <= 50 - ((660 - IR_Distance) * 0.04)  || IR_Deg >= 710 + ((660 - IR_Distance) * 0.04)){
-          Move(0, 0);
-        }
-        else if(IR_Deg <= 360){
-          Move(90, 45);
-        }
-        else{
-          Move(-90, 45);
-        }
-    } else {
+    if(IR_Deg <= 800) 
+    {
+      if(IR_Deg <= 73 || IR_Deg >= 720)
+      {
+         Move(0, 30);
+      } 
+      else if(IR_Deg <= 320) 
+      {
+        int Ball_Deg = IR_Deg / 740.0 * 360.0 + 10; 
+        Move(Ball_Deg, 30);
+      } 
+      else
+      {
+         int Ball_Deg = IR_Deg / 740.0 * 360.0 - 10;
+         Move(Ball_Deg, 30);
+      }
+    } 
+    else 
+    {
       Move(0, 0);
     }
   }

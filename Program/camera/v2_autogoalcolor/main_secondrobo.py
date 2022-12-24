@@ -6,9 +6,9 @@ from pyb import LED, Pin, Timer
 # area   = 色取りをした範囲の面積
 # 必然的にpixelsのほうが値は小さくなる…はず。
 
-threshold_for_court = (57, 89, -86, -32, 44, 72) # コートの色取り用変数
-threshold_for_goal_yellow = (45, 80, -33, 17, 53, 81) # ゴールの色取り用変数(黄色)
-threshold_for_goal_blue = (6, 37, -38, 13, -37, 2) # ゴールの色取り用変数(青色)
+threshold_for_court = (53, 81, -88, -43, 48, 89) # コートの色取り用変数
+threshold_for_goal_yellow = (56, 74, -20, 3, 56, 80) # ゴールの色取り用変数(黄色)
+threshold_for_goal_blue = (13, 44, -34, 31, -61, 6) # ゴールの色取り用変数(青色)
 threshold_for_goal = (0, 0, 0, 0, 0, 0) #ゴールの最終色取り変数
 screen_center = [130, 127]                  # 画面の中央座標
 red_led = LED(1);
