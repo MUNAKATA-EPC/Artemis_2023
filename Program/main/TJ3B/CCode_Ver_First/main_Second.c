@@ -1,7 +1,7 @@
-#include "D_Main.h"
-#include "D_I2C.h"
-#include "D_SIO.h"
-#include "D_EIO.h"
+//--------------------------------------------------------------------------------
+// Title: Main - [ main_Second.c ]
+// Build:DAISEN C-Style for TJ3B  [ Ver.20190706 ] - [ Build_V190617 ]
+//--------------------------------------------------------------------------------
 // SetupVal:111111-111110-000002,cmt:
 // CN01:Ball
 // CN02:Line
@@ -19,9 +19,14 @@
 #include "D_SIO.h"
 #include "D_EIO.h"
 //--------------------------------------------------------------------------------
+#include "D_Main.h"
+#include "D_I2C.h"
+#include "D_SIO.h"
+#include "D_EIO.h"
+//--------------------------------------------------------------------------------
 // Program Name : 
 //--------------------------------------------------------------------------------
-#define GAIN_P 0.15
+#define GAIN_P 0.09
 #define GAIN_I 1
 #define GAIN_D 1
 
@@ -43,6 +48,10 @@ void Calc_GoalPID(void);
 
 //ボール追いかけスピード計算
 int Calc_MotorSpeed(void);
+
+//最大値、最小値計算
+int Max(int a, int b);
+int Min(int a, int b);
 
 //ボールセンサ系統変数格納
 int IR_Deg;
@@ -78,6 +87,17 @@ BOOL bMove_Line;
 //モーターの値を格納
 int Motors_Power[4];  //それぞれ1ch~4chを表す
   
+//最大値計算
+int Max(int a, int b)
+{
+  return a >= b ? a : b;
+}
+//最小値計算
+int Min(int a, int b)
+{
+  return a >= b ? b : a;
+}
+  
 //上下限を丸め込む関数
 int RemoveHighLow(int value, int High, int Low){
   if(value > High)
@@ -97,7 +117,7 @@ void Read_Sensors(){
 
   //カメラ系統変数格納
   Court_Deg = gAD[CN3];
-  Goal_Deg = gAD[CN4];
+  Goal_Deg = gAD[CN4] - 190;
   Goal_Distance = gAD[CN5];
 
   //その他各種センサ変数格納
@@ -185,28 +205,110 @@ void user_main(void)
     Read_Sensors();
     Calc_PID();
     
-    if(IR_Deg <= 800) 
-    {
-      if(IR_Deg <= 73 || IR_Deg >= 720)
-      {
-         Move(0, 30);
-      } 
-      else if(IR_Deg <= 320) 
-      {
-        int Ball_Deg = IR_Deg / 740.0 * 360.0 + 10; 
-        Move(Ball_Deg, 30);
-      } 
-      else
-      {
-         int Ball_Deg = IR_Deg / 740.0 * 360.0 - 10;
-         Move(Ball_Deg, 30);
+    if(Line_Val <= 50) {
+      if(!bMove_Line) {
+        clr_timer(0);
+        bMove_Line = true;
       }
-    } 
+    }
+        
+    if(get_timer(T1) <= 300){
+      int move_deg = ((Court_Deg - 185) / 700.0 * 360.0) / 45 * 45;
+      int move_speed = 30;
+      Move(move_deg, move_speed);
+    }
     else 
     {
-      Move(0, 0);
+      bMove_Line = false;
+    
+      if(IR_Distance >= 490)
+      {
+        if(IR_Deg <= 800) 
+        {
+          if(IR_Deg <= 50 || IR_Deg >= 730)
+          {
+            Move(0, Goal_Distance >= 800 ? 30 : 40);
+          } 
+          else if(IR_Deg <= 320) 
+          {
+            if(Goal_Distance <= 570)
+            {
+              int Ball_Deg = Min(Max(IR_Deg / 740.0 * 360.0 + (IR_Deg) / 7.5 + 3, 90), 90);
+              Move(Ball_Deg, (IR_Deg >= 640 && IR_Distance >= 510) ? 40 : 45);
+            }
+            else
+            {
+              int Ball_Deg = Max(IR_Deg / 740.0 * 360.0 + (IR_Deg) / 7.5 + 3, 60);
+              Move(Ball_Deg, (IR_Deg >= 640 && IR_Distance >= 510) ? 33 : 40);
+            }
+          } 
+          else
+          {
+            if(Goal_Distance <= 570)
+            {
+              int Ball_Deg = Max(Min(IR_Deg / 740.0 * 360.0 - (700 - IR_Deg) / 7.5 - 3, 270), 270);
+              Move(Ball_Deg, (IR_Deg >= 640 && IR_Distance >= 510) ? 40 : 45);
+            }
+            else
+            {
+              int Ball_Deg = Min(IR_Deg / 740.0 * 360.0 - (700 - IR_Deg) / 7.5 - 3, 270);
+              Move(Ball_Deg, (IR_Deg >= 640 && IR_Distance >= 510) ? 33 : 40);
+            }
+          }
+        } 
+        else 
+        {
+          Move(0, 0);
+        }
+      }
+      else
+      {
+      　if(Goal_Distance >= 610)
+      　{
+          if(Goal_Distance >= 800)
+          {
+             Move(180, 40);
+          }
+          else
+          {
+            if(Goal_Deg >= 550 - 190)
+            {
+              Move(0, 45);
+            }
+            else if(Goal_Deg <= 420 - 190)
+            {
+              Move(0, 45);
+            }
+            else
+            {
+              int goal_deg = Goal_Deg / (780.0 - 190.0) * 360.0;
+              Move(goal_deg, 20 + (Goal_Distance - 600) / 10);
+            }
+          }
+        }
+        else
+        {
+          if(Goal_Distance <= 530)
+          {
+            Move(0, 20);
+          }
+          else
+          {
+            if(Goal_Deg <= 470 - 190)
+            {
+              Move(90, 45);
+            }
+            else if(Goal_Deg >= 500 - 190)
+            {
+              Move(270, 45);
+            }
+            else
+            {
+              Move(0, 0);
+            }
+          }
+        }
+      }
     }
   }
 }
-
-

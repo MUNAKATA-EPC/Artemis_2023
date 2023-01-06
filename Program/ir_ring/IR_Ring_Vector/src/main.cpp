@@ -99,7 +99,7 @@ void loop(){
     
     if(Ball_Point.GetX() == 0 && Ball_Point.GetY() == 0){
         analogWrite(0, 1023);
-        analogWrite(1, 1023);
+        analogWrite(1, 0);
     }
     else{
         analogWrite(0, theta);

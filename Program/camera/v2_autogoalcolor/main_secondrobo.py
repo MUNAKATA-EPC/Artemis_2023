@@ -1,3 +1,4 @@
+
 import sensor, image, time, math
 from pyb import LED, Pin, Timer
 
@@ -6,11 +7,11 @@ from pyb import LED, Pin, Timer
 # area   = 色取りをした範囲の面積
 # 必然的にpixelsのほうが値は小さくなる…はず。
 
-threshold_for_court = (53, 81, -88, -43, 48, 89) # コートの色取り用変数
-threshold_for_goal_yellow = (56, 74, -20, 3, 56, 80) # ゴールの色取り用変数(黄色)
-threshold_for_goal_blue = (13, 44, -34, 31, -61, 6) # ゴールの色取り用変数(青色)
+threshold_for_court = (35, 78, -25, -5, 13, 41) # コートの色取り用変数
+threshold_for_goal_yellow = (49, 79, 8, 33, 52, 80) # ゴールの色取り用変数(黄色)
+threshold_for_goal_blue = (6, 28, -9, 38, -61, -17) # ゴールの色取り用変数(青色)
 threshold_for_goal = (0, 0, 0, 0, 0, 0) #ゴールの最終色取り変数
-screen_center = [130, 127]                  # 画面の中央座標
+screen_center = [150, 125]                  # 画面の中央座標
 red_led = LED(1);
 green_led = LED(2);
 blue_led = LED(3);
@@ -20,11 +21,11 @@ sensor.set_pixformat(sensor.RGB565)#カラースケール
 sensor.set_framesize(sensor.QVGA)#解像度
 
 
-sensor.set_contrast(0)#コントラスト
-sensor.set_brightness(-3)#明るさ
+sensor.set_contrast(1)#コントラスト
+sensor.set_brightness(-1)#明るさ
 sensor.set_saturation(1)#彩3~-3
 
-sensor.set_auto_gain(True) # must be turned off for color tracking
+sensor.set_auto_gain(False) # must be turned off for color tracking
 sensor.set_auto_exposure(False)
 sensor.set_auto_whitebal(False,(-5.874588, -6.02073, -3.887871)) # must be turned off for color tracking,(-5.874588, -6.02073, -1.887871)
 
@@ -79,7 +80,7 @@ while(True):
 
     #=======================コート色取りライン=======================
 
-    for blob in img.find_blobs([threshold_for_court], pixels_threshold=10, area_threshold=10, merge=True):
+    for blob in img.find_blobs([threshold_for_court], pixels_threshold=400, area_threshold=400, merge=True):
         if read_count_court >= 9:              # コートの色を10回以上取った場合、それ以上コートの色取りをしない。
             break
         else:                                   # まだコートの色取りが10回行われていない場合、読み取り回数を増やす。
@@ -123,7 +124,7 @@ while(True):
 
         img.draw_rectangle(blob.rect(), thickness=1)         # コートの色取り可能範囲の枠描画
         img.draw_cross(blob.cx(), blob.cy())    # コートの中心を交差線で描画
-        img.draw_line(screen_center[0], screen_center[1], blob.cx(), blob.cy(), thickness=2)  # 画面中心からコート中心へのライン描画
+        #img.draw_line(screen_center[0], screen_center[1], blob.cx(), blob.cy(), thickness=2)  # 画面中心からコート中心へのライン描画
 
 
     # コートの色取り値の内最大のものをコートとして扱う。

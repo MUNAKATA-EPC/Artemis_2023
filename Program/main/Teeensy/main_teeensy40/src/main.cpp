@@ -38,8 +38,7 @@ void loop() {
   //bright neopixel
   Bright_NeoPixel();
 
-  kicker.loop();
-  kicker.push();
+  Serial.println(digitalRead(23));
 
   delay(10);
 }
