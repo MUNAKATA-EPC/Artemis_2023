@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>C:\Teensy_ver\psu_board\psu_board.kicad_sch</source>
+    <date>2023/02/26 21:46:00</date>
+    <tool>Eeschema (6.0.5)</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>psu_board.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="BT1">
+      <value>Battery</value>
+      <footprint>Connector_JST:JST_VH_B2P-VH-B_1x02_P3.96mm_Vertical</footprint>
+      <libsource lib="Device" part="Battery" description="Multiple-cell battery"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="psu_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e877212b-e7cd-4a32-b8f9-aa8b9ccc4482</tstamps>
+    </comp>
+    <comp ref="C1">
+      <value>22μF</value>
+      <footprint>Capacitor_THT:C_Disc_D5.1mm_W3.2mm_P5.00mm</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="psu_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d36dc9a8-b1cb-4623-b43f-b53d4d7e5c9b</tstamps>
+    </comp>
+    <comp ref="C2">
+      <value>10μF</value>
+      <footprint>Capacitor_THT:C_Disc_D5.1mm_W3.2mm_P5.00mm</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="psu_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>06902ce8-52e2-476b-b2b5-d24942117f26</tstamps>
+    </comp>
+    <comp ref="C3">
+      <value>0.33μF</value>
+      <footprint>Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="psu_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>531f31a8-d5d2-4947-bdc4-59931206f2ce</tstamps>
+    </comp>
+    <comp ref="C4">
+      <value>33μF</value>
+      <footprint>Capacitor_THT:C_Radial_D6.3mm_H11.0mm_P2.50mm</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="psu_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>5dd75306-0a6e-42fb-9bed-9f1fd2c27240</tstamps>
+    </comp>
+    <comp ref="D1">
+      <value>D_Shockley</value>
+      <footprint>Diode_THT:D_5W_P12.70mm_Horizontal</footprint>
+      <libsource lib="Device" part="D_Shockley" description="Shockley (PNPN) diode"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="psu_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8453c821-5588-4686-ab2b-49123a2f2c86</tstamps>
+    </comp>
+    <comp ref="F1">
+      <value>Fuse</value>
+      <footprint>Lib:fuse_socket</footprint>
+      <libsource lib="Device" part="Fuse" description="Fuse"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="psu_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b380bda4-7708-4669-8a09-bd65170bd528</tstamps>
+    </comp>
+    <comp ref="J1">
+      <value>Conn_01x02_Female</value>
+      <footprint>Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical</footprint>
+      <libsource lib="Connector" part="Conn_01x02_Female" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="psu_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>715899ef-4793-4297-8044-00d750259449</tstamps>
+    </comp>
+    <comp ref="J2">
+      <value>Conn_01x02_Female</value>
+      <footprint>Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical</footprint>
+      <libsource lib="Connector" part="Conn_01x02_Female" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="psu_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>cf7c2336-363d-42cc-91d9-c884d90f2476</tstamps>
+    </comp>
+    <comp ref="J3">
+      <value>Conn_01x03_Female</value>
+      <footprint>Connector_JST:JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical</footprint>
+      <libsource lib="Connector" part="Conn_01x03_Female" description="Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="psu_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a8437bc9-99b0-4aeb-bd0f-3bb891398f14</tstamps>
+    </comp>
+    <comp ref="MES1">
+      <value>Voltmeter_DC</value>
+      <footprint>Lib:voltage_counter</footprint>
+      <libsource lib="Device" part="Voltmeter_DC" description="DC voltmeter"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="psu_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6e799b4c-4bf8-4ad7-a772-57716baaea3c</tstamps>
+    </comp>
+    <comp ref="R1">
+      <value>20K</value>
+      <footprint>Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="psu_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d91692f2-608a-4142-a86e-8e127ca9009b</tstamps>
+    </comp>
+    <comp ref="R2">
+      <value>1.2k</value>
+      <footprint>Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="psu_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3041f76f-98f7-44f6-9ae6-c0b7ac798654</tstamps>
+    </comp>
+    <comp ref="RV1">
+      <value>R_Potentiometer_Trim_US</value>
+      <footprint>Potentiometer_THT:Potentiometer_Bourns_3296W_Vertical</footprint>
+      <libsource lib="Device" part="R_Potentiometer_Trim_US" description="Trim-potentiometer, US symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="psu_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e55039a2-66c6-4e37-8fda-ca783be39d3e</tstamps>
+    </comp>
+    <comp ref="SW1">
+      <value>SW_DIP_x01</value>
+      <footprint>Lib:DS-850k</footprint>
+      <libsource lib="Switch" part="SW_DIP_x01" description="1x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="psu_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>93d4ee31-1026-47c6-92bb-ccb918bcda88</tstamps>
+    </comp>
+    <comp ref="SW2">
+      <value>SW_DIP_x01</value>
+      <footprint>Lib:2MS1T2B4M2QES</footprint>
+      <libsource lib="Switch" part="SW_DIP_x01" description="1x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="psu_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>02592714-e757-4dee-9790-1f6a061912a1</tstamps>
+    </comp>
+    <comp ref="U1">
+      <value>OKL-T_6-W12N-C</value>
+      <footprint>Lib:DCDC-murata-6A</footprint>
+      <libsource lib="OKL-T_6-W12N-C" part="OKL-T_6-W12N-C" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="psu_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ebc157d7-7ce1-42cd-b9a6-475e6faddcf6</tstamps>
+    </comp>
+    <comp ref="U2">
+      <value>TA48033S</value>
+      <footprint>Lib:TA48033S</footprint>
+      <libsource lib="TA48033S" part="TA48033S" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="psu_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>08bcd43d-1a00-4c3d-9307-2bcd559e6b01</tstamps>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Connector" part="Conn_01x02_Female">
+      <description>Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x02_Female</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector" part="Conn_01x03_Female">
+      <description>Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x03_Female</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="Battery">
+      <description>Multiple-cell battery</description>
+      <docs>~</docs>
+      <fields>
+        <field name="Reference">BT</field>
+        <field name="Value">Battery</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="+" type="passive"/>
+        <pin num="2" name="-" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="C">
+      <description>Unpolarized capacitor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="D_Shockley">
+      <description>Shockley (PNPN) diode</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>TO-???*</fp>
+        <fp>*_Diode_*</fp>
+        <fp>*SingleDiode*</fp>
+        <fp>D_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">D_Shockley</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="Fuse">
+      <description>Fuse</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>*Fuse*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">F</field>
+        <field name="Value">Fuse</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R">
+      <description>Resistor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R_Potentiometer_Trim_US">
+      <description>Trim-potentiometer, US symbol</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Potentiometer*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">RV</field>
+        <field name="Value">R_Potentiometer_Trim_US</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+        <pin num="3" name="3" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="Voltmeter_DC">
+      <description>DC voltmeter</description>
+      <docs>~</docs>
+      <fields>
+        <field name="Reference">MES</field>
+        <field name="Value">Voltmeter_DC</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="-" type="passive"/>
+        <pin num="2" name="+" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="OKL-T_6-W12N-C" part="OKL-T_6-W12N-C">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">OKL-T_6-W12N-C</field>
+        <field name="Footprint">CONV_OKL-T/6-W12N-C</field>
+      </fields>
+      <pins>
+        <pin num="1" name="ON/OFF_CTRL" type="input"/>
+        <pin num="2" name="VIN" type="input"/>
+        <pin num="3" name="GND" type="power_in"/>
+        <pin num="4" name="VOUT" type="output"/>
+        <pin num="5" name="SENSE" type="input"/>
+        <pin num="6" name="TRIM" type="input"/>
+        <pin num="7" name="GND" type="power_in"/>
+        <pin num="10" name="PG_OUT" type="output"/>
+      </pins>
+    </libpart>
+    <libpart lib="Switch" part="SW_DIP_x01">
+      <description>1x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>SW?DIP?x1*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">SW</field>
+        <field name="Value">SW_DIP_x01</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="TA48033S" part="TA48033S">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">TA48033S</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VIN" type="bidirectional"/>
+        <pin num="2" name="VOUT" type="bidirectional"/>
+        <pin num="3" name="GND" type="bidirectional"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Connector">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/Connector.kicad_sym</uri>
+    </library>
+    <library logical="Device">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/Device.kicad_sym</uri>
+    </library>
+    <library logical="OKL-T_6-W12N-C">
+      <uri>D:/部活関係/Munachu_Artemis/KiCad_Projects/Lib/OKL-T_6-W12N-C.lib</uri>
+    </library>
+    <library logical="Switch">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/Switch.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="+3V3">
+      <node ref="C4" pin="1" pintype="passive"/>
+      <node ref="J3" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="U2" pin="2" pinfunction="VOUT" pintype="bidirectional"/>
+    </net>
+    <net code="2" name="+5V">
+      <node ref="C2" pin="1" pintype="passive"/>
+      <node ref="C3" pin="1" pintype="passive"/>
+      <node ref="J3" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="U1" pin="4" pinfunction="VOUT" pintype="output"/>
+      <node ref="U1" pin="5" pinfunction="SENSE" pintype="input"/>
+      <node ref="U2" pin="1" pinfunction="VIN" pintype="bidirectional"/>
+    </net>
+    <net code="3" name="+7.5V">
+      <node ref="C1" pin="1" pintype="passive"/>
+      <node ref="J1" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J2" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="R1" pin="1" pintype="passive"/>
+      <node ref="SW1" pin="2" pintype="passive"/>
+      <node ref="U1" pin="2" pinfunction="VIN" pintype="input"/>
+    </net>
+    <net code="4" name="GND">
+      <node ref="BT1" pin="2" pinfunction="-" pintype="passive"/>
+      <node ref="C1" pin="2" pintype="passive"/>
+      <node ref="C2" pin="2" pintype="passive"/>
+      <node ref="C3" pin="2" pintype="passive"/>
+      <node ref="C4" pin="2" pintype="passive"/>
+      <node ref="D1" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="J1" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="J2" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="J3" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="MES1" pin="1" pinfunction="-" pintype="passive"/>
+      <node ref="R2" pin="2" pintype="passive"/>
+      <node ref="SW2" pin="1" pintype="passive"/>
+      <node ref="U1" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="U1" pin="7" pinfunction="GND" pintype="power_in"/>
+      <node ref="U2" pin="3" pinfunction="GND" pintype="bidirectional"/>
+    </net>
+    <net code="5" name="Net-(BT1-Pad1)">
+      <node ref="BT1" pin="1" pinfunction="+" pintype="passive"/>
+      <node ref="F1" pin="1" pintype="passive"/>
+    </net>
+    <net code="6" name="Net-(D1-Pad1)">
+      <node ref="D1" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="F1" pin="2" pintype="passive"/>
+      <node ref="MES1" pin="2" pinfunction="+" pintype="passive"/>
+      <node ref="SW1" pin="1" pintype="passive"/>
+    </net>
+    <net code="7" name="Net-(R1-Pad2)">
+      <node ref="R1" pin="2" pintype="passive"/>
+      <node ref="SW2" pin="2" pintype="passive"/>
+      <node ref="U1" pin="1" pinfunction="ON/OFF_CTRL" pintype="input"/>
+    </net>
+    <net code="8" name="Net-(R2-Pad1)">
+      <node ref="R2" pin="1" pintype="passive"/>
+      <node ref="RV1" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="RV1" pin="2" pinfunction="2" pintype="passive"/>
+    </net>
+    <net code="9" name="Net-(RV1-Pad3)">
+      <node ref="RV1" pin="3" pinfunction="3" pintype="passive"/>
+      <node ref="U1" pin="6" pinfunction="TRIM" pintype="input"/>
+    </net>
+    <net code="10" name="unconnected-(U1-Pad10)">
+      <node ref="U1" pin="10" pinfunction="PG_OUT" pintype="output+no_connect"/>
+    </net>
+  </nets>
+</export>

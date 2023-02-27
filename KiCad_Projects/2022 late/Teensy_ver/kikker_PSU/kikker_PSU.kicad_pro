@@ -48,10 +48,6 @@
           "min_clearance": 0.508
         }
       },
-<<<<<<< Updated upstream
-      "diff_pair_dimensions": [],
-=======
-<<<<<<< HEAD
       "diff_pair_dimensions": [
         {
           "gap": 0.0,
@@ -59,10 +55,6 @@
           "width": 0.0
         }
       ],
-=======
-      "diff_pair_dimensions": [],
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
       "drc_exclusions": [],
       "meta": {
         "version": 2
@@ -126,11 +118,6 @@
         "solder_mask_min_width": 0.0,
         "use_height_for_length_calcs": true
       },
-<<<<<<< Updated upstream
-      "track_widths": [],
-      "via_dimensions": [],
-=======
-<<<<<<< HEAD
       "track_widths": [
         0.0,
         2.0
@@ -141,11 +128,6 @@
           "drill": 0.0
         }
       ],
-=======
-      "track_widths": [],
-      "via_dimensions": [],
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
       "zones_allow_external_fillets": false,
       "zones_use_no_outline": true
     },

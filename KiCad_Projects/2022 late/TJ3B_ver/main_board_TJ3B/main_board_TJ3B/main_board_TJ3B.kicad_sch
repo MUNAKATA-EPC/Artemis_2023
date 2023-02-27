@@ -1025,9 +1025,6 @@
         )
       )
       (symbol "open_mv_1_1"
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
         (pin bidirectional line (at 10.16 -19.05 180) (length 2.54)
           (name "gnd" (effects (font (size 1.27 1.27))))
           (number "1" (effects (font (size 1.27 1.27))))
@@ -1090,74 +1087,6 @@
         )
         (pin bidirectional line (at -11.43 -1.27 0) (length 2.54)
           (name "mosi" (effects (font (size 1.27 1.27))))
-=======
->>>>>>> Stashed changes
-        (pin bidirectional line (at -11.43 -1.27 0) (length 2.54)
-          (name "mosi" (effects (font (size 1.27 1.27))))
-          (number "1" (effects (font (size 1.27 1.27))))
-        )
-        (pin power_out line (at 10.16 -16.51 180) (length 2.54)
-          (name "vin" (effects (font (size 1.27 1.27))))
-          (number "10" (effects (font (size 1.27 1.27))))
-        )
-        (pin bidirectional line (at 10.16 -13.97 180) (length 2.54)
-          (name "seru01" (effects (font (size 1.27 1.27))))
-          (number "11" (effects (font (size 1.27 1.27))))
-        )
-        (pin bidirectional line (at 10.16 -11.43 180) (length 2.54)
-          (name "seru02" (effects (font (size 1.27 1.27))))
-          (number "12" (effects (font (size 1.27 1.27))))
-        )
-        (pin bidirectional line (at 10.16 -8.89 180) (length 2.54)
-          (name "seru03" (effects (font (size 1.27 1.27))))
-          (number "13" (effects (font (size 1.27 1.27))))
-        )
-        (pin bidirectional line (at 10.16 -6.35 180) (length 2.54)
-          (name "syn" (effects (font (size 1.27 1.27))))
-          (number "14" (effects (font (size 1.27 1.27))))
-        )
-        (pin bidirectional line (at 10.16 -3.81 180) (length 2.54)
-          (name "boot" (effects (font (size 1.27 1.27))))
-          (number "15" (effects (font (size 1.27 1.27))))
-        )
-        (pin bidirectional line (at 10.16 -1.27 180) (length 2.54)
-          (name "rst" (effects (font (size 1.27 1.27))))
-          (number "16" (effects (font (size 1.27 1.27))))
-        )
-        (pin bidirectional line (at -11.43 -3.81 0) (length 2.54)
-          (name "sclk" (effects (font (size 1.27 1.27))))
-          (number "2" (effects (font (size 1.27 1.27))))
-        )
-        (pin bidirectional line (at -11.43 -6.35 0) (length 2.54)
-          (name "miso" (effects (font (size 1.27 1.27))))
-          (number "3" (effects (font (size 1.27 1.27))))
-        )
-        (pin bidirectional line (at -11.43 -8.89 0) (length 2.54)
-          (name "ss" (effects (font (size 1.27 1.27))))
-          (number "4" (effects (font (size 1.27 1.27))))
-        )
-        (pin bidirectional line (at -11.43 -11.43 0) (length 2.54)
-          (name "txo/scl" (effects (font (size 1.27 1.27))))
-          (number "5" (effects (font (size 1.27 1.27))))
-        )
-        (pin bidirectional line (at -11.43 -13.97 0) (length 2.54)
-          (name "rxd/sca" (effects (font (size 1.27 1.27))))
-          (number "6" (effects (font (size 1.27 1.27))))
-        )
-        (pin bidirectional line (at -11.43 -16.51 0) (length 2.54)
-          (name "adc/dac" (effects (font (size 1.27 1.27))))
-          (number "7" (effects (font (size 1.27 1.27))))
-        )
-        (pin power_out line (at -11.43 -19.05 0) (length 2.54)
-          (name "3.3v" (effects (font (size 1.27 1.27))))
-          (number "8" (effects (font (size 1.27 1.27))))
-        )
-        (pin bidirectional line (at 10.16 -19.05 180) (length 2.54)
-          (name "gnd" (effects (font (size 1.27 1.27))))
-<<<<<<< Updated upstream
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
           (number "9" (effects (font (size 1.27 1.27))))
         )
       )
@@ -2381,16 +2310,10 @@
     (stroke (width 0) (type default) (color 0 0 0 0))
     (uuid f9ffd87c-8a0b-41ef-9b0c-ce9b2ba8e19e)
   )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
   (wire (pts (xy 104.14 130.81) (xy 106.68 130.81))
     (stroke (width 0) (type default) (color 0 0 0 0))
     (uuid fd2da747-0472-4080-bf2d-3115ed573402)
   )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
   (wire (pts (xy 79.375 81.915) (xy 74.295 81.915))
     (stroke (width 0) (type default) (color 0 0 0 0))
     (uuid fd51ad57-6af1-4559-b2b4-bd0e14581b40)
@@ -2404,16 +2327,10 @@
     (uuid ff660603-b5d1-4b21-afd4-501f9341e1cb)
   )
 
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
   (text "Touch_connector" (at 97.79 122.555 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 32b0dac1-71ae-4bb5-b3c1-e0521f6b5586)
   )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
   (text "PSU_Board_connector" (at 50.8 102.235 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 6e2bde36-3557-450e-b921-7aec7811cf84)
@@ -2704,9 +2621,6 @@
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
   (global_label "AD8" (shape bidirectional) (at 106.68 130.81 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid cdba65e6-6ef2-4bd0-9fad-07e715cbc96c)
@@ -2714,9 +2628,6 @@
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
   (global_label "MCLR" (shape bidirectional) (at 109.855 78.105 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid d337c492-7429-4618-b378-df29f72737e3)
@@ -2831,15 +2742,9 @@
     (property "Datasheet" "~" (id 3) (at 74.295 67.945 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C528972" (id 4) (at 74.295 67.945 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 208fbf00-f7ee-42dd-a138-28de0587b9ee))
     (pin "2" (uuid 590b1cf7-a429-4ba0-a54f-b536c52692b5))
   )
@@ -2879,15 +2784,9 @@
     (property "Datasheet" "~" (id 3) (at 235.585 97.155 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C507422" (id 4) (at 235.585 97.155 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 2504c67e-dcac-43ef-acf5-010fbf8e275e))
     (pin "2" (uuid f00a234f-0cbe-4c47-b1db-c5205f5a2df7))
   )
@@ -2959,15 +2858,9 @@
     (property "Datasheet" "~" (id 3) (at 235.585 59.055 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C507422" (id 4) (at 235.585 59.055 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 66eba09c-3c70-4973-b7a5-437db5ecaa54))
     (pin "2" (uuid 7e78ef60-e353-441f-9dfb-ec02cef9b164))
   )
@@ -3036,15 +2929,9 @@
     (property "Datasheet" "~" (id 3) (at 191.135 70.485 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C269674" (id 4) (at 191.135 70.485 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 9c2a29da-c83f-4ec8-bbcf-9d775812af04))
     (pin "2" (uuid 5fba7ff8-02f1-4ac0-93c4-5bd7becbcf63))
   )
@@ -3081,9 +2968,6 @@
     (pin "1" (uuid 537cc14b-b690-4baa-acad-7e26aa7c329c))
   )
 
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
   (symbol (lib_id "power:+5V") (at 104.14 125.73 270) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 247e0f90-781f-4adb-bf5e-eeba76745f27)
@@ -3102,9 +2986,6 @@
     (pin "1" (uuid cca23b36-fcd8-4e84-958e-0fe3f209395a))
   )
 
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
   (symbol (lib_id "power:GND") (at 79.375 128.27 90) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 25ad2632-b253-4ec8-acc6-610649cc2496)
@@ -3138,15 +3019,9 @@
     (property "Datasheet" "~" (id 3) (at 252.73 56.515 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C507422" (id 4) (at 252.73 56.515 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 8bf413b6-9d55-401c-be8b-c84fc1805ca1))
     (pin "2" (uuid 2f5793a4-784d-4354-a923-086ce6f236aa))
   )
@@ -3181,15 +3056,9 @@
     (property "Datasheet" "~" (id 3) (at 175.895 70.485 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C269673" (id 4) (at 175.895 70.485 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 5778dc8c-60fe-435e-b75a-362eae1b81ab))
     (pin "2" (uuid a2a4b1ad-c51a-492d-9e99-410eec4f55a3))
   )
@@ -3225,15 +3094,9 @@
     (property "Datasheet" "~" (id 3) (at 155.575 64.135 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C130725" (id 4) (at 155.575 64.135 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 4688ff87-8262-46f4-ad96-b5f4e529cfa9))
     (pin "2" (uuid 92bd1111-b941-4c03-b7ec-a08a9359bc50))
   )
@@ -3249,15 +3112,9 @@
     (property "Datasheet" "~" (id 3) (at 256.54 66.675 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C269673" (id 4) (at 256.54 66.675 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 6377d728-1038-40d4-8681-ce7fe79c5248))
     (pin "2" (uuid 93bfbf11-1cda-44f7-ade4-ae1f685142ce))
   )
@@ -3306,15 +3163,9 @@
     (property "Datasheet" "~" (id 3) (at 66.675 84.455 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C25768" (id 4) (at 66.675 84.455 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 6cc36e54-51f8-4d8c-845c-e01f20a3de32))
     (pin "2" (uuid b886c5bc-df1f-40f0-aa5a-6aeb15f7cae8))
   )
@@ -3436,15 +3287,9 @@
     (property "Datasheet" "~" (id 3) (at 231.775 61.595 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C269673" (id 4) (at 231.775 61.595 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 6116c06f-bd81-4247-be76-91adb314c832))
     (pin "2" (uuid fcbd6ea9-dcbb-48a1-8154-0322456dcd07))
   )
@@ -3460,15 +3305,9 @@
     (property "Datasheet" "~" (id 3) (at 230.505 120.65 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C528972" (id 4) (at 230.505 120.65 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 68fe6fed-79af-4f6e-9e54-d47049353887))
     (pin "2" (uuid 7033b147-8827-447d-be92-4f386ffde0f2))
   )
@@ -3529,15 +3368,9 @@
     (property "Datasheet" "~" (id 3) (at 123.825 70.485 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C269673" (id 4) (at 123.825 70.485 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid aeaaa120-9cc5-4520-9a70-067fbc8f5b7b))
     (pin "2" (uuid 61eb7a4f-888e-4082-9c74-1d94f58e7c05))
   )
@@ -3557,15 +3390,9 @@
     (property "Datasheet" "~" (id 3) (at 173.355 70.485 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C269673" (id 4) (at 173.355 70.485 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid bcfbc157-43ce-49f7-bd18-6a9e2f2f30a3))
     (pin "2" (uuid f931f973-5615-451c-bb04-9a02aede6e6f))
   )
@@ -3581,15 +3408,9 @@
     (property "Datasheet" "~" (id 3) (at 231.775 74.295 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C269673" (id 4) (at 231.775 74.295 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 96591fd4-f103-454e-a0d9-5dd36648d224))
     (pin "2" (uuid a12fcd92-fa97-4557-9816-61027d9f3a67))
   )
@@ -3610,9 +3431,6 @@
     (pin "1" (uuid da172ae5-842d-42c7-a49c-20bae12c4b8f))
   )
 
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
   (symbol (lib_id "Connector:Conn_01x04_Female") (at 99.06 130.81 180) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 4877c160-d1ef-48d5-ad18-5b78c57aefb3)
@@ -3632,9 +3450,6 @@
     (pin "4" (uuid a21f121a-85de-4144-ad06-e17fa546c919))
   )
 
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
   (symbol (lib_id "Device:C") (at 178.435 98.425 90) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 4b982f8b-ca29-4ebf-88fc-8a50b24e0802)
@@ -3661,15 +3476,9 @@
     (property "Datasheet" "~" (id 3) (at 147.955 67.945 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C11702" (id 4) (at 147.955 67.945 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 7eb32ed1-4320-49ba-8487-1c88e4824fe3))
     (pin "2" (uuid 3d416885-b8b5-4f5c-bc29-39c6376095e8))
   )
@@ -3689,15 +3498,9 @@
     (property "Datasheet" "~" (id 3) (at 183.515 70.485 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C269673" (id 4) (at 183.515 70.485 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid cfcae4a3-5d05-48fe-9a5f-9dcd4da4bd65))
     (pin "2" (uuid abe3c03e-744a-4406-8e50-6a10745f0c43))
   )
@@ -3786,15 +3589,9 @@
     (property "Datasheet" "~" (id 3) (at 121.285 70.485 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C269673" (id 4) (at 121.285 70.485 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 6579642b-a152-47f7-af0e-0d8866bdfcb8))
     (pin "2" (uuid eac540a2-0555-4530-b9cb-9b037a65c0a7))
   )
@@ -3830,15 +3627,9 @@
     (property "Datasheet" "~" (id 3) (at 70.485 67.945 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C528972" (id 4) (at 70.485 67.945 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid b4682fe3-f846-4354-8f7a-e3d0265df3db))
     (pin "2" (uuid 81c94adc-f308-45b4-bf45-9034e8229821))
   )
@@ -3893,15 +3684,9 @@
     (property "Datasheet" "~" (id 3) (at 116.205 70.485 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C269674" (id 4) (at 116.205 70.485 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 62a1b97d-067d-487c-835b-0166330d25fe))
     (pin "2" (uuid bb673c7a-d2b0-45b0-bfe2-0b113c092a77))
   )
@@ -3957,15 +3742,9 @@
     (property "Datasheet" "~" (id 3) (at 186.055 70.485 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C269674" (id 4) (at 186.055 70.485 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 0e416ef5-3e03-4fa4-b2a6-3ab634a5ee03))
     (pin "2" (uuid e463ba2a-1cbc-4995-82d8-59710b3fcd2f))
   )
@@ -3985,15 +3764,9 @@
     (property "Datasheet" "~" (id 3) (at 252.73 81.915 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C507422" (id 4) (at 252.73 81.915 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 917af90a-cc50-46da-b231-04af48f69962))
     (pin "2" (uuid 6cb0bfd5-1840-4256-829b-0a434e9cc4da))
   )
@@ -4009,15 +3782,9 @@
     (property "Datasheet" "~" (id 3) (at 66.675 79.375 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C25768" (id 4) (at 66.675 79.375 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid f9fa0803-2536-4b85-b81c-59878eed3540))
     (pin "2" (uuid 82f848c5-4162-4a29-945b-ea255e6abe91))
   )
@@ -4037,15 +3804,9 @@
     (property "Datasheet" "~" (id 3) (at 252.73 69.215 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C507422" (id 4) (at 252.73 69.215 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid daa13f1b-36b7-4a22-8f52-39fbec364b66))
     (pin "2" (uuid c7ff73d3-f293-41ab-bad7-02b95ed6e695))
   )
@@ -4065,15 +3826,9 @@
     (property "Datasheet" "~" (id 3) (at 105.41 37.465 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C507422" (id 4) (at 105.41 37.465 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid e1e41e8e-23cf-4bcd-95af-6cfe24929c57))
     (pin "2" (uuid 9a5fced9-1214-4c6e-9568-7146e8b8a7b8))
   )
@@ -4089,15 +3844,9 @@
     (property "Datasheet" "~" (id 3) (at 234.315 118.11 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C25768" (id 4) (at 234.315 118.11 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid ad4d3bd1-7295-4eea-a5c5-a926366f2281))
     (pin "2" (uuid dd1f096a-ad6e-4cb0-8159-6d99b6c503da))
   )
@@ -4117,15 +3866,9 @@
     (property "Datasheet" "~" (id 3) (at 235.585 71.755 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C507422" (id 4) (at 235.585 71.755 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 7611f220-c254-4124-967e-a76ea961b438))
     (pin "2" (uuid 7e76fff3-4a16-4554-9e73-73745d73fc9a))
   )
@@ -4141,15 +3884,9 @@
     (property "Datasheet" "~" (id 3) (at 78.105 67.945 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C528972" (id 4) (at 78.105 67.945 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 902b015b-8770-4b93-896f-b5588f9453f1))
     (pin "2" (uuid 3e6a9e4d-0d03-4df3-94ca-d21e0e378499))
   )
@@ -4169,15 +3906,9 @@
     (property "Datasheet" "~" (id 3) (at 180.975 70.485 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C269673" (id 4) (at 180.975 70.485 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid a8a389df-8d18-4e17-a74f-f60d5d77371e))
     (pin "2" (uuid fe431a80-868e-482d-aa91-c96eb8387d6a))
   )
@@ -4193,15 +3924,9 @@
     (property "Datasheet" "~" (id 3) (at 231.775 86.995 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C269673" (id 4) (at 231.775 86.995 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 7b1c3ce2-19ed-4193-a707-747b919e6b12))
     (pin "2" (uuid 74773e57-ce2a-4420-b5af-ba52c5ad2f54))
   )
@@ -4224,9 +3949,6 @@
     (pin "1" (uuid 492e5721-3869-4342-9722-7e09d8e244fb))
   )
 
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
   (symbol (lib_id "power:+5V") (at 111.76 133.35 270) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 8aa57a17-96b5-47f7-9ae5-15f19a60cc90)
@@ -4245,9 +3967,6 @@
     (pin "1" (uuid 2ffa7609-2e9c-4012-8fc0-18aefa85413e))
   )
 
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
   (symbol (lib_id "power:+5V") (at 84.455 31.75 270) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 90af87db-6149-4415-811a-540048193bac)
@@ -4285,9 +4004,6 @@
     (pin "6" (uuid 4cc7e1ed-2fbe-4706-8f6d-71313256157d))
   )
 
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
   (symbol (lib_id "power:GND") (at 104.14 128.27 90) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 9b0dfa4b-67c1-4b2c-a096-1c85eea8f81d)
@@ -4306,9 +4022,6 @@
     (pin "1" (uuid 867a3df1-fb1a-4041-80c0-f884af4933bd))
   )
 
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
   (symbol (lib_id "Device:R") (at 231.775 99.695 90) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 9b69efba-b3ce-4680-9fc5-f2986a5e0b16)
@@ -4320,15 +4033,9 @@
     (property "Datasheet" "~" (id 3) (at 231.775 99.695 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C269673" (id 4) (at 231.775 99.695 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid fc38d51c-48c2-4359-8ab3-ed8b796b554b))
     (pin "2" (uuid 8f5b60e3-2d0b-41ef-92fc-54416dedf578))
   )
@@ -4367,15 +4074,9 @@
     (property "Datasheet" "~" (id 3) (at 235.585 84.455 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C507422" (id 4) (at 235.585 84.455 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 86174a0c-a5c5-4fe8-938e-6977ec3c9ae0))
     (pin "2" (uuid cb220892-4b2a-4d01-b1ad-c0ba13ac65eb))
   )
@@ -4409,15 +4110,9 @@
     (property "Datasheet" "~" (id 3) (at 147.955 64.135 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C11702" (id 4) (at 147.955 64.135 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 9e2492fd-e074-42db-8129-fe39460dc1e0))
     (pin "2" (uuid f4aae365-6c70-41da-9253-52b239e8f5e6))
   )
@@ -4523,15 +4218,9 @@
     (property "Datasheet" "~" (id 3) (at 128.905 70.485 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C269674" (id 4) (at 128.905 70.485 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 741879e3-3045-40c7-849d-7f437c35ee91))
     (pin "2" (uuid 6ee71a3c-fedb-4cc6-a3c6-f3d6f3ac6767))
   )
@@ -4567,15 +4256,9 @@
     (property "Datasheet" "~" (id 3) (at 98.425 39.37 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C269674" (id 4) (at 98.425 39.37 90)
       (effects (font (size 0 0)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid f874530c-f41b-47fb-a966-7a776dc2a1c5))
     (pin "2" (uuid 0ac89e3c-31f2-4cd7-a682-8960f3968d5f))
   )
@@ -4642,15 +4325,9 @@
     (property "Datasheet" "~" (id 3) (at 178.435 70.485 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C269673" (id 4) (at 178.435 70.485 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid b8382866-f10b-4adc-84fc-f6e5dd44681b))
     (pin "2" (uuid 7a6d9a4e-fe6a-4427-9f0c-a10fd3ceb923))
   )
@@ -4670,15 +4347,9 @@
     (property "Datasheet" "~" (id 3) (at 126.365 70.485 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C269673" (id 4) (at 126.365 70.485 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid f46fb303-7470-41c0-b6e8-4553c1d6503f))
     (pin "2" (uuid 03d57b22-a0ad-4d3d-9d1c-5573371e6c2f))
   )
@@ -4716,15 +4387,9 @@
     (property "Datasheet" "~" (id 3) (at 113.665 70.485 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C269673" (id 4) (at 113.665 70.485 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid bb5e8a0f-2ed5-4c2a-91b7-cb63c4c66e15))
     (pin "2" (uuid f58fca4c-73af-416f-b236-f3bb62b8fd00))
   )
@@ -4776,15 +4441,9 @@
     (property "Datasheet" "~" (id 3) (at 155.575 67.945 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C130725" (id 4) (at 155.575 67.945 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid fe4869dc-e96e-4bb4-a38d-2ca990635f2d))
     (pin "2" (uuid 2cd3975a-2259-4fa9-8133-e1586b9b9618))
   )
@@ -4824,15 +4483,9 @@
     (property "Datasheet" "~" (id 3) (at 111.125 70.485 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C269674" (id 4) (at 111.125 70.485 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 61fae217-e18a-4e68-8630-42cc06a8ba2f))
     (pin "2" (uuid 927b1eb6-e6f4-412f-9a58-8dc81a4889a0))
   )
@@ -4886,15 +4539,9 @@
     (property "Datasheet" "~" (id 3) (at 252.73 94.615 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C507422" (id 4) (at 252.73 94.615 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 10dc7016-051a-44ee-9dea-5a6b1cfcd3c2))
     (pin "2" (uuid 3292d7ff-18d5-44ea-aded-a29445e2ee3b))
   )
@@ -4914,15 +4561,9 @@
     (property "Datasheet" "~" (id 3) (at 188.595 70.485 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C269674" (id 4) (at 188.595 70.485 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 08ac4c42-16f0-4513-b91e-bf0b3a111257))
     (pin "2" (uuid 4fc3183f-297c-42b7-b3bd-25a9ea18c844))
   )
@@ -4942,22 +4583,13 @@
     (property "Datasheet" "~" (id 3) (at 118.745 70.485 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C269673" (id 4) (at 118.745 70.485 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 0aa1e38d-f07a-4820-b628-a171234563bb))
     (pin "2" (uuid e0692317-3143-4681-97c6-8fbe46592f31))
   )
 
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
   (symbol (lib_id "Device:R_Variable") (at 107.95 133.35 270) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid e395cf36-5f22-4ddb-be07-8d4e7d60978f)
@@ -4973,9 +4605,6 @@
     (pin "2" (uuid a96942aa-49cb-4bd6-bedc-32be8f525814))
   )
 
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
   (symbol (lib_id "Device:R") (at 66.675 81.915 90) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid e53c4ade-0a4e-4923-995e-4f0c78e5a113)
@@ -4987,15 +4616,9 @@
     (property "Datasheet" "~" (id 3) (at 66.675 81.915 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C25768" (id 4) (at 66.675 81.915 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid e515a69f-4568-485e-aecf-83dad8a6ac0c))
     (pin "2" (uuid 4aebbaec-4889-42e1-ae82-cda47fd4acb6))
   )
@@ -5038,15 +4661,9 @@
     (property "Datasheet" "~" (id 3) (at 256.54 92.075 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C269673" (id 4) (at 256.54 92.075 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 460bea37-a047-43f6-a429-84bbd922c884))
     (pin "2" (uuid 0f9726cd-e7a7-48ba-a8a8-b999a75e9200))
   )
@@ -5133,15 +4750,9 @@
     (property "Datasheet" "~" (id 3) (at 256.54 79.375 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C269673" (id 4) (at 256.54 79.375 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 83453e05-b539-45a3-8b31-e4019df6a03b))
     (pin "2" (uuid 6c347053-8fc9-4fd0-999a-80cd1d05ea04))
   )
@@ -5175,15 +4786,9 @@
     (property "Datasheet" "~" (id 3) (at 256.54 53.975 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C269673" (id 4) (at 256.54 53.975 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid c3e3f1e4-4d2e-4d26-ab3a-b98c4351cdcf))
     (pin "2" (uuid 5b50da50-2a1a-453e-b6c3-1b9172e34b6c))
   )
@@ -5292,9 +4897,6 @@
     (path "/4861ac2f-8d8c-4811-9567-2a97a88d31e0"
       (reference "#PWR033") (unit 1) (value "+3.3V") (footprint "")
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (path "/247e0f90-781f-4adb-bf5e-eeba76745f27"
       (reference "#PWR034") (unit 1) (value "+5V") (footprint "")
     )
@@ -5304,9 +4906,6 @@
     (path "/8aa57a17-96b5-47f7-9ae5-15f19a60cc90"
       (reference "#PWR036") (unit 1) (value "+5V") (footprint "")
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (path "/9d235fa1-a856-418b-94fc-cdd7c10ed9b4"
       (reference "BZ1") (unit 1) (value "Buzzer") (footprint "Buzzer_Beeper:Buzzer_12x9.5RM7.6")
     )
@@ -5373,15 +4972,9 @@
     (path "/69479798-8209-4114-83e4-7a990d07ac93"
       (reference "J4") (unit 1) (value "Conn_01x04_Female") (footprint "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical")
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (path "/4877c160-d1ef-48d5-ad18-5b78c57aefb3"
       (reference "J5") (unit 1) (value "Conn_01x04_Female") (footprint "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical")
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (path "/792d3331-64b3-49f3-b00e-4f693bd5b36d"
       (reference "R1") (unit 1) (value "22k") (footprint "Resistor_SMD:R_0402_1005Metric")
     )
@@ -5478,15 +5071,9 @@
     (path "/e7551802-52ac-4e60-b358-20fc531dc286"
       (reference "R32") (unit 1) (value "100k") (footprint "Resistor_SMD:R_0402_1005Metric")
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (path "/e395cf36-5f22-4ddb-be07-8d4e7d60978f"
       (reference "R33") (unit 1) (value "R_Variable") (footprint "可変抵抗:可変抵抗(小)")
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (path "/0bf77fe9-deea-44a9-a913-025fc31b0b3d"
       (reference "SW1") (unit 1) (value "SW_DIP_x01") (footprint "Lib:2MS1T2B4M2QES")
     )

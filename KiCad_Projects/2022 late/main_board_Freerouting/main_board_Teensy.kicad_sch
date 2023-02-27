@@ -4637,15 +4637,9 @@
     (property "Datasheet" "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf" (id 3) (at 116.205 140.335 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C2761795" (id 4) (at 106.68 142.875 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 252a9cc8-5131-4523-9dba-4ab788ea41cc))
     (pin "2" (uuid c5b3389c-1edc-43c8-8027-57ad938cff2a))
     (pin "3" (uuid bf440e1e-ce4c-4876-b6dc-fac11dd48136))
@@ -4729,15 +4723,9 @@
     (property "Datasheet" "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf" (id 3) (at 79.375 118.745 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C2761795" (id 4) (at 69.85 121.285 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 5eb3bd8e-23f4-4a5a-b318-8dbc0458fc7d))
     (pin "2" (uuid bb178166-6671-4c97-9a5e-0b523030b277))
     (pin "3" (uuid e55b670b-56d6-43d0-8a7e-9ba1c68f9a0a))
@@ -4771,15 +4759,9 @@
     (property "Datasheet" "~" (id 3) (at 266.7 93.345 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C269673" (id 4) (at 266.7 93.345 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid f2957647-d4d9-4472-aef1-131d8805bd3a))
     (pin "2" (uuid a0b27886-76a8-4ac1-9ce0-ae6c47694fa4))
   )
@@ -4795,15 +4777,9 @@
     (property "Datasheet" "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf" (id 3) (at 79.375 161.925 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C2761795" (id 4) (at 69.85 164.465 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 1776fcf6-7317-45cb-84e5-e57ed32f12fb))
     (pin "2" (uuid 4b426845-38a0-45f1-9a83-2613f6e0a17b))
     (pin "3" (uuid 3c3a03c4-4d30-4f87-871c-15fb5caa0fa8))
@@ -4928,15 +4904,9 @@
     (property "Datasheet" "~" (id 3) (at 62.23 113.665 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C507422" (id 4) (at 62.23 113.665 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid af2ad33b-e684-4fc5-8ee6-9364e20dd4d7))
     (pin "2" (uuid d8ed5b35-e366-4df0-a5ce-93d85359e241))
   )
@@ -4970,15 +4940,9 @@
     (property "Datasheet" "~" (id 3) (at 241.935 139.065 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C269673" (id 4) (at 241.935 139.065 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid e9c56ec8-b6b0-48e8-af15-1b082e3755c6))
     (pin "2" (uuid 03967057-46ed-4b78-be91-44f0ca254e82))
   )
@@ -5079,15 +5043,9 @@
     (property "Datasheet" "~" (id 3) (at 99.06 113.665 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C507422" (id 4) (at 99.06 113.665 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 47124c7c-f893-449d-a89c-5d6a82a386ab))
     (pin "2" (uuid 1fa46402-b736-4c8a-8b24-c9ab1ee38cef))
   )
@@ -5107,15 +5065,9 @@
     (property "Datasheet" "~" (id 3) (at 43.815 156.845 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C507422" (id 4) (at 43.815 156.845 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 3ef39e80-0673-42be-af1b-00ef7b7779ba))
     (pin "2" (uuid e8badc62-0ffb-41e8-afbb-be80e4dc94b0))
   )
@@ -5131,15 +5083,9 @@
     (property "Datasheet" "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf" (id 3) (at 79.375 140.335 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C2761795" (id 4) (at 69.85 142.875 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid c603222b-2220-44d5-a491-fcc83be10c15))
     (pin "2" (uuid 5f1c40de-337d-4f64-8da9-360101af4a9c))
     (pin "3" (uuid 6245137f-b819-4cdc-bb69-79d062d9090e))
@@ -5161,15 +5107,9 @@
     (property "Datasheet" "~" (id 3) (at 24.765 72.39 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C507422" (id 4) (at 24.765 72.39 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 024503a6-1029-4150-a5f4-dc85552ca62f))
     (pin "2" (uuid de688529-14ac-40f1-9deb-9ab2c353929e))
   )
@@ -5185,15 +5125,9 @@
     (property "Datasheet" "~" (id 3) (at 17.78 74.295 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C269674" (id 4) (at 17.78 74.295 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 8c92d12e-b5a5-4cfd-bc08-0f5854ed920a))
     (pin "2" (uuid 13d7f9c2-b91c-408d-a1ec-6a81dfefa623))
   )
@@ -5267,15 +5201,9 @@
     (property "Datasheet" "~" (id 3) (at 245.745 98.425 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C507422" (id 4) (at 245.745 98.425 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid ab52c233-4aea-40e3-908e-b70a8fda5068))
     (pin "2" (uuid adc94120-3d1f-4463-abac-899743ad0caa))
   )
@@ -5331,15 +5259,9 @@
     (property "Datasheet" "~" (id 3) (at 245.745 136.525 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C507422" (id 4) (at 245.745 136.525 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 632de4a2-f52d-4646-bafa-431765a60715))
     (pin "2" (uuid fd00066a-c980-4192-b19b-8faced8028c5))
   )
@@ -5355,15 +5277,9 @@
     (property "Datasheet" "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf" (id 3) (at 60.96 118.745 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSL" "C2761795" (id 4) (at 51.435 121.285 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 11bdb6d5-7e1b-4462-bbb5-7a6198273a16))
     (pin "2" (uuid 811fc656-a2a6-43ba-8566-ef824a7ff3a2))
     (pin "3" (uuid d3dbfba9-6a5f-437e-a1eb-f0cfbb1a13d3))
@@ -5381,15 +5297,9 @@
     (property "Datasheet" "~" (id 3) (at 266.7 118.745 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C269673" (id 4) (at 266.7 118.745 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid e214177d-df11-4e1a-8a90-a708ab40e102))
     (pin "2" (uuid 278823b8-44b7-40d4-81b6-d5c1b77b7405))
   )
@@ -5459,15 +5369,9 @@
     (property "Datasheet" "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf" (id 3) (at 60.96 140.335 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C2761795" (id 4) (at 51.435 142.875 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 2c458ced-b40e-49ca-b563-f6eadf688ea9))
     (pin "2" (uuid ce4ffd02-0ba4-4d79-ac63-7c9b66d81a50))
     (pin "3" (uuid d53fe33c-4516-4a85-afe7-6c1f7353eb4c))
@@ -5489,15 +5393,9 @@
     (property "Datasheet" "~" (id 3) (at 259.08 31.75 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C507422" (id 4) (at 259.08 31.75 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 2886a096-9089-4fdc-ada9-a356b0f15b71))
     (pin "2" (uuid a79d7c33-0ee1-4f36-8bb8-be9d6c812dde))
   )
@@ -5713,15 +5611,9 @@
     (property "Datasheet" "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf" (id 3) (at 134.62 162.56 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C2761795" (id 4) (at 125.095 165.1 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 4b234ade-f222-425a-bf2d-b4f46f1d4669))
     (pin "2" (uuid b195c5b3-8d44-4ce2-8bfa-5489553ed676))
     (pin "3" (uuid 01435f2c-e443-435b-910a-7a418be3c982))
@@ -5829,15 +5721,9 @@
     (property "Datasheet" "~" (id 3) (at 25.4 113.665 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C507422" (id 4) (at 25.4 113.665 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid aed1e277-9706-41c3-831d-db11e3fdd567))
     (pin "2" (uuid 37055a3c-f308-4a89-9d9a-16161e27abb7))
   )
@@ -5893,15 +5779,9 @@
     (property "Datasheet" "~" (id 3) (at 259.08 52.705 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C507422" (id 4) (at 259.08 52.705 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 2238105a-b29c-4677-992f-f4e5eef55cb5))
     (pin "2" (uuid 5824f2da-77a4-4524-bb1d-95d1b6bc8445))
   )
@@ -6078,15 +5958,9 @@
     (property "Datasheet" "~" (id 3) (at 262.89 108.585 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C507422" (id 4) (at 262.89 108.585 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid b75639bf-b6fd-4182-b20f-2c97cc477aa0))
     (pin "2" (uuid da38bf99-ec6c-4ef2-a6a0-61d6208b3f6c))
   )
@@ -6198,15 +6072,9 @@
     (property "Datasheet" "~" (id 3) (at 99.06 135.255 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C507422" (id 4) (at 99.06 135.255 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 1d6f150d-e81f-4966-ba54-f3fa4299f7ef))
     (pin "2" (uuid 5cc1d76e-94d3-47fd-b94e-8f494135350b))
   )
@@ -6283,15 +6151,9 @@
     (property "Datasheet" "~" (id 3) (at 266.7 131.445 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C269673" (id 4) (at 266.7 131.445 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid d71f026c-d81f-4f96-84bf-74e5a35d5a10))
     (pin "2" (uuid 1eac3e01-ff78-4707-990c-2d080edf95a9))
   )
@@ -6307,15 +6169,9 @@
     (property "Datasheet" "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf" (id 3) (at 42.545 140.335 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C2761795" (id 4) (at 33.02 142.875 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 1e15a36c-7fb8-4bfb-ac10-552066a61212))
     (pin "2" (uuid 93c3a46a-fd1c-45b4-8777-bfa141b672cf))
     (pin "3" (uuid 38daf5c4-34dd-408e-8cdb-e475af0ce6c9))
@@ -6390,15 +6246,9 @@
     (property "Datasheet" "~" (id 3) (at 25.4 135.255 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C507422" (id 4) (at 25.4 135.255 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid eb0106fd-be51-46e6-a097-9841a8835acf))
     (pin "2" (uuid cdc162bd-4a38-4e0e-af29-b5c99bdfac2e))
   )
@@ -6461,15 +6311,9 @@
     (property "Datasheet" "~" (id 3) (at 241.935 100.965 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C269673" (id 4) (at 241.935 100.965 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid d8a2c76f-aea8-408e-884a-87f8efa49862))
     (pin "2" (uuid ecde11f8-3ad2-4045-8e0f-3436f32a7a1c))
   )
@@ -6539,15 +6383,9 @@
     (property "Datasheet" "~" (id 3) (at 62.23 156.845 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C507422" (id 4) (at 62.23 156.845 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 739dd2b5-408c-45a8-9c2e-b66a7c93a05d))
     (pin "2" (uuid 9ba3e758-cbb4-418e-815c-c67f06378782))
   )
@@ -6606,15 +6444,9 @@
     (property "Datasheet" "~" (id 3) (at 117.475 156.845 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C507422" (id 4) (at 117.475 156.845 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid e5b96a89-291e-414e-94c4-d6a2e76d6f1f))
     (pin "2" (uuid 90b59875-ff73-43f0-b77c-a06467ba1ff1))
   )
@@ -6711,15 +6543,9 @@
     (property "Datasheet" "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf" (id 3) (at 42.545 161.925 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C2761795" (id 4) (at 33.02 164.465 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 04e15920-2479-4fce-9ce1-71b7b99b2bad))
     (pin "2" (uuid b6c4e2ea-b508-450b-9f97-d84644272133))
     (pin "3" (uuid 2bc4c0cc-a351-4ca2-962b-8d6132ccae50))
@@ -6780,15 +6606,9 @@
     (property "Datasheet" "~" (id 3) (at 262.89 133.985 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C507422" (id 4) (at 262.89 133.985 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid a0d64f35-c9a3-44ae-ba51-eca0e152fa62))
     (pin "2" (uuid a12706d6-8269-4592-bb50-9771047cb4e5))
   )
@@ -6880,15 +6700,9 @@
     (property "Datasheet" "~" (id 3) (at 174.625 29.845 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C507422" (id 4) (at 174.625 29.845 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 3519454a-411f-4314-8efa-3007f05b6a04))
     (pin "2" (uuid 2a752acd-0e03-4287-8789-cf8600576935))
   )
@@ -6963,15 +6777,9 @@
     (property "Datasheet" "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf" (id 3) (at 97.79 140.335 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C2761795" (id 4) (at 88.265 142.875 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 65f2d8f6-ef29-4a90-b07c-d1ea6a69a09e))
     (pin "2" (uuid 9b025482-8a61-49ee-be68-45cc8a600bc9))
     (pin "3" (uuid b2756398-ef9d-4596-bc39-e7a34a9c4785))
@@ -7025,15 +6833,9 @@
     (property "Datasheet" "~" (id 3) (at 80.645 113.665 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C507422" (id 4) (at 80.645 113.665 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 5df9d52f-06e6-4056-844f-f39a516e1760))
     (pin "2" (uuid cce5b5d1-40ff-488e-8630-4f66b57a248d))
   )
@@ -7103,15 +6905,9 @@
     (property "Datasheet" "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf" (id 3) (at 97.79 161.925 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C2761795" (id 4) (at 88.265 164.465 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 7d95ee91-f0ff-4d1b-b5c9-0aeb5cdd6bdf))
     (pin "2" (uuid a95cf6d0-c917-4df8-a61d-10f27afb37f9))
     (pin "3" (uuid ebce2ad7-6dae-4660-95c5-078e83eeeab5))
@@ -7160,15 +6956,9 @@
     (property "Datasheet" "~" (id 3) (at 266.7 106.045 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C269673" (id 4) (at 266.7 106.045 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid c18f8c3f-f65b-4044-bf0d-f1a56c276bc6))
     (pin "2" (uuid fa66dbd4-496f-4486-815d-5ac2395f8d53))
   )
@@ -7290,15 +7080,9 @@
     (property "Datasheet" "~" (id 3) (at 252.095 33.655 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C269674" (id 4) (at 252.095 33.655 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid cce9ac2f-bf40-4512-934c-bb0b515efc9d))
     (pin "2" (uuid 2bcdc074-6c7f-4f44-a3d6-0486653e0114))
   )
@@ -7318,15 +7102,9 @@
     (property "Datasheet" "~" (id 3) (at 245.745 111.125 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C507422" (id 4) (at 245.745 111.125 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid bdd026d9-6422-4e68-8b56-95201ed9eb8e))
     (pin "2" (uuid 01593af8-6021-40a6-a813-5b179b84a9c3))
   )
@@ -7382,15 +7160,9 @@
     (property "Datasheet" "~" (id 3) (at 80.645 156.845 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C507422" (id 4) (at 80.645 156.845 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 26d05f0a-f5cf-41df-8bb1-d68f38da784a))
     (pin "2" (uuid 5ff481f8-6e21-4c53-ab6c-ba3c6347fb27))
   )
@@ -7468,15 +7240,9 @@
     (property "Datasheet" "~" (id 3) (at 262.89 95.885 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C507422" (id 4) (at 262.89 95.885 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 2e51aceb-b1ec-42e3-8978-f38ded38345c))
     (pin "2" (uuid ceb2e75b-491a-4f38-b99b-752f71e817de))
   )
@@ -7530,15 +7296,9 @@
     (property "Datasheet" "~" (id 3) (at 252.095 54.61 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C269674" (id 4) (at 252.095 54.61 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid d6946346-df01-4f0f-be6b-1d62d9b79e18))
     (pin "2" (uuid 98058168-4486-412a-81a8-c02c2c2baa79))
   )
@@ -7558,15 +7318,9 @@
     (property "Datasheet" "~" (id 3) (at 99.06 156.845 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C507422" (id 4) (at 99.06 156.845 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 7b9caa45-02ed-474d-acb2-ae8f773e5e58))
     (pin "2" (uuid a43818b9-df2a-4fbe-a3bb-90712211f97f))
   )
@@ -7625,15 +7379,9 @@
     (property "Datasheet" "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf" (id 3) (at 116.205 161.925 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C2761795" (id 4) (at 106.68 164.465 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 84c32512-9f56-4659-9745-5c4b94281639))
     (pin "2" (uuid 93eb8a6d-6ad6-4e14-b358-2486cec3793a))
     (pin "3" (uuid aac21846-b0da-4751-9d65-05ba4468d658))
@@ -7685,15 +7433,9 @@
     (property "Datasheet" "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf" (id 3) (at 97.79 118.745 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C2761795" (id 4) (at 88.265 121.285 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 57e55ac6-be25-4ef2-b475-6e58ffa25d44))
     (pin "2" (uuid ddffe8df-cd90-444f-a413-462acfe3c63a))
     (pin "3" (uuid d5fbc3ea-eb9c-44fa-a19c-bf53ad55dedd))
@@ -7729,15 +7471,9 @@
     (property "Datasheet" "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf" (id 3) (at 116.205 118.745 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C2761795" (id 4) (at 106.68 121.285 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 9ba2bfc3-f5ff-4222-9a35-d86c9b13f5b2))
     (pin "2" (uuid 3489a1e8-a1d5-4c0a-9490-027676388062))
     (pin "3" (uuid d0f7f50d-e10e-441d-b0ab-3e9945506393))
@@ -7759,15 +7495,9 @@
     (property "Datasheet" "~" (id 3) (at 43.815 135.255 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C507422" (id 4) (at 43.815 135.255 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid ca4bfac1-96f9-44fc-95c0-c57bfe328092))
     (pin "2" (uuid b5871181-5f56-41f1-9786-88c38041810a))
   )
@@ -7798,15 +7528,9 @@
     (property "Datasheet" "~" (id 3) (at 241.935 126.365 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C269673" (id 4) (at 241.935 126.365 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid b2cc4efa-3f27-4301-851b-a958ebac63b5))
     (pin "2" (uuid e1bcb7b9-1efd-4b3f-88af-a29871ad514c))
   )
@@ -7876,15 +7600,9 @@
     (property "Datasheet" "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf" (id 3) (at 42.545 118.745 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C2761795" (id 4) (at 33.02 121.285 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid a472b086-1ec5-499f-9ed6-24e9ddc43a70))
     (pin "2" (uuid 6e557795-2df6-4b91-b951-d03ddf7d3e7f))
     (pin "3" (uuid 81b0e885-c922-43ca-bfc8-8af01aaef886))
@@ -7906,15 +7624,9 @@
     (property "Datasheet" "~" (id 3) (at 262.89 121.285 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C507422" (id 4) (at 262.89 121.285 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid d746df1f-7f25-45c9-9890-695ee0512e65))
     (pin "2" (uuid b1d2c7e5-a024-4f68-91c3-873498e5c768))
   )
@@ -7994,15 +7706,9 @@
     (property "Datasheet" "~" (id 3) (at 80.645 135.255 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C507422" (id 4) (at 80.645 135.255 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid d93a19a4-50a8-4b3f-a233-b167027acfef))
     (pin "2" (uuid 7882e2f3-5eb1-4759-a6f9-b58ccb512bb4))
   )
@@ -8018,15 +7724,9 @@
     (property "Datasheet" "~" (id 3) (at 241.935 113.665 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C269673" (id 4) (at 241.935 113.665 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid d3b124b8-70ac-4ad2-bdbd-93f73bd57a39))
     (pin "2" (uuid 95d0f67d-0a42-4b24-a281-099df3043dab))
   )
@@ -8070,15 +7770,9 @@
     (property "Datasheet" "~" (id 3) (at 25.4 156.845 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C507422" (id 4) (at 25.4 156.845 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 4cf7a31c-f2da-4f25-8fe7-b27ed615b4fb))
     (pin "2" (uuid cefc9a91-5d48-4701-a43a-0ffaab7c1ae1))
   )
@@ -8369,15 +8063,9 @@
     (property "Datasheet" "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf" (id 3) (at 60.96 161.925 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C2761795" (id 4) (at 51.435 164.465 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 70b70cf1-5298-4f46-a8fb-8ccaac7683ab))
     (pin "2" (uuid 027fb31a-1600-4488-9120-3c11747e02be))
     (pin "3" (uuid b84c07b3-4fa0-4f39-ba5b-5f5d3a6dca28))
@@ -8417,15 +8105,9 @@
     (property "Datasheet" "~" (id 3) (at 62.23 135.255 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C507422" (id 4) (at 62.23 135.255 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 089847d9-fd99-4ad9-9842-ad2bae1f0753))
     (pin "2" (uuid b71b4a3f-66e7-4adb-92f6-c10e396d6eb4))
   )
@@ -8461,15 +8143,9 @@
     (property "Datasheet" "~" (id 3) (at 43.815 113.665 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C507422" (id 4) (at 43.815 113.665 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 3c01bfe5-d40b-4760-9720-7a30cc6aba89))
     (pin "2" (uuid 68939cd6-6ea4-4c52-bb8a-4e4b8d3f5026))
   )
@@ -8504,15 +8180,9 @@
     (property "Datasheet" "~" (id 3) (at 245.745 123.825 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (property "LCSC" "C507422" (id 4) (at 245.745 123.825 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (pin "1" (uuid 525a6cae-b310-41fc-b88a-eb75b8822108))
     (pin "2" (uuid 296a7698-b943-4b50-95b6-6c7f8e1c4735))
   )

@@ -1,0 +1,15 @@
+Designator,Val,Package,Mid X,Mid Y,Rotation,Layer
+C1,C_Small,C_0603_1608Metric,7.03,-4.47,0.0,top
+C2,C_Small,CP_EIA-3216-10_Kemet-I,12.58,-10.76,90.0,top
+C3,C_Small,C_0603_1608Metric,10.05,-5.99,0.0,top
+C4,C_Small,C_0603_1608Metric,10.06,-16.36,180.0,top
+C5,C_Small,C_0603_1608Metric,10.2,-1.79,90.0,top
+C6,C_Small,C_0603_1608Metric,10.035,-14.84,0.0,top
+C7,C_Small,C_0603_1608Metric,10.045,-7.51,0.0,top
+D1,LED,LED_0603_1608Metric,7.02,-17.88,0.0,top
+R1,R_Small,R_0603_1608Metric,7.03,-5.99,0.0,top
+R2,R_Small,R_0603_1608Metric,7.03,-7.51,0.0,top
+R3,R_Small,R_0603_1608Metric,7.02,-16.36,180.0,top
+R4,R_Small,R_0603_1608Metric,7.025,-14.83,0.0,top
+U1,TLV713185PDBV,SOT-23-5,7.45,-1.88,0.0,top
+U2,MPU-6050,InvenSense_QFN-24_4x4mm_P0.5mm,8.2,-10.95,0.0,top

@@ -1,11 +1,5 @@
 (fp_lib_table
   (lib (name "Lib")(type "KiCad")(uri "D:/部活関係/Munachu_Artemis/KiCad_Projects/Lib")(options "")(descr ""))
   (lib (name "可変抵抗")(type "KiCad")(uri "D:/部活関係/Munachu_Artemis/KiCad_Projects/Lib/可変抵抗.pretty")(options "")(descr ""))
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
   (lib (name "New")(type "KiCad")(uri "D:/部活関係/Munachu_Artemis/KiCad_Projects/Lib/New.pretty")(options "")(descr ""))
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
 )
