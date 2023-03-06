@@ -1,0 +1,27 @@
+Drill report for Kiker_PSU.kicad_pcb
+Created on 2023/02/27 23:38:19
+
+Copper Layer Stackup:
+    =============================================================
+    L1 :  F.Cu                      front
+    L2 :  B.Cu                      back
+
+
+Drill file 'Kiker_PSU-PTH.drl' contains
+    plated through holes:
+    =============================================================
+    T1  0.400mm  0.0157"  (103 holes)
+    T2  0.700mm  0.0276"  (4 holes)
+    T3  0.762mm  0.0300"  (4 holes)
+    T4  0.950mm  0.0374"  (3 holes)
+    T5  1.000mm  0.0394"  (11 holes)
+    T6  1.200mm  0.0472"  (2 holes)
+
+    Total plated holes count 127
+
+
+Drill file 'Kiker_PSU-NPTH.drl' contains
+    unplated through holes:
+    =============================================================
+
+    Total unplated holes count 0

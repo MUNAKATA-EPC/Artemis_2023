@@ -38,12 +38,6 @@
   )
 
   (setup
-<<<<<<< Updated upstream
-    (pad_to_mask_clearance 0)
-    (pcbplotparams
-      (layerselection 0x00010fc_ffffffff)
-=======
-<<<<<<< HEAD
     (stackup
       (layer "F.SilkS" (type "Top Silk Screen"))
       (layer "F.Paste" (type "Top Solder Paste"))
@@ -60,12 +54,6 @@
     (pad_to_mask_clearance 0)
     (pcbplotparams
       (layerselection 0x00010f0_ffffffff)
-=======
-    (pad_to_mask_clearance 0)
-    (pcbplotparams
-      (layerselection 0x00010fc_ffffffff)
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
       (disableapertmacros false)
       (usegerberextensions false)
       (usegerberattributes true)
@@ -93,21 +81,9 @@
       (subtractmaskfromsilk false)
       (outputformat 1)
       (mirror false)
-<<<<<<< Updated upstream
-      (drillshape 1)
-      (scaleselection 1)
-      (outputdirectory "")
-=======
-<<<<<<< HEAD
       (drillshape 0)
       (scaleselection 1)
       (outputdirectory "新しいフォルダー/")
-=======
-      (drillshape 1)
-      (scaleselection 1)
-      (outputdirectory "")
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     )
   )
 
@@ -125,24 +101,13 @@
 
   (footprint "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal" (layer "F.Cu")
     (tedit 5AE5139B) (tstamp 30f0bc73-3191-4e3b-a92a-00a9ce5cc971)
-<<<<<<< Updated upstream
-    (at 161.64 97.79 90)
-=======
-<<<<<<< HEAD
     (at 130.18 96.52)
-=======
-    (at 161.64 97.79 90)
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (descr "Resistor, Axial_DIN0204 series, Axial, Horizontal, pin pitch=5.08mm, 0.167W, length*diameter=3.6*1.6mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
     (tags "Resistor Axial_DIN0204 series Axial Horizontal pin pitch 5.08mm 0.167W length 3.6mm diameter 1.6mm")
     (property "Sheetfile" "kikker_PSU.kicad_sch")
     (property "Sheetname" "")
     (path "/5f2a61bb-c3f3-4d4e-bb91-7b1286c07230")
     (attr through_hole)
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (fp_text reference "R2" (at 2.54 0) (layer "F.SilkS")
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 28090510-186f-49c6-b9d1-17bc5c6d11eb)
@@ -152,21 +117,6 @@
       (tstamp 5c391584-9de0-4630-a26e-e9f6259c37f5)
     )
     (fp_text user "${REFERENCE}" (at 2.54 0) (layer "F.Fab")
-=======
->>>>>>> Stashed changes
-    (fp_text reference "R2" (at 2.54 -1.92 90) (layer "F.SilkS")
-      (effects (font (size 1 1) (thickness 0.15)))
-      (tstamp 28090510-186f-49c6-b9d1-17bc5c6d11eb)
-    )
-    (fp_text value "10K" (at 2.54 1.92 90) (layer "F.Fab")
-      (effects (font (size 1 1) (thickness 0.15)))
-      (tstamp 5c391584-9de0-4630-a26e-e9f6259c37f5)
-    )
-    (fp_text user "${REFERENCE}" (at 2.54 0 90) (layer "F.Fab")
-<<<<<<< Updated upstream
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
       (effects (font (size 0.72 0.72) (thickness 0.108)))
       (tstamp 6262a08f-39d7-4b89-ac41-80f20d3bbb6b)
     )
@@ -182,21 +132,9 @@
     (fp_line (start 4.34 0.8) (end 4.34 -0.8) (layer "F.Fab") (width 0.1) (tstamp 8c070851-9421-4d81-822c-06aff6a3bc8c))
     (fp_line (start 0.74 -0.8) (end 0.74 0.8) (layer "F.Fab") (width 0.1) (tstamp a87a38bb-5ce4-4449-9f87-fe81975d7541))
     (fp_line (start 0.74 0.8) (end 4.34 0.8) (layer "F.Fab") (width 0.1) (tstamp dc77a0d3-7bbe-43b1-b5f6-e6112b4207f5))
-<<<<<<< Updated upstream
-    (pad "1" thru_hole circle (at 0 0 90) (size 1.4 1.4) (drill 0.7) (layers *.Cu *.Mask)
-      (net 9 "Net-(Q1-Pad3)") (pintype "passive") (tstamp 65d071c4-862b-486c-afab-5de4c076ff4e))
-    (pad "2" thru_hole oval (at 5.08 0 90) (size 1.4 1.4) (drill 0.7) (layers *.Cu *.Mask)
-=======
-<<<<<<< HEAD
     (pad "1" thru_hole circle (at 0 0) (size 1.4 1.4) (drill 0.7) (layers *.Cu *.Mask)
       (net 9 "Net-(Q1-Pad3)") (pintype "passive") (tstamp 65d071c4-862b-486c-afab-5de4c076ff4e))
     (pad "2" thru_hole oval (at 5.08 0) (size 1.4 1.4) (drill 0.7) (layers *.Cu *.Mask)
-=======
-    (pad "1" thru_hole circle (at 0 0 90) (size 1.4 1.4) (drill 0.7) (layers *.Cu *.Mask)
-      (net 9 "Net-(Q1-Pad3)") (pintype "passive") (tstamp 65d071c4-862b-486c-afab-5de4c076ff4e))
-    (pad "2" thru_hole oval (at 5.08 0 90) (size 1.4 1.4) (drill 0.7) (layers *.Cu *.Mask)
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
       (net 7 "Net-(Q1-Pad1)") (pintype "passive") (tstamp 6873b61c-65ea-448f-a05d-2b7691001567))
     (model "${KICAD6_3DMODEL_DIR}/Resistor_THT.3dshapes/R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal.wrl"
       (offset (xyz 0 0 0))
@@ -315,15 +253,7 @@
     (fp_line (start -2.45 -2.35) (end -2.45 3.4) (layer "F.Fab") (width 0.1) (tstamp 824ced86-d097-4a56-bb87-8ec57cb3062e))
     (fp_line (start 4.95 -2.35) (end -2.45 -2.35) (layer "F.Fab") (width 0.1) (tstamp cb3af5e0-b318-4a46-af13-5c4fcd83694b))
     (fp_line (start 4.95 3.4) (end 4.95 -2.35) (layer "F.Fab") (width 0.1) (tstamp de6796d6-f8ca-4a6d-b6a9-b44981b49175))
-<<<<<<< Updated upstream
-    (pad "1" thru_hole roundrect (at 0 0 270) (size 1.7 2) (drill 1) (layers *.Cu *.Mask) (roundrect_rratio 0.147059)
-=======
-<<<<<<< HEAD
     (pad "1" thru_hole roundrect (at 0 0 270) (size 1.7 2) (drill 1) (layers *.Cu *.Mask) (roundrect_rratio 0.1470588235)
-=======
-    (pad "1" thru_hole roundrect (at 0 0 270) (size 1.7 2) (drill 1) (layers *.Cu *.Mask) (roundrect_rratio 0.147059)
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
       (net 5 "GND") (pinfunction "Pin_1") (pintype "passive") (tstamp 4f84681d-5796-4d33-9574-04e5f1a879ad))
     (pad "2" thru_hole oval (at 2.5 0 270) (size 1.7 2) (drill 1) (layers *.Cu *.Mask)
       (net 4 "Net-(D1-Pad2)") (pinfunction "Pin_2") (pintype "passive") (tstamp da85eac7-ec0b-4cac-a576-eb6fa74019ea))
@@ -336,24 +266,13 @@
 
   (footprint "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal" (layer "F.Cu")
     (tedit 5AE5139B) (tstamp 47e14e73-aa94-4f03-9038-09edec6efe1b)
-<<<<<<< Updated upstream
-    (at 161.64 85.09 -90)
-=======
-<<<<<<< HEAD
     (at 142.88 96.52 180)
-=======
-    (at 161.64 85.09 -90)
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (descr "Resistor, Axial_DIN0204 series, Axial, Horizontal, pin pitch=5.08mm, 0.167W, length*diameter=3.6*1.6mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
     (tags "Resistor Axial_DIN0204 series Axial Horizontal pin pitch 5.08mm 0.167W length 3.6mm diameter 1.6mm")
     (property "Sheetfile" "kikker_PSU.kicad_sch")
     (property "Sheetname" "")
     (path "/b0adc689-1d12-4f6f-aa74-b1a5b2666522")
     (attr through_hole)
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (fp_text reference "R3" (at 2.54 0) (layer "F.SilkS")
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp e1ba4b11-62d9-4958-b563-06dd8bc265c6)
@@ -363,21 +282,6 @@
       (tstamp 149cf543-bb8c-4449-ae16-e58aacc2c43e)
     )
     (fp_text user "${REFERENCE}" (at 2.54 0) (layer "F.Fab")
-=======
->>>>>>> Stashed changes
-    (fp_text reference "R3" (at 2.54 -1.92 90) (layer "F.SilkS")
-      (effects (font (size 1 1) (thickness 0.15)))
-      (tstamp e1ba4b11-62d9-4958-b563-06dd8bc265c6)
-    )
-    (fp_text value "100" (at 2.54 1.92 90) (layer "F.Fab")
-      (effects (font (size 1 1) (thickness 0.15)))
-      (tstamp 149cf543-bb8c-4449-ae16-e58aacc2c43e)
-    )
-    (fp_text user "${REFERENCE}" (at 2.54 0 90) (layer "F.Fab")
-<<<<<<< Updated upstream
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
       (effects (font (size 0.72 0.72) (thickness 0.108)))
       (tstamp 4569adc0-3db9-44ba-a056-7828ec447f1c)
     )
@@ -393,21 +297,9 @@
     (fp_line (start 0.74 -0.8) (end 0.74 0.8) (layer "F.Fab") (width 0.1) (tstamp 1c9ef3dd-41c3-4d84-b2a2-7c89324e705d))
     (fp_line (start 0 0) (end 0.74 0) (layer "F.Fab") (width 0.1) (tstamp e3af31ac-c014-40a4-a4d9-024fe95fe546))
     (fp_line (start 4.34 0.8) (end 4.34 -0.8) (layer "F.Fab") (width 0.1) (tstamp ed30bce6-e5b7-4a69-bef8-c0da53deec7a))
-<<<<<<< Updated upstream
-    (pad "1" thru_hole circle (at 0 0 270) (size 1.4 1.4) (drill 0.7) (layers *.Cu *.Mask)
-      (net 6 "Net-(J2-Pad1)") (pintype "passive") (tstamp 5b33f07e-c5e0-40fe-9c81-69eff68decdd))
-    (pad "2" thru_hole oval (at 5.08 0 270) (size 1.4 1.4) (drill 0.7) (layers *.Cu *.Mask)
-=======
-<<<<<<< HEAD
     (pad "1" thru_hole circle (at 0 0 180) (size 1.4 1.4) (drill 0.7) (layers *.Cu *.Mask)
       (net 6 "Net-(J2-Pad1)") (pintype "passive") (tstamp 5b33f07e-c5e0-40fe-9c81-69eff68decdd))
     (pad "2" thru_hole oval (at 5.08 0 180) (size 1.4 1.4) (drill 0.7) (layers *.Cu *.Mask)
-=======
-    (pad "1" thru_hole circle (at 0 0 270) (size 1.4 1.4) (drill 0.7) (layers *.Cu *.Mask)
-      (net 6 "Net-(J2-Pad1)") (pintype "passive") (tstamp 5b33f07e-c5e0-40fe-9c81-69eff68decdd))
-    (pad "2" thru_hole oval (at 5.08 0 270) (size 1.4 1.4) (drill 0.7) (layers *.Cu *.Mask)
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
       (net 7 "Net-(Q1-Pad1)") (pintype "passive") (tstamp 43d37d0d-8265-4cec-861b-6ef5a388f245))
     (model "${KICAD6_3DMODEL_DIR}/Resistor_THT.3dshapes/R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal.wrl"
       (offset (xyz 0 0 0))
@@ -418,15 +310,7 @@
 
   (footprint "Diode_THT:D_DO-15_P10.16mm_Horizontal" (layer "F.Cu")
     (tedit 5AE50CD5) (tstamp 64c2c1c6-eabc-46e3-8f86-8e03f2cc90af)
-<<<<<<< Updated upstream
-    (at 160.02 105.41)
-=======
-<<<<<<< HEAD
     (at 161.29 106.68)
-=======
-    (at 160.02 105.41)
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (descr "Diode, DO-15 series, Axial, Horizontal, pin pitch=10.16mm, , length*diameter=7.6*3.6mm^2, , http://www.diodes.com/_files/packages/DO-15.pdf")
     (tags "Diode DO-15 series Axial Horizontal pin pitch 10.16mm  length 7.6mm diameter 3.6mm")
     (property "Sheetfile" "kikker_PSU.kicad_sch")
@@ -522,28 +406,12 @@
 
   (footprint "Lib:5W 1Ω sement" (layer "F.Cu")
     (tedit 0) (tstamp 8c8bedde-d692-4e0e-a76b-9522c8e6bc89)
-<<<<<<< Updated upstream
-    (at 135.89 96.52 180)
-=======
-<<<<<<< HEAD
     (at 135.89 94.8375 180)
-=======
-    (at 135.89 96.52 180)
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (property "Sheetfile" "kikker_PSU.kicad_sch")
     (property "Sheetname" "")
     (path "/e838774d-90be-4751-a36b-f67797b4ba88")
     (attr through_hole)
-<<<<<<< Updated upstream
-    (fp_text reference "R4" (at 0 -0.635 180 unlocked) (layer "F.SilkS")
-=======
-<<<<<<< HEAD
     (fp_text reference "R4" (at 1.27 2.1275 180 unlocked) (layer "F.SilkS")
-=======
-    (fp_text reference "R4" (at 0 -0.635 180 unlocked) (layer "F.SilkS")
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp b89b10e4-f1af-4176-a521-98c2fd85768f)
     )
@@ -624,15 +492,7 @@
     (fp_line (start 7.45 3.4) (end 7.45 -2.35) (layer "F.Fab") (width 0.1) (tstamp 79a02402-679c-4372-9e70-beec6ef27cb0))
     (fp_line (start -2.45 3.4) (end 7.45 3.4) (layer "F.Fab") (width 0.1) (tstamp b1bc083c-258b-49f1-8451-3d654be8a487))
     (fp_line (start 0 -1.35) (end 0.625 -2.35) (layer "F.Fab") (width 0.1) (tstamp e9b3993d-f903-41e7-b9e0-5ef9bb47266a))
-<<<<<<< Updated upstream
-    (pad "1" thru_hole roundrect (at 0 0 270) (size 1.7 1.95) (drill 0.95) (layers *.Cu *.Mask) (roundrect_rratio 0.147059)
-=======
-<<<<<<< HEAD
     (pad "1" thru_hole roundrect (at 0 0 270) (size 1.7 1.95) (drill 0.95) (layers *.Cu *.Mask) (roundrect_rratio 0.1470588235)
-=======
-    (pad "1" thru_hole roundrect (at 0 0 270) (size 1.7 1.95) (drill 0.95) (layers *.Cu *.Mask) (roundrect_rratio 0.147059)
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
       (net 6 "Net-(J2-Pad1)") (pinfunction "Pin_1") (pintype "passive") (tstamp 4e7a7045-bad0-4c19-9b8a-58ff96dea674))
     (pad "2" thru_hole oval (at 2.5 0 270) (size 1.7 1.95) (drill 0.95) (layers *.Cu *.Mask)
       (net 1 "Net-(C1-Pad1)") (pinfunction "Pin_2") (pintype "passive") (tstamp 1b213928-9604-4db3-8410-f512271e9e3e))
@@ -647,24 +507,13 @@
 
   (footprint "Lib:2MS1T2B4M2QES" (layer "F.Cu")
     (tedit 0) (tstamp c1bdfe47-fe42-450f-8895-08b163181f23)
-<<<<<<< Updated upstream
-    (at 163.83 110.77 -90)
-=======
-<<<<<<< HEAD
     (at 160.02 121.92 -45)
-=======
-    (at 163.83 110.77 -90)
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (descr "2MS1T2B4M2QES-1")
     (tags "Switch")
     (property "Sheetfile" "kikker_PSU.kicad_sch")
     (property "Sheetname" "")
     (path "/36346205-e125-444b-9a28-cfcdbae7f1f2")
     (attr through_hole)
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (fp_text reference "SW1" (at -0.28 -2.54 135) (layer "F.SilkS")
       (effects (font (size 1.27 1.27) (thickness 0.254)))
       (tstamp 94fb4806-12f5-43e3-a3ce-5be4949b3f2a)
@@ -674,21 +523,6 @@
       (tstamp 796849d9-18b0-4d12-96c4-6979ee4b3ef3)
     )
     (fp_text user "${REFERENCE}" (at -0.28 -2.54 135) (layer "F.Fab")
-=======
->>>>>>> Stashed changes
-    (fp_text reference "SW1" (at -0.28 -2.54 90) (layer "F.SilkS")
-      (effects (font (size 1.27 1.27) (thickness 0.254)))
-      (tstamp 94fb4806-12f5-43e3-a3ce-5be4949b3f2a)
-    )
-    (fp_text value "SW_DIP_x01" (at -0.28 -2.54 90) (layer "F.SilkS") hide
-      (effects (font (size 1.27 1.27) (thickness 0.254)))
-      (tstamp 796849d9-18b0-4d12-96c4-6979ee4b3ef3)
-    )
-    (fp_text user "${REFERENCE}" (at -0.28 -2.54 90) (layer "F.Fab")
-<<<<<<< Updated upstream
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
       (effects (font (size 1.27 1.27) (thickness 0.254)))
       (tstamp afb2172c-177b-4d1b-90d7-4d4b3344c19d)
     )
@@ -710,25 +544,11 @@
     (fp_line (start 2.54 -6.605) (end 2.54 1.525) (layer "F.Fab") (width 0.2) (tstamp 20ecbac2-c313-49ba-91a8-28b82ba1d27e))
     (fp_line (start -2.54 -6.605) (end 2.54 -6.605) (layer "F.Fab") (width 0.2) (tstamp 440e530b-c669-40ad-ae54-fa4d2de0c3d3))
     (fp_line (start 2.54 1.525) (end -2.54 1.525) (layer "F.Fab") (width 0.2) (tstamp f399b460-951e-47fe-b63f-e1c9b1059b75))
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     (pad "1" thru_hole circle locked (at 0 0 315) (size 1.635 1.635) (drill 1.09) (layers *.Cu *.Mask)
       (net 3 "+12V") (pintype "passive") (tstamp 8e4a16e5-f12f-483a-ad90-1a9ca10f241a))
     (pad "2" thru_hole circle locked (at 0 -2.54 315) (size 1.635 1.635) (drill 1.09) (layers *.Cu *.Mask)
       (net 10 "Net-(SW1-Pad2)") (pintype "passive") (tstamp 8dce49f7-38dc-4016-888f-12144e2ed89d))
     (pad "3" thru_hole circle locked (at 0 -5.08 315) (size 1.635 1.635) (drill 1.09) (layers *.Cu *.Mask) (tstamp b526f751-8472-443f-8251-408ea443b394))
-=======
->>>>>>> Stashed changes
-    (pad "1" thru_hole circle locked (at 0 0 270) (size 1.635 1.635) (drill 1.09) (layers *.Cu *.Mask)
-      (net 3 "+12V") (pintype "passive") (tstamp 8e4a16e5-f12f-483a-ad90-1a9ca10f241a))
-    (pad "2" thru_hole circle locked (at 0 -2.54 270) (size 1.635 1.635) (drill 1.09) (layers *.Cu *.Mask)
-      (net 10 "Net-(SW1-Pad2)") (pintype "passive") (tstamp 8dce49f7-38dc-4016-888f-12144e2ed89d))
-    (pad "3" thru_hole circle locked (at 0 -5.08 270) (size 1.635 1.635) (drill 1.09) (layers *.Cu *.Mask) (tstamp b526f751-8472-443f-8251-408ea443b394))
-<<<<<<< Updated upstream
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (model "2MS1T2B4M2QES.stp"
       (offset (xyz 0 0 0))
       (scale (xyz 1 1 1))
@@ -738,15 +558,7 @@
 
   (footprint "Capacitor_THT:C_Radial_D16.0mm_H31.5mm_P7.50mm" (layer "F.Cu")
     (tedit 5BC5C9BA) (tstamp d3d7cc14-d080-4c96-93fd-6d1242095f0f)
-<<<<<<< Updated upstream
-    (at 133.35 108.01 -90)
-=======
-<<<<<<< HEAD
     (at 133.35 106.74 -90)
-=======
-    (at 133.35 108.01 -90)
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (descr "C, Radial series, Radial, pin pitch=7.50mm, diameter=16mm, height=31.5mm, Non-Polar Electrolytic Capacitor")
     (tags "C Radial series Radial pin pitch 7.50mm diameter 16mm height 31.5mm Non-Polar Electrolytic Capacitor")
     (property "Sheetfile" "kikker_PSU.kicad_sch")
@@ -781,15 +593,7 @@
 
   (footprint "Capacitor_THT:C_Radial_D16.0mm_H31.5mm_P7.50mm" (layer "F.Cu")
     (tedit 5BC5C9BA) (tstamp e21fdc3d-158c-443f-b345-d28625d4519b)
-<<<<<<< Updated upstream
-    (at 151.13 108.01 -90)
-=======
-<<<<<<< HEAD
     (at 151.13 106.74 -90)
-=======
-    (at 151.13 108.01 -90)
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
     (descr "C, Radial series, Radial, pin pitch=7.50mm, diameter=16mm, height=31.5mm, Non-Polar Electrolytic Capacitor")
     (tags "C Radial series Radial pin pitch 7.50mm diameter 16mm height 31.5mm Non-Polar Electrolytic Capacitor")
     (property "Sheetfile" "kikker_PSU.kicad_sch")
@@ -845,9 +649,6 @@
   (gr_circle (center 175.363272 105.0764) (end 176.863272 105.0764) (layer "Edge.Cuts") (width 0.2) (fill none) (tstamp e28ac653-fbd6-40cf-b6b5-0b73b57d5e70))
   (gr_arc (start 139.917 80.100786) (mid 137.488174 81.964489) (end 134.452898 81.564887) (layer "Edge.Cuts") (width 0.2) (tstamp e830df97-6001-4792-924a-fcaf6d716f7f))
 
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
   (segment (start 133.35 106.74) (end 151.13 106.74) (width 2) (layer "F.Cu") (net 1) (tstamp 262baedf-93ec-4a38-9c4b-7a83f988d50d))
   (segment (start 151.13 102.87) (end 165.1 88.9) (width 2) (layer "F.Cu") (net 1) (tstamp 334d57fd-3c4c-4938-bce4-1ed147159c03))
   (segment (start 124.46 100.33) (end 126.94 100.33) (width 2) (layer "F.Cu") (net 1) (tstamp 61e2e727-611f-411b-b4db-09375ac1d64a))
@@ -6814,9 +6615,6 @@
       )
     )
   )
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
   (group "" (id 06b5d938-a692-4106-b8f4-286624daec3e)
     (members
       127880c3-4295-4492-b004-12f899e9277c

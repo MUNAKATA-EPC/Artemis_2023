@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name "ir_sensor")(type "KiCad")(uri "E:/部活関係/Munachu_Artemis/KiCad_Projects/Lib/ir_sensor.kicad_sym")(options "")(descr ""))
+  (lib (name "open_mv")(type "KiCad")(uri "E:/部活関係/Munachu_Artemis/KiCad_Projects/Lib/open_mv.kicad_sym")(options "")(descr ""))
+)

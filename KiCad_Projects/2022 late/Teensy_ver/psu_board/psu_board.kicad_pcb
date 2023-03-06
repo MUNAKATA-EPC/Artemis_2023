@@ -1,8 +1,4 @@
 (kicad_pcb (version 20211014) (generator pcbnew)
-<<<<<<< Updated upstream
-)
-=======
-<<<<<<< HEAD
 
   (general
     (thickness 1.6)
@@ -9231,7 +9227,3 @@
     )
   )
 )
-=======
-)
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes

@@ -1,12 +1,4 @@
-<<<<<<< Updated upstream
-20270999900472918
-=======
-<<<<<<< HEAD
 20277662536717858
-=======
-20270999900472918
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -57639,9 +57631,6 @@ Switch
 3
 3
 Lib
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
 5W 1Ω sement
 
 
@@ -57649,9 +57638,6 @@ Lib
 2
 2
 Lib
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
 Akizuki_Logic_Level_converter
 
 
@@ -57673,9 +57659,6 @@ DS-850k
 2
 2
 Lib
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
 FS70SMJ
 
 
@@ -57690,9 +57673,6 @@ K15A20D
 3
 3
 Lib
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
 LCD
 
 
@@ -57777,9 +57757,6 @@ LED, Neopixel, RGB, WS2811, WS2812
 4
 4
 Lib
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
 XL6009
 
 
@@ -57787,9 +57764,6 @@ XL6009
 4
 4
 Lib
-=======
->>>>>>> 56dbcb92e178a8b6041ec227bc55ad84854f2f19
->>>>>>> Stashed changes
 fuse_socket
 
 
