@@ -19,17 +19,15 @@ class Kicker{
             
             if(kicking){
                 if(KickTimer.get_value() <= 500){
-                    Bright(strip.Color(255,   0,   0));
-                    analogWrite(SpliterPin, 1024);
-                    analogWrite(ControlPin, 1024);
+                    analogWrite(SpliterPin, 0);
+                    analogWrite(ControlPin, 1023);
                 }
                 else{
                     if(KickTimer.get_value() >= 6000){
                         kicking = false;
                         KickTimer.reset();
                     }
-                    Bright(strip.Color(0,   255,   0));
-                    analogWrite(SpliterPin, 1024);
+                    analogWrite(SpliterPin, 1023);
                     analogWrite(ControlPin, 0);
                 }
             }

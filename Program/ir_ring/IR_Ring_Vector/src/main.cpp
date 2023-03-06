@@ -83,19 +83,30 @@ void loop(){
 
     int radius = sqrt(pow(Ball_Point.GetX(), 2.0) + pow(Ball_Point.GetY(), 2.0));
     radius = radius / 1500.0 * 700.0;
-    /*
+    
+    if(IR_Sen[0].value <= 920 && IR_Sen[7].value <= 920)
+    {
+        if(IR_Sen[1].value >= 600 && IR_Sen[6].value >= 600 )
+        {
+            radius = 0;
+        }
+    }
+
     for(int i = 0; i < 8; i++){
         Serial.print(IR_Sen[i].value);
         Serial.print(", ");
     }
-    Serial.println();*/
+    Serial.print(", ");
+    Serial.print(radius);
+    Serial.println();
+    /*
     Serial.print(Ball_Point.GetX());
     Serial.print(", ");
     Serial.print(Ball_Point.GetY());
     Serial.print(", ");
     Serial.print(theta);
     Serial.print(", ");
-    Serial.println(radius);
+    Serial.println(radius);*/
     
     if(Ball_Point.GetX() == 0 && Ball_Point.GetY() == 0){
         analogWrite(0, 1023);

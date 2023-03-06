@@ -2,7 +2,9 @@
 #include <DSR1202.h>
 #include <U8g2lib.h>
 #include <Adafruit_NeoPixel.h>
+#include <U8g2lib.h>
 
+#include "pins.h"
 #include "neopixel.h"
 #include "buzzer.h"
 #include "sensor.h"
@@ -23,6 +25,8 @@ void setup() {
   Setup_Sensors();
   Setup_Neopixel();
 
+  Setup_LCD();
+
   Setup_buzzer();
 
   //Initialize DSR1202
@@ -31,14 +35,8 @@ void setup() {
 
 void loop() {
   //read sensors
-  Read_IR();
-  Read_Gyro();
-  Read_Camera();
-
-  //bright neopixel
-  Bright_NeoPixel();
-
-  Serial.println(digitalRead(23));
+  
+  Process_LCD();
 
   delay(10);
 }

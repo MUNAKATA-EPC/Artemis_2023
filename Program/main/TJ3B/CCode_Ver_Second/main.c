@@ -24,11 +24,6 @@
 #include "D_SIO.h"
 #include "D_EIO.h"
 //--------------------------------------------------------------------------------
-#include "D_Main.h"
-#include "D_I2C.h"
-#include "D_SIO.h"
-#include "D_EIO.h"
-//--------------------------------------------------------------------------------
 
 #define GAIN_P 0.15
 #define GAIN_I 1
@@ -114,7 +109,7 @@ void Read_Sensors(){
 
   //ÉJÉÅÉâånìùïœêîäiî[
   Court_Deg = gAD[CN3];
-  Goal_Deg = gAD[CN4] - 230;
+  Goal_Deg = gAD[CN4] - 180;
   Goal_Distance = gAD[CN5];
 
   //ÇªÇÃëºäeéÌÉZÉìÉTïœêîäiî[
@@ -212,14 +207,14 @@ void Calc_GoalPID(BOOL bDecide) {
   deviation_old = deviation;
       
   if(bDecide) {
-    Operation_PID = val_P * 0.1 + val_D * 0;
+      Operation_PID = val_P * 0.08 + val_D * 0;
     Operation_PID = -RemoveHighLow(Operation_PID, PID_LIMIT, -PID_LIMIT);
   }
 }
 
 int Calc_MotorSpeed(){
   int motor_speed = 0;
-    int default_speed = 40;
+  int default_speed = 40;
   float ir_deg = IR_Value / 750.0 * 360.0;
   float ir_deviation_deg;
   int add_speed;
@@ -236,15 +231,12 @@ int Calc_MotorSpeed(){
     center_deg = 270;
   
   ir_deviation_deg = ir_deg <= 180 ? ir_deg - center_deg : center_deg - ir_deg;
-  add_speed = ir_deviation_deg / 90.0 * 10.0;
+  add_speed = ir_deviation_deg / 90.0 * 15.0;
   
   ir_dis = (300 - (IR_Distance  - 340));
   speed_per = 1.0 + (ir_dis / 300.0 * 0.35);
   
-  if( (default_speed + add_speed) * speed_per <= 30)
-      return 30;
-  else
-    return (default_speed + add_speed) * speed_per;
+  return (default_speed + add_speed) * speed_per;
 }
 
 void user_main(void)
@@ -277,12 +269,12 @@ void user_main(void)
       bMove_Line = false;
       
       if(IR_Value < 800) {
-           if(IR_Value < 15 || IR_Value > 720){
-           Move(0, (Goal_Distance <= 500)? 40 : 50);
+          if(IR_Value < 60 || IR_Value > 710) {
+             Move(0, (Goal_Distance <= 500)? 35 : 45);
           }
-          else if(IR_Value < 150)
+          else if(IR_Value < 140)
           {
-            int adddeg = 90 - ((450 - (IR_Distance - 300)) / 300.0 * 90);  
+            int adddeg = 90 - ((450 - (IR_Distance - 300)) / 300.0 * 45);  
             if(adddeg < 20) adddeg = 20;
             move_deg = (IR_Value / 750.0 * 360.0) + adddeg;
             Move(move_deg, Calc_MotorSpeed());

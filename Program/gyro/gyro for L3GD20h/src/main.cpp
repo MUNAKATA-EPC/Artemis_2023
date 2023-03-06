@@ -1,5 +1,6 @@
 #include <Arduino.h>
 #include <Wire.h>
+
 //シリアルモニタを起動しなければプログラムが走らない！！！
 
 // Connect L3GD20 with SDA (A4), SCL (A5)
@@ -25,7 +26,7 @@ const byte L3GD20_Z_H = 0x2D;
 #define analogpin 1
 #define outputpin 0
 #define resetpin 6
-#define CAL_TIMEMS 500
+#define CAL_TIMEMS 1000
 #define UPDATE_MS 10
 
 float degdata = 0;
@@ -110,7 +111,7 @@ void setup() {
                       //   |||||||+ X axis enable
                       //   ||||||+- Y axis enable
                       //   |||||+-- Z axis enable
-                      //   ||||+--- PD: 0: power down, 1: active
+                      //   ||||+--- PD: 0: power down, 1: active:]
                       //   ||++---- BW1-BW0: cut off 12.5[Hz]
                       //   ++------ DR1-DR0: ODR 95[HZ]
 
@@ -125,13 +126,16 @@ void loop() {
 
   GetDegdata();
 
-  long outputdata = (degdata / 512) + 512;
+  long outputdata = (degdata / 480) + 512;
   if(outputdata > 1023 ){
     outputdata = 1023;
   } else if(outputdata < 0){
     outputdata = 0;     
   }
 
+  int micro = analogRead(analogpin);
+  Serial.print((micro - 512) / 50);
+  Serial.print(" ");
   Serial.println(outputdata);
 
   analogWrite(outputpin, outputdata);

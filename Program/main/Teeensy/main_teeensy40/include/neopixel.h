@@ -1,6 +1,3 @@
-#define NEOPIXEL_PIN    2
-#define NEOPIXEL_COUNT 16
-
 Adafruit_NeoPixel strip(NEOPIXEL_COUNT, NEOPIXEL_PIN, NEO_GRB + NEO_KHZ800);
 
 // Fill strip pixels one after another with a color. Strip is NOT cleared
