@@ -1,3 +1,5 @@
+DSR1202 dsr1202(1);
+
 void Output_MotorPower(int A, int B, int C, int D){
     dsr1202.move(A, B, C, D, false);
 }

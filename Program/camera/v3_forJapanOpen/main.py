@@ -1,8 +1,8 @@
 import sensor, image, time, math
 from pyb import UART, LED, Pin, Timer
 
-threshold_for_court = (43, 65, -37, -8, 7, 39)# コートの色取り用変数
-threshold_for_goal_yellow = (64, 78, 14, 46, 57, 86)# ゴールの色取り用変数(黄色)
+threshold_for_court = (27, 57, -36, 0, -7, 24)# コートの色取り用変数
+threshold_for_goal_yellow = ((70, 90, -15, 13, 52, 82))# ゴールの色取り用変数(黄色)
 threshold_for_goal_blue = (35, 51, -39, -18, -16, 10) # ゴールの色取り用変数(青色)
 screen_center = [160, 120]                  # 画面の中央座標
 
@@ -23,7 +23,7 @@ clock = time.clock()
 
 while(True):
     clock.tick()
-
+    img = sensor.snapshot()
     img.draw_cross(screen_center[0], screen_center[1])    # クロスヘアの表示
 
     #=======================変数定義ライン=======================
@@ -77,10 +77,6 @@ while(True):
         cy_court[read_count_court] = blob.cy()
         area_court[read_count_court] = blob.area()
 
-        img.draw_rectangle(blob.rect(), thickness=1)         # コートの色取り可能範囲の枠描画
-        img.draw_cross(blob.cx(), blob.cy())    # コートの中心を交差線で描画
-        img.draw_line(screen_center[0], screen_center[1], blob.cx(), blob.cy(), thickness=2)  # 画面中心からコート中心へのライン描画
-
     #=======================黄ゴール色取りライン=======================
 
     for blob in img.find_blobs([threshold_for_goal_yellow], pixels_threshold=20, area_threshold=20, merge=True):
@@ -108,7 +104,7 @@ while(True):
     #==============================================
 
     maximum_cx_court = (max(cx_court[:]))
-    maximum_cx_court_cy_court = (max(cy_court[:]))
+    maximum_cy_court = (max(cy_court[:]))
     maximum_area_court = (max(area_court[:]))
 
     for i in range(0, 9):
@@ -116,6 +112,9 @@ while(True):
             maximum_cx_court = cx_court[i]
             maximum_cy_court = cy_court[i]
             break
+
+    img.draw_cross(maximum_cx_court, maximum_cy_court)    # コートの中心を交差線で描画
+    img.draw_line(screen_center[0], screen_center[1], maximum_cx_court, maximum_cy_court, thickness=2)  # 画面中心からコート中心へのライン描画
 
     #==============================================
 
@@ -150,6 +149,8 @@ while(True):
         court_deg = (2 * math.pi) - abs(court_deg)
     court_deg = (math.floor(court_deg / (2 * math.pi) * 100))
 
+    court_distance = math.sqrt(math.pow((maximum_cx_court - screen_center[0]), 2) + math.pow((maximum_cy_court - screen_center[1]), 2))
+
     #==============================================
 
     goal_deg_yellow = math.atan2((maximum_cx_goal_yellow - screen_center[0]), (maximum_cy_goal_yellow - screen_center[1]))
@@ -175,6 +176,21 @@ while(True):
     goal_distance_blue = math.sqrt(math.pow((maximum_cx_goal_blue - screen_center[0]), 2) + math.pow((maximum_cy_goal_blue - screen_center[1]), 2)) - 50;
 
     #==============================================
+
+    #======================出力フェーズ=======================
+
+    #uart.write(str(court_deg))
+    #uart.write("a")
+    #uart.write(str(court_distance))
+    #uart.write("b")
+    #uart.write(str(goal_deg_yellow))
+    #uart.write("c")
+    #uart.write(str(goal_distance_yellow))
+    #uart.write("d")
+    #uart.write(str(goal_deg_blue))
+    #uart.write("e")
+    #uart.write(str(goal_distance_blue))
+    #uart.write("f")
 
 
 

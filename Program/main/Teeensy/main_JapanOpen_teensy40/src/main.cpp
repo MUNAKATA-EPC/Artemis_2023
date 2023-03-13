@@ -1,8 +1,6 @@
 #include <Arduino.h>
 #include <DSR1202.h>
 
-DSR1202 dsr1202(1);
-
 #include "motor.h"
 #include "timer.h"
 #include "sensors.h"
@@ -14,6 +12,9 @@ Kicker kicker(5, 4);
 #define FIRST_FLOOR 0
 #define SECOND_FLOOR 1
 #define THIRD_FLOOR 2
+
+#define PRGB1 6
+#define PRGB2 9
 
 int Parents_Point;
 int Now_Point;
@@ -47,6 +48,9 @@ void setup() {
 
   Initialize_Sensors();
 
+  pinMode(PRGB1, INPUT_PULLUP);
+  pinMode(PRGB2, INPUT_PULLUP);
+
   dsr1202.Init();
 }
 
@@ -54,9 +58,6 @@ void loop() {
   Read_Sensors();
 
   Main_Program();
-
-  kicker.loop();
-  kicker.push();
 
   if(Now_Floor == FIRST_FLOOR)
   {
