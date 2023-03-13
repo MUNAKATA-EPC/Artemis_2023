@@ -2,7 +2,6 @@
 #include <DSR1202.h>
 #include <U8g2lib.h>
 #include <Adafruit_NeoPixel.h>
-#include <U8g2lib.h>
 
 #include "pins.h"
 #include "neopixel.h"
@@ -22,21 +21,24 @@ void setup() {
   Serial.begin(9600); //Teensy to PC
 
   //Initialize each Sensors
-  Setup_Sensors();
+  //Setup_Sensors();
   Setup_Neopixel();
 
   Setup_LCD();
+  
+  pinMode(6, INPUT_PULLUP);
+  pinMode(9, INPUT_PULLUP);
 
   Setup_buzzer();
 
   //Initialize DSR1202
-  dsr1202.Init();
+  //dsr1202.Init();
 }
 
 void loop() {
-  //read sensors
+  Serial.print(analogRead(6));
+  Serial.print(", ");
+  Serial.println(analogRead(9));
   
-  Process_LCD();
-
   delay(10);
 }

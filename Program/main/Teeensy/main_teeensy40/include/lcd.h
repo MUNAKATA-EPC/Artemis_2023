@@ -1,3 +1,8 @@
+#define LEFT_BUTTON 33
+#define RIGHT_BUTTON 32
+#define START_BUTTON 30
+#define STOP_BUTTON 31
+
 U8G2_ST7565_AK_AQM1248_F_4W_HW_SPI u8g2(U8G2_R0, 10, 34, 35);
 
 void DrawString(int x, int y, const char *text, const uint8_t* font)
@@ -16,5 +21,6 @@ void Setup_LCD()
 
 void Process_LCD()
 {
-    DrawString(0, 30, "unko", u8g2_font_ncenB10_tr);
+    int unko = analogRead(6);
+    Serial.println(unko);
 }

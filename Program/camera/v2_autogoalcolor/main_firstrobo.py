@@ -12,6 +12,7 @@ threshold_for_goal_yellow = (64, 78, 14, 46, 57, 86)# ゴールの色取り用�
 threshold_for_goal_blue = (35, 51, -39, -18, -16, 10) # ゴールの色取り用変数(青色)
 threshold_for_goal = threshold_for_goal_blue #ゴールの最終色取り変数
 screen_center = [134, 120]                  # 画面の中央座標
+
 red_led = LED(1);
 green_led = LED(2);
 blue_led = LED(3);
@@ -26,7 +27,6 @@ sensor.set_saturation(2)#彩3~-3
 sensor.set_auto_gain(False) # must be turned off for color tracking
 sensor.set_auto_exposure(False)
 sensor.set_auto_whitebal(False,(-5.874588, -6.02073, -3.887871)) # must be turned off for color tracking,(-5.874588, -6.02073, -1.887871)
-
 
 clock = time.clock()
 
