@@ -75,10 +75,10 @@ void user_main(void)
       if (gV[VAR_L] == 0) {
         user_sub_2();
       } else {
-        gPwm[0] = 0x00;
-        gPwm[1] = 0x00;
-        gPwm[2] = 0x00;
-        gPwm[3] = 0x00;
+        gPwm[0] = 0x00 | 0x80;
+        gPwm[1] = 0x00 | 0x80;
+        gPwm[2] = 0x00 | 0x80;
+        gPwm[3] = 0x00 | 0x80;
         pwm_out();
       }
     } else {
