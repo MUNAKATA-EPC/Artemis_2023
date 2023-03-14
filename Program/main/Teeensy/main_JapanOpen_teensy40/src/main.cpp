@@ -1,6 +1,7 @@
 #include <Arduino.h>
 #include <DSR1202.h>
 
+#include "pid.h"
 #include "motor.h"
 #include "timer.h"
 #include "sensors.h"
