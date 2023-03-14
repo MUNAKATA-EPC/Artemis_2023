@@ -4,7 +4,7 @@
 /// @param goal_value 目標値
 /// @param gains 各要素のゲイン(倍率)
 /// @return 
-int pid(int value, int max_value, int goal_value, int gains[3])
+int pid(int value, int max_value, int goal_value, double gains[3])
 {
     //比例、積分、微分
     int operations[3];

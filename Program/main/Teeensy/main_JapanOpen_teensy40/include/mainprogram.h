@@ -2,5 +2,5 @@ Timer Line_Timer;
 
 void Main_Program()
 {
-    Break();
+    pid(Gyro_Deg, 360, 0, {1.0, 0, 0});
 }

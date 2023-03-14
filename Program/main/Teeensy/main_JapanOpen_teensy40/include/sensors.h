@@ -24,20 +24,20 @@ void Read_Sensors(){
     {
         Ball_Deg        = Serial3.readStringUntil('a').toInt();
         Ball_Distance   = Serial3.readStringUntil('b').toInt();
+        //Gyro_Deg        = Serial3.readStringUntil('c').toInt();
+    }
+
+    if(Serial5.available() > 0)
+    {
+        Cam_Court_Deg   = Serial5.readStringUntil('a').toInt();
+        Cam_Court_Dis   = Serial5.readStringUntil('b').toInt();
+        Cam_GoalY_Deg   = Serial5.readStringUntil('c').toInt();
+        Cam_GoalY_Dis   = Serial5.readStringUntil('d').toInt();
+        Cam_GoalB_Deg   = Serial5.readStringUntil('e').toInt();
+        Cam_GoalB_Dis   = Serial5.readStringUntil('f').toInt(); 
     }
 
     Serial.print(Ball_Deg);
     Serial.print(", ");
     Serial.println(Ball_Distance);
-    //Gyro_Deg        = Serial3.readStringUntil('c').toInt();
-
-    /*
-    //Cam data From OpenMV
-    Cam_Court_Deg   = Serial5.readStringUntil('a').toInt();
-    Cam_Court_Dis   = Serial5.readStringUntil('b').toInt();
-    Cam_GoalY_Deg   = Serial5.readStringUntil('c').toInt();
-    Cam_GoalY_Dis   = Serial5.readStringUntil('d').toInt();
-    Cam_GoalB_Deg   = Serial5.readStringUntil('e').toInt();
-    Cam_GoalB_Dis   = Serial5.readStringUntil('f').toInt();  
-    */
 }   
