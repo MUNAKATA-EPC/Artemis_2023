@@ -55,10 +55,28 @@ void setup() {
   dsr1202.Init();
 }
 
+int a;
+bool b;
 void loop() {
+  if(digitalRead(PRGB1) == LOW){
+    a++;
+  }
+  else 
+  {
+    a = 0;
+  }
+
   Read_Sensors();
 
-  Main_Program();
+  if(a == 1)
+  {
+    b = !b;
+  }
+
+  if(b)
+    Output_MotorPower(0, 0, 0, 0);
+  else
+    Main_Program();
 
   if(Now_Floor == FIRST_FLOOR)
   {

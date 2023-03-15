@@ -2,5 +2,5 @@ Timer Line_Timer;
 
 void Main_Program()
 {
-    Break();
+    Output_MotorPower(20, 20, 20, 20);
 }

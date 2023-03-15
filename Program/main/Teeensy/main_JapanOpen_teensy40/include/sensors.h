@@ -19,17 +19,16 @@ void Initialize_Sensors(){
 
 void Read_Sensors(){
     //Ball Deg And Distance From Mega
-    
     if(Serial3.available() > 0)
     {
         Ball_Deg        = Serial3.readStringUntil('a').toInt();
         Ball_Distance   = Serial3.readStringUntil('b').toInt();
+        //Gyro_Deg        = Serial3.readStringUntil('c').toInt();
     }
 
     Serial.print(Ball_Deg);
     Serial.print(", ");
     Serial.println(Ball_Distance);
-    //Gyro_Deg        = Serial3.readStringUntil('c').toInt();
 
     /*
     //Cam data From OpenMV
