@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name "Lib")(type "KiCad")(uri "G:/部活関係/Munachu_Artemis/KiCad_Projects/Lib")(options "")(descr ""))
+  (lib (name "New")(type "KiCad")(uri "G:/部活関係/Munachu_Artemis/KiCad_Projects/Lib/New.pretty")(options "")(descr ""))
+)
