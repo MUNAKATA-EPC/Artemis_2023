@@ -1,4 +1,5 @@
 import sensor, image, time, math
+
 from pyb import LED, Pin, Timer
 
 # メモ
@@ -6,11 +7,12 @@ from pyb import LED, Pin, Timer
 # area   = 色取りをした範囲の面積
 # 必然的にpixelsのほうが値は小さくなる…はず。
 
-threshold_for_court = (56, 92, -87, -58, 46, 71) # コートの色取り用変数
-threshold_for_goal_yellow = (62, 95, -35, 11, 51, 88)# ゴールの色取り用変数(黄色)
-threshold_for_goal_blue = (13, 30, -34, 4, -24, -2) # ゴールの色取り用変数(青色)
-threshold_for_goal = (0, 0, 0, 0, 0, 0) #ゴールの最終色取り変数
-screen_center = [170, 125]                  # 画面の中央座標
+threshold_for_court = (22, 57, -37, -5, 18, 42)# コートの色取り用変数
+threshold_for_goal_yellow = (64, 78, 14, 46, 57, 86)# ゴールの色取り用変数(黄色)
+threshold_for_goal_blue = (35, 51, -39, -18, -16, 10) # ゴールの色取り用変数(青色)
+threshold_for_goal = threshold_for_goal_blue #ゴールの最終色取り変数
+screen_center = [134, 120]                  # 画面の中央座標
+
 red_led = LED(1);
 green_led = LED(2);
 blue_led = LED(3);
@@ -18,17 +20,13 @@ blue_led = LED(3);
 sensor.reset()
 sensor.set_pixformat(sensor.RGB565)#カラースケール
 sensor.set_framesize(sensor.QVGA)#解像度
-
 timer = Timer(4, freq=1000)
-
-sensor.set_contrast(1)#コントラスト
+sensor.set_contrast(0)#コントラスト
 sensor.set_brightness(-2)#明るさ
 sensor.set_saturation(2)#彩3~-3
-
-sensor.set_auto_gain(True) # must be turned off for color tracking
+sensor.set_auto_gain(False) # must be turned off for color tracking
 sensor.set_auto_exposure(False)
 sensor.set_auto_whitebal(False,(-5.874588, -6.02073, -3.887871)) # must be turned off for color tracking,(-5.874588, -6.02073, -1.887871)
-
 
 clock = time.clock()
 
@@ -45,6 +43,7 @@ read_areaofyellow = 0
 while(True):
     clock.tick()
     img = sensor.snapshot()
+
     img.draw_cross(screen_center[0], screen_center[1])    # クロスヘアの表示
 
     waittimer = waittimer + 1
@@ -75,10 +74,11 @@ while(True):
     cx_goal         =   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]      # ゴールの中心x座標保存用配列
     cy_goal         =   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]      # ゴールの中心y座標保存用配列
     area_goal       =   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]      # コートの色取りエリア保存用配列
+    area_goal_sub       =   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]      # コートの色取りエリア保存用配列
 
     #=======================コート色取りライン=======================
 
-    for blob in img.find_blobs([threshold_for_court], pixels_threshold=10, area_threshold=10, merge=True):
+    for blob in img.find_blobs([threshold_for_court], pixels_threshold=200, area_threshold=200, merge=True):
         if read_count_court >= 3:              # コートの色を10回以上取った場合、それ以上コートの色取りをしない。
             break
         else:                                   # まだコートの色取りが10回行われていない場合、読み取り回数を増やす。
@@ -150,7 +150,7 @@ while(True):
     if waittimer >= 50:
         if decide_court_color == 0:
             read_count_goal = 0
-            for blob in img.find_blobs([threshold_for_goal_yellow], pixels_threshold=2, area_threshold=2, merge=True):
+            for blob in img.find_blobs([threshold_for_goal_yellow], pixels_threshold=10, area_threshold=10, merge=True):
                 if read_count_goal >= 9:              # ゴールの色を10回以上取った場合、それ以上ゴールの色取りをしない。
                     break
                 else:                                   # まだゴールの色取りが10回行われていない場合、読み取り回数を増やす。
@@ -160,8 +160,10 @@ while(True):
 
             read_areaofyellow = (max(area_goal[:]))
 
+            print(read_areaofyellow)
+
             read_count_goal = 0
-            for blob in img.find_blobs([threshold_for_goal_blue], pixels_threshold=2, area_threshold=2, merge=True):
+            for blob in img.find_blobs([threshold_for_goal_blue], pixels_threshold=20, area_threshold=20, merge=True):
                 if read_count_goal >= 9:              # ゴールの色を10回以上取った場合、それ以上ゴールの色取りをしない。
                     break
                 else:                                   # まだゴールの色取りが10回行われていない場合、読み取り回数を増やす。
@@ -169,8 +171,9 @@ while(True):
 
                 area_goal[read_count_goal] = blob.area()
 
-
             read_areaofblue = (max(area_goal[:]))
+
+            print(read_areaofblue)
 
             if read_areaofblue >= read_areaofyellow:
                 threshold_for_goal = threshold_for_goal_yellow
@@ -198,6 +201,6 @@ while(True):
     port2.pulse_width_percent(goal_deg)
     port3.pulse_width_percent(int(goal_distance))
 
-    print(goal_deg)
+    print(court_deg)
 
     #==========================================================

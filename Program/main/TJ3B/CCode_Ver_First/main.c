@@ -1,13 +1,13 @@
 //--------------------------------------------------------------------------------
 // Title: Main - [ main.c ]
-// Build:DAISEN C-Style for TJ3B  [ Ver.20190706 ] - [ Build_V190617 ]
+// Build:DAISEN C-Style for TJ3B  [ Ver.20190706 ] - [  ...  ]
 //--------------------------------------------------------------------------------
 // SetupVal:111111-111110-000002,cmt:
 // CN01:Ball
 // CN02:Line
 // CN03:L-Touch
 // CN04:R-Touch
-// CN05:
+// CN05:C-Touch
 // CN06:
 // CN07:
 // CN08:
@@ -19,13 +19,23 @@
 #include "D_SIO.h"
 #include "D_EIO.h"
 //--------------------------------------------------------------------------------
+#include "D_Main.h"
+#include "D_I2C.h"
+#include "D_SIO.h"
+#include "D_EIO.h"
+//--------------------------------------------------------------------------------
+#include "D_Main.h"
+#include "D_I2C.h"
+#include "D_SIO.h"
+#include "D_EIO.h"
+//--------------------------------------------------------------------------------
 
 #define GAIN_P 0.15
 #define GAIN_I 1
 #define GAIN_D 1
 
-#define MOTOR_LIMIT 35
-#define PID_LIMIT 20
+#define MOTOR_LIMIT 60
+#define PID_LIMIT 13
 
 #define IR_MAX 576.0
 
@@ -49,7 +59,7 @@ int Calc_MotorSpeed(void);
 int max(int a, int b);
 
 //ボールセンサ系統変数格納
-int IR_Deg;
+int IR_Value;
 int IR_Distance;
 
 //カメラ系統変数格納
@@ -99,12 +109,12 @@ int RemoveHighLow(int value, int High, int Low){
 
 void Read_Sensors(){
   //ボールセンサ系統変数格納
-  IR_Deg = gAD[CN1];
+  IR_Value = gAD[CN1];
   IR_Distance = gAD[CN2];
 
   //カメラ系統変数格納
   Court_Deg = gAD[CN3];
-  Goal_Deg = gAD[CN4] - 180;
+  Goal_Deg = gAD[CN4] - 230;
   Goal_Distance = gAD[CN5];
 
   //その他各種センサ変数格納
@@ -114,10 +124,31 @@ void Read_Sensors(){
 
 //角度・速度でモーターを動かす
 void Move(int Deg, int Power){
+  double motor_max;
+  double power_per;
+  
   Motors_Power[0] = sin((Deg - 60) * PI / 180) * -Power;
   Motors_Power[1] = sin((Deg + 60) * PI / 180) * Power;
   Motors_Power[2] = sin((Deg - 135) * PI / 180) * -Power;
   Motors_Power[3] = sin((Deg + 135) * PI / 180) * Power;
+  
+  /*
+  int i;
+  for(i = 0; i < 4; i++) {
+    int compare_val = Motors_Power[i] < 0 ? Motors_Power[i] * -1 : Motors_Power[i];
+    if(compare_val > motor_max) {
+      motor_max = compare_val;
+    }
+  }
+  
+  power_per = Power / motor_max;
+  
+  int j;
+  for(j = 0; j < 4; j++) {
+    Motors_Power[i] = Motors_Power[i] * power_per;
+  }
+  */
+  
   Move_Power(Motors_Power[0], Motors_Power[1], Motors_Power[2], Motors_Power[3]);
 }
 
@@ -125,14 +156,18 @@ void Move(int Deg, int Power){
 void Move_Power(int MotorA, int MotorB, int MotorC, int MotorD){
   int Motors[4];
     
-  Motors[0] = MotorA + Operation_PID;
-  Motors[1] = RemoveHighLow(Motors[0], MOTOR_LIMIT, -MOTOR_LIMIT);
-  Motors[1] = MotorB - Operation_PID;
+  Motors[0] = MotorA;
+  Motors[0] = RemoveHighLow(Motors[0], MOTOR_LIMIT, -MOTOR_LIMIT);
+  Motors[0] += Operation_PID;
+  Motors[1] = MotorB;
   Motors[1] = RemoveHighLow(Motors[1], MOTOR_LIMIT, -MOTOR_LIMIT);
-  Motors[2] = MotorC + Operation_PID;
+  Motors[1] -= Operation_PID;
+  Motors[2] = MotorC;
   Motors[2] = RemoveHighLow(Motors[2], MOTOR_LIMIT, -MOTOR_LIMIT);
-  Motors[3] = MotorD - Operation_PID;
+  Motors[2] += Operation_PID;
+  Motors[3] = MotorD;
   Motors[3] = RemoveHighLow(Motors[3], MOTOR_LIMIT, -MOTOR_LIMIT);
+  Motors[3] -= Operation_PID;
 
   gPwm[0] = Motors[0] < 0 ? (Motors[0] * -1) | 0x80 : Motors[0];
   gPwm[1] = Motors[1] < 0 ? (Motors[1] * -1) | 0x80 : Motors[1];
@@ -146,8 +181,8 @@ void Calc_PID(BOOL bDecide){
   PID_Type = 0;
   val_P = Gyro_Deg;
 
-  if(val_P > 400){
-    val_P = val_P - 800;
+  if(val_P > 420){
+    val_P = val_P - 840;
   }
   
   val_P = val_P * 2;
@@ -172,21 +207,44 @@ void Calc_GoalPID(BOOL bDecide) {
   if(val_P > 400){
     val_P = val_P - 800;
   }
-  deviation_goal = 0 - val_P;
-  val_D = deviation_goal - deviation_old_goal;
-  deviation_old_goal = deviation_goal;
-        
+  deviation = 0 - val_P;
+  val_D = deviation - deviation_old;
+  deviation_old = deviation;
+      
   if(bDecide) {
-    Operation_PID = val_P * 0.13 + val_D;
-    Operation_PID = -RemoveHighLow(Operation_PID, 20, -20);
+    Operation_PID = val_P * 0.1 + val_D * 0;
+    Operation_PID = -RemoveHighLow(Operation_PID, PID_LIMIT, -PID_LIMIT);
   }
 }
 
-int Calc_MotorSpeed(){ 
-  if(IR_Deg <= 140 || IR_Deg >= 650)
-    return 27;
-
-  return 50;
+int Calc_MotorSpeed(){
+  int motor_speed = 0;
+    int default_speed = 40;
+  float ir_deg = IR_Value / 750.0 * 360.0;
+  float ir_deviation_deg;
+  int add_speed;
+  
+  int ir_dis;
+  float speed_per;
+    
+  //左か右かによって計算方法を変える
+  float center_deg;
+  
+  if(ir_deg <= 165)
+    center_deg = 90;
+  else
+    center_deg = 270;
+  
+  ir_deviation_deg = ir_deg <= 180 ? ir_deg - center_deg : center_deg - ir_deg;
+  add_speed = ir_deviation_deg / 90.0 * 10.0;
+  
+  ir_dis = (300 - (IR_Distance  - 340));
+  speed_per = 1.0 + (ir_dis / 300.0 * 0.35);
+  
+  if( (default_speed + add_speed) * speed_per <= 30)
+      return 30;
+  else
+    return (default_speed + add_speed) * speed_per;
 }
 
 void user_main(void)
@@ -197,10 +255,10 @@ void user_main(void)
         
     Read_Sensors();
     
-    if(Goal_Distance <= 800)
-      Calc_GoalPID(true);
-    else
+    if(Goal_Deg >= 850)
       Calc_PID(true);
+    else
+      Calc_GoalPID(true);
     
     //ラインセンサ処理
     if(Line_Val <= 50) {
@@ -210,39 +268,52 @@ void user_main(void)
       }
     }
     
-    if(get_timer(T1) <= 400){
-      move_deg = (Court_Deg - 185) / 700.0 * 360.0;
-      move_speed = 35;
+    if(get_timer(T1) <= 500){
+      move_deg = ((Court_Deg - 185) / 700.0 * 360.0 + 22) / 45 * 45;
+      move_speed = 30;
       Move(move_deg, move_speed);
     }
     else {
       bMove_Line = false;
-          
-      if(IR_Deg < 800) { //反応しているか否か
-          if(IR_Deg < 73 || IR_Deg > 740) {
-            Move(0, Goal_Distance >= 510 ? 30 : 45);
+      
+      if(IR_Value < 800) {
+           if(IR_Value < 15 || IR_Value > 720){
+           Move(0, (Goal_Distance <= 500)? 40 : 50);
           }
-          else if(IR_Deg < 360) {
-            if(IR_Distance <= 520) {
-              int adddeg = 30;                      
-              move_deg = (IR_Deg / 750.0 * 360.0) + adddeg;
-              Move(move_deg, Calc_MotorSpeed());
-            }
-            else {  
-              move_deg = (IR_Deg / 750.0 * 360.0);
-              Move(move_deg, Calc_MotorSpeed());
-            }
+          else if(IR_Value < 150)
+          {
+            int adddeg = 90 - ((450 - (IR_Distance - 300)) / 300.0 * 90);  
+            if(adddeg < 20) adddeg = 20;
+            move_deg = (IR_Value / 750.0 * 360.0) + adddeg;
+            Move(move_deg, Calc_MotorSpeed());
           }
-          else{
-              if(IR_Distance <= 520) {
-              int adddeg = 35;
-              move_deg = (IR_Deg / 750.0 * 360.0) - adddeg;
-              Move(move_deg, Calc_MotorSpeed());
-            }
-            else {  
-              move_deg = (IR_Deg / 750.0 * 360.0);
-              Move(move_deg, Calc_MotorSpeed());
-            }
+          else if(IR_Value < 400)
+          {
+              if(IR_Value < 340) 
+              {
+                int adddeg = 90 - ((450 - (IR_Distance - 300)) / 300.0 * 90);  
+                if(adddeg < 20) adddeg = 20;
+                move_deg = (IR_Value / 750.0 * 360.0) + adddeg;
+                Move(move_deg, Calc_MotorSpeed());
+              } 
+              else 
+              {
+                Move(270, Calc_MotorSpeed());
+              }
+          }
+          else
+          {
+              if(IR_Value < 460) 
+              {
+                Move(90, Calc_MotorSpeed());
+              } 
+              else
+              {
+                int adddeg = 90 - ((450 - (IR_Distance - 300)) / 300.0 * 90); 
+                if(adddeg < 20) adddeg = 20;
+                move_deg = (IR_Value / 750.0 * 360.0) - adddeg;
+                Move(move_deg, Calc_MotorSpeed());
+              }
           }
       }
       else {

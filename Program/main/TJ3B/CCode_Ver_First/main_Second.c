@@ -30,7 +30,7 @@
 #define GAIN_I 1
 #define GAIN_D 1
 
-#define MOTOR_LIMIT 40
+#define MOTOR_LIMIT 50
 #define PID_LIMIT 25
 
 #define PI 3.14159
@@ -52,6 +52,12 @@ int Calc_MotorSpeed(void);
 //Å‘å’lAÅ¬’lŒvŽZ
 int Max(int a, int b);
 int Min(int a, int b);
+
+//’èˆÊ’u–ß‚èƒvƒƒOƒ‰ƒ€
+void BackToMyGoal();
+
+//Œ»Ý’èˆÊ’u‚É‚¢‚é‚©‚Ç‚¤‚©
+BOOL bInMyGoal();
 
 //ƒ{[ƒ‹ƒZƒ“ƒTŒn“•Ï”Ši”[
 int IR_Deg;
@@ -117,7 +123,7 @@ void Read_Sensors(){
 
   //ƒJƒƒ‰Œn“•Ï”Ši”[
   Court_Deg = gAD[CN3];
-  Goal_Deg = gAD[CN4] - 190;
+  Goal_Deg = gAD[CN4] \;
   Goal_Distance = gAD[CN5];
 
   //‚»‚Ì‘¼ŠeŽíƒZƒ“ƒT•Ï”Ši”[
@@ -160,7 +166,7 @@ void Calc_PID(void){
   val_P = Gyro_Deg;
 
   if(val_P > 400){
-    val_P = val_P - 800;
+    val_P = val_P - 810;
   }
   
   val_P = val_P * 2;
@@ -199,6 +205,50 @@ int Calc_MotorSpeed(){
   return 25;
 }
 
+void BackToMyGoal()
+{
+
+          if(Goal_Deg >= 540)
+          {
+            Move(0, 30); 
+          }
+          else if(Goal_Deg >= 500)
+          {
+            Move(270, 45);
+          }
+          else if(Goal_Deg <= 390)
+          {
+            Move(0, 30); 
+          }
+          else if(Goal_Deg <= 470)
+          {
+            Move(90, 45);
+          }
+          else
+          {
+            if(Goal_Distance >= 650)
+            {
+              Move(180, 30);
+            }
+            else if(Goal_Distance <= 550)
+            {   
+              Move(0, 30);
+            }
+            else
+            {
+              Move(0, 0);
+            }
+          }
+}
+
+BOOL bInMyGoal()
+{
+  if(Goal_Deg <= 510 && Goal_Deg >= 450 && Goal_Distance <= 650)
+    return true;
+  else
+    return false;
+}
+
 void user_main(void)
 {  
   while(TRUE){
@@ -213,100 +263,95 @@ void user_main(void)
     }
         
     if(get_timer(T1) <= 300){
-      int move_deg = ((Court_Deg - 185) / 700.0 * 360.0) / 45 * 45;
+      int move_deg = 0;
       int move_speed = 30;
       Move(move_deg, move_speed);
     }
     else 
     {
       bMove_Line = false;
-    
-      if(IR_Distance >= 490)
+      
+      if(Goal_Distance >= 710)
       {
-        if(IR_Deg <= 800) 
+        if(Goal_Deg >= 550 || Goal_Deg <= 470)
         {
-          if(IR_Deg <= 50 || IR_Deg >= 730)
-          {
-            Move(0, Goal_Distance >= 800 ? 30 : 40);
-          } 
-          else if(IR_Deg <= 320) 
-          {
-            if(Goal_Distance <= 570)
-            {
-              int Ball_Deg = Min(Max(IR_Deg / 740.0 * 360.0 + (IR_Deg) / 7.5 + 3, 90), 90);
-              Move(Ball_Deg, (IR_Deg >= 640 && IR_Distance >= 510) ? 40 : 45);
-            }
-            else
-            {
-              int Ball_Deg = Max(IR_Deg / 740.0 * 360.0 + (IR_Deg) / 7.5 + 3, 60);
-              Move(Ball_Deg, (IR_Deg >= 640 && IR_Distance >= 510) ? 33 : 40);
-            }
-          } 
-          else
-          {
-            if(Goal_Distance <= 570)
-            {
-              int Ball_Deg = Max(Min(IR_Deg / 740.0 * 360.0 - (700 - IR_Deg) / 7.5 - 3, 270), 270);
-              Move(Ball_Deg, (IR_Deg >= 640 && IR_Distance >= 510) ? 40 : 45);
-            }
-            else
-            {
-              int Ball_Deg = Min(IR_Deg / 740.0 * 360.0 - (700 - IR_Deg) / 7.5 - 3, 270);
-              Move(Ball_Deg, (IR_Deg >= 640 && IR_Distance >= 510) ? 33 : 40);
-            }
-          }
-        } 
-        else 
+          Move(0, 30);
+        }
+        else if(Goal_Deg >= 500)
         {
-          Move(0, 0);
+          Move(270, 45);
+        }
+        else if(Goal_Deg <= 430)
+        {
+          Move(90, 45);
+        }
+        else
+        {
+          Move(180, 30);
         }
       }
       else
       {
-      @if(Goal_Distance >= 610)
-      @{
-          if(Goal_Distance >= 800)
+      
+        if(IR_Deg <= 800)
+        {
+          if(IR_Distance >= 420)
           {
-             Move(180, 40);
-          }
-          else
-          {
-            if(Goal_Deg >= 550 - 190)
+            if(IR_Deg <= 70 || IR_Deg >= 750)
             {
-              Move(0, 45);
+                Move(0, 40);
             }
-            else if(Goal_Deg <= 420 - 190)
+            else if(IR_Deg <= 160)
             {
-              Move(0, 45);
+                Move(90, 40);
+            }
+            else if(IR_Deg <= 210)
+            {
+                Move(180, 40);
+            }
+            else if(IR_Deg <= 360)
+            {
+                Move(0, 0);
+            }
+            else if(IR_Deg <= 440)
+            {
+                Move(0, 0);
+            }
+            else if(IR_Deg <= 580)
+            {
+                Move(180, 40);
             }
             else
             {
-              int goal_deg = Goal_Deg / (780.0 - 190.0) * 360.0;
-              Move(goal_deg, 20 + (Goal_Distance - 600) / 10);
+                Move(270, 40);
+            }
+          }
+          else
+          {
+            if(bInMyGoal() == true)
+            {
+              if(IR_Deg <= 15 || IR_Deg >= 725)
+              {
+                Move(0, 0);
+              }
+              else if(IR_Deg <= 460)
+              {   
+                Move(90, 45);
+              }
+              else if(IR_Deg <= 710)
+              {
+                Move(270, 45);
+              }
+            }
+            else
+            {
+              BackToMyGoal();
             }
           }
         }
         else
         {
-          if(Goal_Distance <= 530)
-          {
-            Move(0, 20);
-          }
-          else
-          {
-            if(Goal_Deg <= 470 - 190)
-            {
-              Move(90, 45);
-            }
-            else if(Goal_Deg >= 500 - 190)
-            {
-              Move(270, 45);
-            }
-            else
-            {
-              Move(0, 0);
-            }
-          }
+          BackToMyGoal();
         }
       }
     }
