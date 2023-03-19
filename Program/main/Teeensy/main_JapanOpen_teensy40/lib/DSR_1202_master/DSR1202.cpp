@@ -43,149 +43,151 @@ void DSR1202::move(int a, int b, int c, int d, bool breaking)
 	String StringZ = "0";
 	String String0 = "0";
 
-
-	StringX = String(1);
-	val = input[0];
-	if (val < 0 && val >= -100)
-	{
-		StringY = String('R');
-		val = abs(val);
-		StringZ = String(val);
-	}
-	else if (val >= 0 && val <= 100)
-	{
-		StringY = String('F');
-		StringZ = String(val);
-	}
-	else
-	{
-		StringY = String('F');
-		StringZ = String(0);
-	}
-	if (val < 10)
-	{
-		String0 = String("00");
-		StringZ = String0 + StringZ;
-	}
-	else if (val < 100)
-	{
-		String0 = String('0');
-		StringZ = String0 + StringZ;
-	}
-	else
-	{
-		String0 = String("");
-	}
-	StringA = StringX + StringY + StringZ;
-
-
-	StringX = String(2);
-	val = input[1];
-	if (val < 0 && val >= -100)
-	{
-		StringY = String('R');
-		val = abs(val);
-		StringZ = String(val);
-	}
-	else if (val >= 0 && val <= 100)
-	{
-		StringY = String('F');
-		StringZ = String(val);
-	}
-	else
-	{
-		StringY = String('F');
-		StringZ = String(0);
-	}
-	if (val < 10)
-	{
-		String0 = String("00");
-		StringZ = String0 + StringZ;
-	}
-	else if (val < 100)
-	{
-		String0 = String('0');
-		StringZ = String0 + StringZ;
-	}
-	else
-	{
-	}
-	StringB = StringX + StringY + StringZ;
-
-
-	StringX = String(3);
-	val = input[2];
-	if (val < 0 && val >= -100)
-	{
-		StringY = String('R');
-		val = abs(val);
-		StringZ = String(val);
-	}
-	else if (val >= 0 && val <= 100)
-	{
-		StringY = String('F');
-		StringZ = String(val);
-	}
-	else
-	{
-		StringY = String('F');
-		StringZ = String(0);
-	}
-	if (val < 10)
-	{
-		String0 = String("00");
-		StringZ = String0 + StringZ;
-	}
-	else if (val < 100)
-	{
-		String0 = String('0');
-		StringZ = String0 + StringZ;
-	}
-	else
-	{
-	}
-	StringC = StringX + StringY + StringZ;
-
-
-	StringX = String(4);
-	val = input[3];
-	if (val < 0 && val >= -100)
-	{
-		StringY = String('R');
-		val = abs(val);
-		StringZ = String(val);
-	}
-	else if (val >= 0 && val <= 100)
-	{
-		StringY = String('F');
-		StringZ = String(val);
-	}
-	else
-	{
-		StringY = String('F');
-		StringZ = String(0);
-	}
-	if (val < 10)
-	{
-		String0 = String("00");
-		StringZ = String0 + StringZ;
-	}
-	else if (val < 100)
-	{
-		String0 = String('0');
-		StringZ = String0 + StringZ;
-	}
-	else
-	{
-	}
-	StringD = StringX + StringY + StringZ;
-
 	if(breaking)
 	{
 		StringA = "1R000";
 		StringB = "2R000";
 		StringC = "3R000";
 		StringD = "4R000";
+
+	}
+	else
+	{
+		StringX = String(1);
+		val = input[0];
+		if (val < 0 && val >= -100)
+		{
+			StringY = String('R');
+			val = abs(val);
+			StringZ = String(val);
+		}
+		else if (val >= 0 && val <= 100)
+		{
+			StringY = String('F');
+			StringZ = String(val);
+		}
+		else
+		{
+			StringY = String('F');
+			StringZ = String(0);
+		}
+		if (val < 10)
+		{
+			String0 = String("00");
+			StringZ = String0 + StringZ;
+		}
+		else if (val < 100)
+		{
+			String0 = String('0');
+			StringZ = String0 + StringZ;
+		}
+		else
+		{
+			String0 = String("");
+		}
+		StringA = StringX + StringY + StringZ;
+
+
+		StringX = String(2);
+		val = input[1];
+		if (val < 0 && val >= -100)
+		{
+			StringY = String('R');
+			val = abs(val);
+			StringZ = String(val);
+		}
+		else if (val >= 0 && val <= 100)
+		{
+			StringY = String('F');
+			StringZ = String(val);
+		}
+		else
+		{
+			StringY = String('F');
+			StringZ = String(0);
+		}
+		if (val < 10)
+		{
+			String0 = String("00");
+			StringZ = String0 + StringZ;
+		}
+		else if (val < 100)
+		{
+			String0 = String('0');
+			StringZ = String0 + StringZ;
+		}
+		else
+		{
+		}
+		StringB = StringX + StringY + StringZ;
+
+
+		StringX = String(3);
+		val = input[2];
+		if (val < 0 && val >= -100)
+		{
+			StringY = String('R');
+			val = abs(val);
+			StringZ = String(val);
+		}
+		else if (val >= 0 && val <= 100)
+		{
+			StringY = String('F');
+			StringZ = String(val);
+		}
+		else
+		{
+			StringY = String('F');
+			StringZ = String(0);
+		}
+		if (val < 10)
+		{
+			String0 = String("00");
+			StringZ = String0 + StringZ;
+		}
+		else if (val < 100)
+		{
+			String0 = String('0');
+			StringZ = String0 + StringZ;
+		}
+		else
+		{
+		}
+		StringC = StringX + StringY + StringZ;
+
+
+		StringX = String(4);
+		val = input[3];
+		if (val < 0 && val >= -100)
+		{
+			StringY = String('R');
+			val = abs(val);
+			StringZ = String(val);
+		}
+		else if (val >= 0 && val <= 100)
+		{
+			StringY = String('F');
+			StringZ = String(val);
+		}
+		else
+		{
+			StringY = String('F');
+			StringZ = String(0);
+		}
+		if (val < 10)
+		{
+			String0 = String("00");
+			StringZ = String0 + StringZ;
+		}
+		else if (val < 100)
+		{
+			String0 = String('0');
+			StringZ = String0 + StringZ;
+		}
+		else
+		{
+		}
+		StringD = StringX + StringY + StringZ;
 	}
 
 	if(PinNo == 2)

@@ -14,31 +14,11 @@
 #include "pid.h"
 
 DSR1202 dsr1202(1);
-Kicker kicker(4, 5);
 
 void setup() {
-  analogWriteResolution(10);  //0-255 to 0-1024
-  Serial.begin(9600); //Teensy to PC
-
-  //Initialize each Sensors
-  //Setup_Sensors();
-  Setup_Neopixel();
-
-  Setup_LCD();
-  
-  pinMode(6, INPUT_PULLUP);
-  pinMode(9, INPUT_PULLUP);
-
-  Setup_buzzer();
-
-  //Initialize DSR1202
-  //dsr1202.Init();
+  dsr1202.Init();
 }
 
 void loop() {
-  Serial.print(analogRead(6));
-  Serial.print(", ");
-  Serial.println(analogRead(9));
-  
-  delay(10);
+  dsr1202.move(20, 20, 20, 20);
 }

@@ -1,0 +1,25 @@
+Drill report for line_Inergrate.kicad_pcb
+Created on 2023/03/02 23:20:44
+
+Copper Layer Stackup:
+    =============================================================
+    L1 :  F.Cu                      front
+    L2 :  B.Cu                      back
+
+
+Drill file 'line_Inergrate-PTH.drl' contains
+    plated through holes:
+    =============================================================
+    T1  0.400mm  0.0157"  (92 holes)
+    T2  0.800mm  0.0315"  (14 holes)
+    T3  0.950mm  0.0374"  (6 holes)
+    T4  1.000mm  0.0394"  (27 holes)
+
+    Total plated holes count 139
+
+
+Drill file 'line_Inergrate-NPTH.drl' contains
+    unplated through holes:
+    =============================================================
+
+    Total unplated holes count 0

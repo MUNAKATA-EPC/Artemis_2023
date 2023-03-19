@@ -9,8 +9,8 @@ int pid(int value, int max_value, int goal_value, double gains[3])
     //比例、積分、微分
     int operations[3];
     int val_P = value;
-    int val_I;
-    int val_D;
+    int val_I = 0;
+    int val_D = 0;
     if(val_P >= max_value / 2)
     {
         //-(max_value / 2) ~ (max_value / 2)

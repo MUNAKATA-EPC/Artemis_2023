@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name "arduino mega")(type "KiCad")(uri "C:/KiCad_Projects/Lib/arduino mega.kicad_sym")(options "")(descr ""))
+)
