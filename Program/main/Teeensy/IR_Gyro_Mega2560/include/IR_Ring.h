@@ -22,5 +22,8 @@ void IRRing_loop(){
     
     //Culc theta and radius between robots and ball
     Ball_theta = degrees(atan2(Ball_pos.x, Ball_pos.y));
+    if(Ball_theta <= 0)
+        Ball_theta = Ball_theta + 360;
+        
     Ball_radius = sqrt(pow(Ball_pos.x, 2.0) + pow(Ball_pos.y, 2.0));
 }

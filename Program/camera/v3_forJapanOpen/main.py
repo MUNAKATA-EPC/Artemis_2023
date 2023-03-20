@@ -1,25 +1,27 @@
 import sensor, image, time, math
 from pyb import UART, LED, Pin, Timer
 
-threshold_for_court = (27, 57, -36, 0, -7, 24)# コートの色取り用変数
-threshold_for_goal_yellow = ((70, 90, -15, 13, 52, 82))# ゴールの色取り用変数(黄色)
+threshold_for_court = (13, 56, -31, 9, -10, 25)# コートの色取り用変数
+threshold_for_goal_yellow = (68, 79, -12, 14, 30, 76)# ゴールの色取り用変数(黄色)
 threshold_for_goal_blue = (35, 51, -39, -18, -16, 10) # ゴールの色取り用変数(青色)
-screen_center = [160, 120]                  # 画面の中央座標
+threshold_for_wall = (0, 2, -3, 6, -2, 2)
+screen_center = [185, 105]                  # 画面の中央座標
 
 sensor.reset()
 sensor.set_pixformat(sensor.RGB565)#カラースケール
 sensor.set_framesize(sensor.QVGA)#解像度
-timer = Timer(4, freq=1000)
+sensor.skip_frames(time = 400)
 sensor.set_contrast(0)#コントラスト
-sensor.set_brightness(-2)#明るさ
-sensor.set_saturation(2)#彩3~-3
+sensor.set_brightness(-3)#明るさ
+sensor.set_saturation(1)#彩3~-3
 sensor.set_auto_gain(False) # must be turned off for color tracking
-sensor.set_auto_exposure(False)
-sensor.set_auto_whitebal(False,(-5.874588, -6.02073, -1.887871)) # must be turned off for color tracking,(-5.874588, -6.02073, -1.887871)
+sensor.set_auto_whitebal(False,(-2.502073, -3.219987, 0.6176831))
 
 uart = UART(3, 112500, timeout_char=1000)
 
 clock = time.clock()
+
+timer = Timer(4, freq=1000)
 
 while(True):
     clock.tick()
@@ -67,7 +69,7 @@ while(True):
 
     #=======================コート色取りライン=======================
 
-    for blob in img.find_blobs([threshold_for_court], pixels_threshold=200, area_threshold=200, merge=True):
+    for blob in img.find_blobs([threshold_for_wall], pixels_threshold=10, area_threshold=10, merge=True, margin=30):
         if read_count_court >= 3:              # コートの色を10回以上取った場合、それ以上コートの色取りをしない。
             break
         else:                                   # まだコートの色取りが10回行われていない場合、読み取り回数を増やす。
@@ -79,7 +81,7 @@ while(True):
 
     #=======================黄ゴール色取りライン=======================
 
-    for blob in img.find_blobs([threshold_for_goal_yellow], pixels_threshold=20, area_threshold=20, merge=True):
+    for blob in img.find_blobs([threshold_for_goal_yellow], pixels_threshold=10, area_threshold=10, merge=True,margin=25):
         if read_count_goal_yellow + 1 >= 10:              # コートの色を10回以上取った場合、それ以上コートの色取りをしない。
             break
         else:                                   # まだコートの色取りが10回行われていない場合、読み取り回数を増やす。
@@ -91,7 +93,7 @@ while(True):
 
     #=======================青ゴール色取りライン=======================
 
-    for blob in img.find_blobs([threshold_for_goal_blue], pixels_threshold=20, area_threshold=20, merge=True):
+    for blob in img.find_blobs([threshold_for_goal_blue], pixels_threshold=1, area_threshold=1, merge=True, margin=25):
         if read_count_goal_blue + 1 >= 10:              # コートの色を10回以上取った場合、それ以上コートの色取りをしない。
             break
         else:                                   # まだコートの色取りが10回行われていない場合、読み取り回数を増やす。
@@ -108,13 +110,11 @@ while(True):
     maximum_area_court = (max(area_court[:]))
 
     for i in range(0, 9):
+
         if area_court[i] == maximum_area_court:
             maximum_cx_court = cx_court[i]
             maximum_cy_court = cy_court[i]
             break
-
-    img.draw_cross(maximum_cx_court, maximum_cy_court)    # コートの中心を交差線で描画
-    img.draw_line(screen_center[0], screen_center[1], maximum_cx_court, maximum_cy_court, thickness=2)  # 画面中心からコート中心へのライン描画
 
     #==============================================
 
@@ -127,6 +127,9 @@ while(True):
             maximum_cx_goal_yellow = cx_goal_yellow[i]
             maximum_cy_goal_yellow = cy_goal_yellow[i]
             break
+
+    img.draw_cross(maximum_cx_goal_yellow, maximum_cy_goal_yellow)    # コートの中心を交差線で描画
+    img.draw_line(screen_center[0], screen_center[1], maximum_cx_goal_yellow, maximum_cy_goal_yellow, thickness=2)  # 画面中心からコート中心へのライン描画
 
     #==============================================
 
@@ -156,10 +159,10 @@ while(True):
     goal_deg_yellow = math.atan2((maximum_cx_goal_yellow - screen_center[0]), (maximum_cy_goal_yellow - screen_center[1]))
     if goal_deg_yellow < 0:
         goal_deg_yellow = (2 * math.pi) - abs(goal_deg_yellow)
-    goal_deg_yellow = (math.floor(goal_deg_yellow / (2 * math.pi) * 90))
+    goal_deg_yellow = (math.floor(goal_deg_yellow / (2 * math.pi) * 180))
 
     if maximum_area_goal_yellow == 0:
-        goal_deg_yellow = 100
+        goal_deg_yellow = -1
 
     goal_distance_yellow = math.sqrt(math.pow((maximum_cx_goal_yellow - screen_center[0]), 2) + math.pow((maximum_cy_goal_yellow - screen_center[1]), 2)) - 50;
 
@@ -179,18 +182,18 @@ while(True):
 
     #======================出力フェーズ=======================
 
-    #uart.write(str(court_deg))
-    #uart.write("a")
-    #uart.write(str(court_distance))
-    #uart.write("b")
-    #uart.write(str(goal_deg_yellow))
-    #uart.write("c")
-    #uart.write(str(goal_distance_yellow))
-    #uart.write("d")
-    #uart.write(str(goal_deg_blue))
-    #uart.write("e")
-    #uart.write(str(goal_distance_blue))
-    #uart.write("f")
+    uart.write(str(court_deg))
+    uart.write("a")
+    uart.write(str(court_distance))
+    uart.write("b")
+    uart.write(str(goal_deg_yellow))
+    uart.write("c")
+    uart.write(str(goal_distance_yellow))
+    uart.write("d")
+    uart.write(str(goal_deg_blue))
+    uart.write("e")
+    uart.write(str(goal_distance_blue))
+    uart.write("f")
 
 
 

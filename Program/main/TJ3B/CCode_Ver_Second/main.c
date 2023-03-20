@@ -213,30 +213,12 @@ void Calc_GoalPID(BOOL bDecide) {
 }
 
 int Calc_MotorSpeed(){
-  int motor_speed = 0;
-  int default_speed = 40;
-  float ir_deg = IR_Value / 750.0 * 360.0;
-  float ir_deviation_deg;
-  int add_speed;
-  
-  int ir_dis;
-  float speed_per;
-    
-  //左か右かによって計算方法を変える
-  float center_deg;
-  
-  if(ir_deg <= 165)
-    center_deg = 90;
-  else
-    center_deg = 270;
-  
-  ir_deviation_deg = ir_deg <= 180 ? ir_deg - center_deg : center_deg - ir_deg;
-  add_speed = ir_deviation_deg / 90.0 * 15.0;
-  
-  ir_dis = (300 - (IR_Distance  - 340));
-  speed_per = 1.0 + (ir_dis / 300.0 * 0.35);
-  
-  return (default_speed + add_speed) * speed_per;
+  int ret = 50;
+  if(Court_Deg >= 500)
+     ret = 30;
+  else if(Court_Deg >= 320)
+         ret = 35;
+  return ret;
 }
 
 void user_main(void)
@@ -247,11 +229,7 @@ void user_main(void)
         
     Read_Sensors();
     
-    if(Goal_Deg >= 850)
-      Calc_PID(true);
-    else
-      Calc_GoalPID(true);
-    
+          Calc_PID(true);
     //ラインセンサ処理
     if(Line_Val <= 50) {
       if(!bMove_Line) {
@@ -261,16 +239,18 @@ void user_main(void)
     }
     
     if(get_timer(T1) <= 500){
-      move_deg = ((Court_Deg - 185) / 700.0 * 360.0 + 22) / 45 * 45;
-      move_speed = 30;
-      Move(move_deg, move_speed);
+        gPwm[0] = 0x00 | 0x80;
+        gPwm[1] = 0x00 | 0x80;
+        gPwm[2] = 0x00 | 0x80;
+        gPwm[3] = 0x00 | 0x80;
+        pwm_out();
     }
     else {
       bMove_Line = false;
       
       if(IR_Value < 800) {
           if(IR_Value < 60 || IR_Value > 710) {
-             Move(0, (Goal_Distance <= 500)? 35 : 45);
+                       Move(0, Calc_MotorSpeed());
           }
           else if(IR_Value < 140)
           {
