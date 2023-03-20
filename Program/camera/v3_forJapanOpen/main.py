@@ -150,49 +150,55 @@ while(True):
     court_deg = math.atan2((maximum_cx_court - screen_center[0]), (maximum_cy_court - screen_center[1]))
     if court_deg < 0:
         court_deg = (2 * math.pi) - abs(court_deg)
-    court_deg = (math.floor(court_deg / (2 * math.pi) * 100))
+    court_deg = (math.floor(court_deg / (2 * math.pi) * 180))
 
     court_distance = math.sqrt(math.pow((maximum_cx_court - screen_center[0]), 2) + math.pow((maximum_cy_court - screen_center[1]), 2))
 
     #==============================================
 
-    goal_deg_yellow = math.atan2((maximum_cx_goal_yellow - screen_center[0]), (maximum_cy_goal_yellow - screen_center[1]))
-    if goal_deg_yellow < 0:
-        goal_deg_yellow = (2 * math.pi) - abs(goal_deg_yellow)
-    goal_deg_yellow = (math.floor(goal_deg_yellow / (2 * math.pi) * 180))
+    goal_yellow_deg = math.atan2((maximum_cx_goal_yellow - screen_center[0]), (maximum_cy_goal_yellow - screen_center[1]))
+    if goal_yellow_deg < 0:
+        goal_yellow_deg = (2 * math.pi) - abs(goal_yellow_deg)
+    goal_yellow_deg = (math.floor(goal_yellow_deg / (2 * math.pi) * 180))
 
-    if maximum_area_goal_yellow == 0:
-        goal_deg_yellow = -1
-
-    goal_distance_yellow = math.sqrt(math.pow((maximum_cx_goal_yellow - screen_center[0]), 2) + math.pow((maximum_cy_goal_yellow - screen_center[1]), 2)) - 50;
+    goal_yellow_distance = math.sqrt(math.pow((maximum_cx_goal_yellow - screen_center[0]), 2) + math.pow((maximum_cy_goal_yellow - screen_center[1]), 2)) - 50;
 
     #==============================================
 
-    goal_deg_blue = math.atan2((maximum_cx_goal_blue - screen_center[0]), (maximum_cy_goal_blue - screen_center[1]))
-    if goal_deg_blue < 0:
-        goal_deg_blue = (2 * math.pi) - abs(goal_deg_blue)
-    goal_deg_blue = (math.floor(goal_deg_blue / (2 * math.pi) * 90))
+    goal_blue_deg = math.atan2((maximum_cx_goal_blue - screen_center[0]), (maximum_cy_goal_blue - screen_center[1]))
+    if goal_blue_deg < 0:
+        goal_blue_deg = (2 * math.pi) - abs(goal_blue_deg)
+    goal_blue_deg = (math.floor(goal_blue_deg / (2 * math.pi) * 180))
 
-    if maximum_area_goal_blue == 0:
-        goal_deg_blue = 100
-
-    goal_distance_blue = math.sqrt(math.pow((maximum_cx_goal_blue - screen_center[0]), 2) + math.pow((maximum_cy_goal_blue - screen_center[1]), 2)) - 50;
+    goal_blue_distance = math.sqrt(math.pow((maximum_cx_goal_blue - screen_center[0]), 2) + math.pow((maximum_cy_goal_blue - screen_center[1]), 2));
 
     #==============================================
 
     #======================出力フェーズ=======================
 
+    if maximum_area_court == 0:
+        court_deg = 255
+        court_distance = 255
+
+    if maximum_area_goal_yellow == 0:
+        goal_yellow_deg = 255
+        goal_yellow_distance = 255
+
+    if maximum_area_goal_blue == 0:
+        goal_blue_deg = 255
+        goal_blue_distance = 255
+
     uart.write(str(court_deg))
     uart.write("a")
     uart.write(str(court_distance))
     uart.write("b")
-    uart.write(str(goal_deg_yellow))
+    uart.write(str(goal_yellow_deg))
     uart.write("c")
-    uart.write(str(goal_distance_yellow))
+    uart.write(str(goal_yellow_distance))
     uart.write("d")
-    uart.write(str(goal_deg_blue))
+    uart.write(str(goal_blue_deg))
     uart.write("e")
-    uart.write(str(goal_distance_blue))
+    uart.write(str(goal_blue_distance))
     uart.write("f")
 
 

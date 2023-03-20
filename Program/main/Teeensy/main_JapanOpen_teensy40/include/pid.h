@@ -33,9 +33,9 @@ int get_pid_value(int value, int max_value, float gains[3])
     return operations[0] + operations[1] + operations[2];
 }
 
-void PID_loop(float gains[3])
+void PID_loop(int value, float gains[3])
 {
-    operation_PID = get_pid_value(180 - Cam_GoalY_Deg, 180, gains);
+    operation_PID = get_pid_value(value, 180, gains);
 
     if(operation_PID >= PID_MAX)
         operation_PID = PID_MAX; 
