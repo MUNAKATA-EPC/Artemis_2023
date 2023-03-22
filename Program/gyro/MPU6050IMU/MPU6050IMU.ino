@@ -52,7 +52,6 @@ void setup() {
         Fastwire::setup(400, true);
     #endif
     
-    Serial.begin(115200);
     Serial2.begin(115200);
 
     mpu.initialize();
@@ -66,11 +65,9 @@ void setup() {
       mpu.CalibrateGyro(6);
       mpu.PrintActiveOffsets();
      
-      Serial.println(F("Enabling DMP..."));
       mpu.setDMPEnabled(true);
       mpuIntStatus = mpu.getIntStatus();
 
-      Serial.println(F("DMP ready! Waiting for first interrupt..."));
       dmpReady = true;
 
       packetSize = mpu.dmpGetFIFOPacketSize();
@@ -82,10 +79,6 @@ void loop() {
       AttachOffset();
     
     CulcDegData();
-    
-    Serial.print(analogRead(BUTTON_PIN));
-    Serial.print("\t");
-    Serial.println(DegData);
     
     Serial2.println(DegData);
 }

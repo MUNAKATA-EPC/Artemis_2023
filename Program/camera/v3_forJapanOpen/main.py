@@ -2,10 +2,10 @@ import sensor, image, time, math
 from pyb import UART, LED, Pin, Timer
 
 threshold_for_court = (13, 56, -31, 9, -10, 25)# コートの色取り用変数
-threshold_for_goal_yellow = (68, 79, -12, 14, 30, 76)# ゴールの色取り用変数(黄色)
-threshold_for_goal_blue = (35, 51, -39, -18, -16, 10) # ゴールの色取り用変数(青色)
+threshold_for_goal_yellow = (55, 77, 19, 51, 40, 78)# ゴールの色取り用変数(黄色)
+threshold_for_goal_blue = (5, 22, -11, 8, -43, -12) # ゴールの色取り用変数(青色)
 threshold_for_wall = (0, 2, -3, 6, -2, 2)
-screen_center = [185, 105]                  # 画面の中央座標
+screen_center = [165, 105]                  # 画面の中央座標
 
 sensor.reset()
 sensor.set_pixformat(sensor.RGB565)#カラースケール

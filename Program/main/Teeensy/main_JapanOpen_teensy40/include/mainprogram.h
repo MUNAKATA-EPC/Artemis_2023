@@ -4,7 +4,8 @@ namespace Attacker
 
     Timer Line_Timer;
 
-    float gains[3] = {0.60, 0, 12};
+    float gains[3] = {0.60, 0, 6};
+    float gains_gyro[3] = {1.2, 0, 12};
 
     int CulcSpeed()
     {
@@ -33,34 +34,13 @@ namespace Attacker
 
     void Main_Program(bool yellow)
     {
-        if(yellow)
-        {
-            if(Cam_GoalY_Deg == 255)
-            {
-                PID_loop(Gyro_Deg / 2, gains);
-            }
-            else
-            {
-                PID_loop(180 - Cam_GoalY_Deg, gains);
-            }
-        }
-        else
-        {
-            if(Cam_GoalY_Deg == 255)
-            {
-                PID_loop(Gyro_Deg / 2, gains);
-            }
-            else
-            {
-                PID_loop(180 - Cam_GoalB_Deg, gains);
-            }
-        }
+        PID_loop(180 - Cam_GoalY_Deg, gains);
 
         Process_NeoPixel();
 
         CulcSpeed();
 
-        if(Ball_Deg >= 510 || Ball_Deg < 0)
+        if(Ball_Deg >= 500 || Ball_Deg < 0)
         {
             Move(0, 0);
         }
@@ -86,7 +66,6 @@ namespace Attacker
             }
         }
 
-        Serial.println(Ball_Distance);
     }
 }
 
@@ -94,8 +73,14 @@ namespace Defencer
 {
     #define MOTOR_SPEED_B 20
 
+    float gain[3] = {0.6, 0, 12};
+
     void Main_Program(bool yellow)
     {
+        Process_NeoPixel();
 
+        PID_loop(Gyro_Deg, gain);
+
+        Move(0, 0);
     }
-}
+} 
