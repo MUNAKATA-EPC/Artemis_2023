@@ -18,11 +18,15 @@ public:
     void stop(){
         ticking = false;
     }
+    
     void reset(){
         ticking = false;
         value = 0;
     }
     int get_value(){
         return value;
+    }
+    bool isticking(){
+        return ticking;
     }
 };

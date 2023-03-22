@@ -7,11 +7,11 @@ from pyb import LED, Pin, Timer
 # area   = 色取りをした範囲の面積
 # 必然的にpixelsのほうが値は小さくなる…はず。
 
-threshold_for_court = (22, 57, -37, -5, 18, 42)# コートの色取り用変数
+threshold_for_court = (19, 38, -30, 33, 8, 53)# コートの色取り用変数
 threshold_for_goal_yellow = (64, 78, 14, 46, 57, 86)# ゴールの色取り用変数(黄色)
 threshold_for_goal_blue = (35, 51, -39, -18, -16, 10) # ゴールの色取り用変数(青色)
 threshold_for_goal = threshold_for_goal_blue #ゴールの最終色取り変数
-screen_center = [134, 120]                  # 画面の中央座標
+screen_center = [144, 120]                  # 画面の中央座標
 
 red_led = LED(1);
 green_led = LED(2);
@@ -26,7 +26,7 @@ sensor.set_brightness(-2)#明るさ
 sensor.set_saturation(2)#彩3~-3
 sensor.set_auto_gain(False) # must be turned off for color tracking
 sensor.set_auto_exposure(False)
-sensor.set_auto_whitebal(False,(-5.874588, -6.02073, -3.887871)) # must be turned off for color tracking,(-5.874588, -6.02073, -1.887871)
+sensor.set_auto_whitebal(False,(-2.502073, -3.219987, 0.6176831))
 
 clock = time.clock()
 
@@ -62,6 +62,7 @@ while(True):
     maxium_area_goal    =   0                               # ゴールの最大色取りサイズのエリアサイズ
 
     court_deg           =   0                               # 画面中央からのコートの角度
+    court_distance      =   0
     goal_deg            =   0                               # 画面中央からのゴールの角度
     goal_distance       =   0                               # 画面中央からのゴールの距離
 
@@ -105,6 +106,8 @@ while(True):
     if court_deg < 0:
         court_deg = (2 * math.pi) - abs(court_deg)
     court_deg = (math.floor(court_deg / (2 * math.pi) * 100))
+
+    court_distance = math.sqrt(math.pow(maxium_cx_court - screen_center[0], 2.0) + math.pow(maxium_cy_court - screen_center[1], 2.0))
 
     #==========================================================
 
@@ -157,7 +160,6 @@ while(True):
                     read_count_goal += 1
 
                 area_goal[read_count_goal] = blob.area()
-
             read_areaofyellow = (max(area_goal[:]))
 
             print(read_areaofyellow)
@@ -197,10 +199,10 @@ while(True):
 
     #=======================ポート出力ライン========================
 
-    port1.pulse_width_percent(court_deg)
+    port1.pulse_width_percent(int(court_distance))
     port2.pulse_width_percent(goal_deg)
     port3.pulse_width_percent(int(goal_distance))
 
-    print(court_deg)
+    print(court_distance)
 
     #==========================================================
