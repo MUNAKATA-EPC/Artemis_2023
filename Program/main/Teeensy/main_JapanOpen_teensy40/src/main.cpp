@@ -57,11 +57,40 @@ void setup() {
 void loop() {
 
   Read_Sensors();
+  PRGB_1.loop();
+
+  if(PRGB_1.isPushed())
+  {
+    process_program = !process_program;
+  }
+
+  if(process_program)
+  {
+    Defencer::Main_Program(true);
+  }
+  else
+  {
+    NeoPixel_Off();
+    Output_MotorPower(0, 0, 0, 0);
+  }
   
-  Attacker::Main_Program(true);
   
   u8g2.clearBuffer();
-  DrawString(0, 15, String(Ball_Deg).c_str(), u8g2_font_ncenB12_tr);
+  DrawString(0, LCD_TITLE_POINT_Y, "BallRing", u8g2_font_ncenB10_tr);
+  DrawString(7, 31, (String("Deg:") + String(Ball_Deg == 510 ? "NaN" : String(Ball_Deg))).c_str(), u8g2_font_6x10_tr);
+  DrawString(7, 43, (String("Dis:") + String(Ball_Distance == 255 ? "NaN" : String(Ball_Distance))).c_str(), u8g2_font_6x10_tr);
+
+  u8g2.drawCircle(100, 25, 6);
+  u8g2.drawLine(100, 2, 100, 48);
+
+  u8g2.drawLine(77, 25, 123, 25);
+
+  if(Ball_Deg != 510 && Ball_Distance != 255)
+  {
+    double ball_distance = min(max((Ball_Distance - 30) / 50.0 * 20.0, 0), 15);
+    double ball_pos[2] = {cos(radians(Ball_Deg - 90)) * ball_distance, sin(radians(Ball_Deg - 90)) * ball_distance};
+    u8g2.drawDisc(100 + ball_pos[0], 25 + ball_pos[1], 2);
+  }
   u8g2.sendBuffer();
   
   //Process_LCD();

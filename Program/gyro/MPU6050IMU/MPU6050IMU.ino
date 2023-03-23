@@ -5,7 +5,7 @@ MPU6050 mpu;
 
 #define OUTPUT_READABLE_YAWPITCHROLL
 
-#define BUTTON_PIN 0  // use pin 2 on Arduino Uno & most boards
+#define BUTTON_PIN 10  // use pin 2 on Arduino Uno & most boards
 
 bool dmpReady = false;  // set true if DMP init was successful
 uint8_t mpuIntStatus;   // holds actual interrupt status byte from MPU
@@ -33,9 +33,9 @@ void CulcDegData() {
   
   ypr[0] = raw_ypr[0] - offset_ypr[0];
   
-  DegData = ypr[0] * 180/M_PI;
+  DegData = ypr[0] * 180/M_PI/2;
   if(DegData < 0)
-    DegData = DegData + 360;
+    DegData = DegData + 180;
 }
 
 void AttachOffset(){
@@ -51,8 +51,10 @@ void setup() {
     #elif I2CDEV_IMPLEMENTATION == I2CDEV_BUILTIN_FASTWIRE
         Fastwire::setup(400, true);
     #endif
+
+    Serial.begin(9600);
     
-    Serial2.begin(115200);
+    Serial1.begin(115200);
 
     mpu.initialize();
     mpu.dmpInitialize();
@@ -79,6 +81,7 @@ void loop() {
       AttachOffset();
     
     CulcDegData();
+    Serial.println(DegData);
     
-    Serial2.println(DegData);
+    Serial1.write(DegData);
 }

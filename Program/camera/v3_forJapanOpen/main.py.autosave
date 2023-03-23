@@ -5,7 +5,7 @@ threshold_for_court = (13, 56, -31, 9, -10, 25)# コートの色取り用変数
 threshold_for_goal_yellow = (77, 87, -17, 15, 35, 94)# ゴールの色取り用変数(黄色)
 threshold_for_goal_blue = (5, 22, -11, 8, -43, -12) # ゴールの色取り用変数(青色)
 threshold_for_wall = (0, 2, -3, 6, -2, 2)
-screen_center = [140, 105]                  # 画面の中央座標
+screen_center = [163, 135]                  # 画面の中央座標
 
 sensor.reset()
 sensor.set_pixformat(sensor.RGB565)#カラースケール

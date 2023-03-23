@@ -1,16 +1,18 @@
 namespace Attacker
 {
-    #define MOTOR_SPEED_A 25
+    #define MOTOR_SPEED_A 14
 
     Timer Line_Timer;
 
-    float gains[3] = {0.60, 0, 6};
+    float gains[3] = {0.60, 0, 15};
     float gains_gyro[3] = {1.2, 0, 12};
+
+    int Line_Move_deg;
 
     int CulcSpeed()
     {
         // plus gain / minus gain
-        float deg_gain[2] = {0.06, 0.15};
+        float deg_gain[2] = {0.04, 0.1};
         float dis_gain = 0.12;
         int ball_change_deg = 40;
         int ball_deg_val;
@@ -34,50 +36,81 @@ namespace Attacker
 
     void Main_Program(bool yellow)
     {
-        PID_loop(180 - Cam_GoalY_Deg, gains);
-
-        Process_NeoPixel();
-
-        CulcSpeed();
-
-        if(Ball_Deg >= 500 || Ball_Deg < 0)
+        Line_Timer.tick();
+        
+        if(Cam_GoalY_Deg != 255)
         {
-            Move(0, 0);
+            PID_loop(180 - Cam_GoalY_Deg, gains);
         }
         else
         {
-            if(Ball_Deg <= 32 || Ball_Deg >= 360)
+            PID_loop(Gyro_Deg, gains_gyro);
+        }
+
+        CulcSpeed();
+
+        if(Line_Value != 510)
+        {
+            if(!Line_Timer.isticking())
             {
-                Move(0, MOTOR_SPEED_A);
-            }
-            else 
-            {
-                if(Ball_Deg <= 180)
-                {
-                    int move_deg = Ball_Deg + (90 - min(max(Ball_Distance - 60, 0) / 15.0 * 80.0, 85));
-                    Move(move_deg, CulcSpeed());
-                }
-                else
-                {
-                    int move_deg = Ball_Deg - (90 - min(max(Ball_Distance - 60, 0) / 45.0 * 90.0, 70));
-                    Move(move_deg, CulcSpeed());
-                }
-    
+                Line_Timer.reset();
+                Line_Timer.start();
+                Line_Move_deg = Line_Value;
             }
         }
 
+        if(Line_Timer.isticking())
+        {
+            if(Line_Timer.get_value() <= 400)
+            {
+                int move_deg = ((Line_Move_deg + 360) - 180) % 360;
+                Move(move_deg, MOTOR_SPEED_A);
+            }
+            else
+            {
+                Line_Timer.reset();
+            }
+        }
+        else
+        {
+            if(Ball_Deg >= 500 || Ball_Deg < 0)
+            {
+                Move(0, 0);
+            }
+            else
+            {
+                if(Ball_Deg <= 32 || Ball_Deg >= 360)
+                {
+                    Move(0, MOTOR_SPEED_A);
+                }
+                else 
+                {
+                    if(Ball_Deg <= 180)
+                    {
+                        int move_deg = Ball_Deg + (90 - min(max(Ball_Distance - 60, 0) / 15.0 * 80.0, 85));
+                        Move(move_deg, CulcSpeed());
+                    }
+                    else
+                    {
+                        int move_deg = Ball_Deg - (90 - min(max(Ball_Distance - 60, 0) / 45.0 * 90.0, 70));
+                        Move(move_deg, CulcSpeed());
+                    }
+        
+                }
+            }
+        }
     }
 }
 
 namespace Defencer
 {
-    #define MOTOR_SPEED_B 20
+    #define MOTOR_SPEED_B 15
 
     float gain[3] = {0.6, 0, 12};
 
     void Main_Program(bool yellow)
     {
-        Process_NeoPixel();
+        //Process_NeoPixel();
 
         PID_loop(Gyro_Deg, gain);
 

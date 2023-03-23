@@ -1,4 +1,4 @@
-#define PID_MAX 15
+#define PID_MAX 8
 
 int operation_PID;
 int deviation;

@@ -1,9 +1,8 @@
 #include "I2Cdev.h"
 #include "MPU6050_6Axis_MotionApps20.h"
+#define BUTTON_PIN 10  // use pin 2 on Arduino Uno & most boards
 
 MPU6050 mpu = MPU6050(0x69);
-
-#define BUTTON_PIN 22  // use pin 2 on Arduino Uno & most boards
 
 bool dmpReady = false;  // set true if DMP init was successful
 uint8_t mpuIntStatus;   // holds actual interrupt status byte from MPU
@@ -14,10 +13,17 @@ uint8_t fifoBuffer[64]; // FIFO storage buffer
 
 float ypr[3], raw_ypr[3], offset_ypr[3];           //yaw   yaw/pitch/roll container and gravity vector
 
+int DegData;
+
+typedef struct{
+  int index = 0;
+  int value = 0;
+} IR_SENSOR;
+
+IR_SENSOR IR_Sen[16];
+
 int theta;
 int radius;
-
-int DegData;
 
 void CulcDegData() {
   if (!dmpReady) return;
@@ -39,13 +45,6 @@ void CulcDegData() {
 void AttachOffset(){
   offset_ypr[0] = raw_ypr[0];
 }
-
-typedef struct{
-  int index = 0;
-  int value = 0;
-} IR_SENSOR;
-
-IR_SENSOR IR_Sen[16];
 
 //比較対象のvalue値の比較を行います。
 //n1<n2 : 1 
@@ -73,28 +72,29 @@ bool CheckAllSensor(){
 }
 
 void setup() {
-  Serial1.begin(115200);
-  Serial2.begin(115200);
   
   for(int i = 0; i < 16; i++)
   {
     pinMode(i, INPUT);
   }
-  
-  pinMode(BUTTON_PIN, INPUT_PULLUP);
 
+  pinMode(BUTTON_PIN, INPUT_PULLUP);
+  
   #if I2CDEV_IMPLEMENTATION == I2CDEV_ARDUINO_WIRE
       Wire.begin();
       Wire.setClock(400000); // 400kHz I2C clock. Comment this line if having compilation difficulties
   #elif I2CDEV_IMPLEMENTATION == I2CDEV_BUILTIN_FASTWIRE
       Fastwire::setup(400, true);
   #endif
+  
+  Serial1.begin(115200);
+  Serial2.begin(115200);
 
   mpu.initialize();
   mpu.dmpInitialize();
 
-  mpu.setZGyroOffset(-31); //64
-  mpu.setZAccelOffset(5384); //724
+  mpu.setZGyroOffset(47); //64
+  mpu.setZAccelOffset(560); //724
 
   if (devStatus == 0) {
     mpu.CalibrateAccel(6);
@@ -111,12 +111,11 @@ void setup() {
 }
 
 void loop() {
-  
-  if(digitalRead(BUTTON_PIN) == LOW)
-    AttachOffset();
+  //if(digitalRead(BUTTON_PIN) == LOW)
+  //  AttachOffset();
   
   CulcDegData();
-
+  
   for(int i = 0; i < 16; i++)
   {
     IR_Sen[i].value = analogRead(i);
@@ -143,11 +142,10 @@ void loop() {
   }
   else
   {
-    theta = 254;
-    radius = 254;
+    theta = 255;
+    radius = 255;
   }
 
-  Serial1.write(255);
   Serial1.write(DegData);
   Serial1.flush();
   
