@@ -1,8 +1,10 @@
 #include "I2Cdev.h"
 #include "MPU6050_6Axis_MotionApps20.h"
-#define BUTTON_PIN 10  // use pin 2 on Arduino Uno & most boards
+#define BUTTON_PIN 22  // use pin 2 on Arduino Uno & most boards
 
 MPU6050 mpu = MPU6050(0x69);
+
+#define OUTPUT_READABLE_YAWPITCHROLL
 
 bool dmpReady = false;  // set true if DMP init was successful
 uint8_t mpuIntStatus;   // holds actual interrupt status byte from MPU
@@ -87,14 +89,15 @@ void setup() {
       Fastwire::setup(400, true);
   #endif
   
+  Serial.begin(9600);
   Serial1.begin(115200);
   Serial2.begin(115200);
 
   mpu.initialize();
   mpu.dmpInitialize();
 
-  mpu.setZGyroOffset(47); //64
-  mpu.setZAccelOffset(560); //724
+  mpu.setZGyroOffset(-31); //64
+  mpu.setZAccelOffset(5384); //724
 
   if (devStatus == 0) {
     mpu.CalibrateAccel(6);
@@ -111,8 +114,8 @@ void setup() {
 }
 
 void loop() {
-  //if(digitalRead(BUTTON_PIN) == LOW)
-  //  AttachOffset();
+  if(digitalRead(BUTTON_PIN) == LOW)
+    AttachOffset();
   
   CulcDegData();
   
