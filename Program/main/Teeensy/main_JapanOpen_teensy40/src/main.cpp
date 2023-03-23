@@ -10,7 +10,8 @@
 #include "button.h"
 #include "sensors.h"
 #include "neopixel.h"
-#include "mainprogram.h"
+#include "attacker.h"
+#include "defencer.h"
 #include "debug_program.h"
 
 #define PIN_PRGB1 6
