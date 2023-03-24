@@ -13,7 +13,6 @@ int Cam_GoalB_Deg;
 int Cam_GoalB_Dis;
 
 void Initialize_Sensors(){
-    Serial2.begin(115200);
     Serial3.begin(115200);      //Mega(Ball) ======> Teensy
     Serial4.begin(115200);      //Mega(Line) ======> Teensy
     Serial5.begin(115200);      //OpenMV     ======> Teensy
@@ -22,7 +21,6 @@ void Initialize_Sensors(){
 
 void Read_Sensors(){
     //Ball Deg And Distance From Mega
-    
     if(Serial3.available() > 0)
     {
         int head_ball = Serial3.read();
@@ -62,5 +60,5 @@ void Read_Sensors(){
             Gyro_Deg = test;
     }
 
-    Serial.println(Ball_Deg);
-}   
+    Serial.println(Line_Value);
+}

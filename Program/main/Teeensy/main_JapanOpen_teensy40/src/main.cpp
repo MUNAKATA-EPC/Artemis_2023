@@ -52,7 +52,7 @@ void setup() {
 
   dsr1202.Init();
 
-  process_program = false;
+  process_program = true;
 }
 
 void loop() {
@@ -67,7 +67,7 @@ void loop() {
 
   if(process_program)
   {
-    Defencer::Main_Program(true);
+    Attacker::Main_Program(true);
   }
   else
   {
@@ -77,22 +77,8 @@ void loop() {
   
   
   u8g2.clearBuffer();
-  DrawString(0, LCD_TITLE_POINT_Y, "BallRing", u8g2_font_ncenB10_tr);
-  DrawString(7, 31, (String("Deg:") + String(Ball_Deg == 510 ? "510" : String(Ball_Deg))).c_str(), u8g2_font_6x10_tr);
-  DrawString(7, 43, (String("Dis:") + String(Ball_Distance == 255 ? "255" : String(Ball_Distance))).c_str(), u8g2_font_6x10_tr);
-
-  u8g2.drawCircle(100, 25, 6);
-  u8g2.drawLine(100, 2, 100, 48);
-
-  u8g2.drawLine(77, 25, 123, 25);
-
-  if(Ball_Deg != 510 && Ball_Distance != 255)
-  {
-    double ball_distance = min(max((Ball_Distance - 30) / 50.0 * 20.0, 0), 15);
-    double ball_pos[2] = {cos(radians(Ball_Deg - 90)) * ball_distance, sin(radians(Ball_Deg - 90)) * ball_distance};
-    u8g2.drawDisc(100 + ball_pos[0], 25 + ball_pos[1], 2);
-  }
+  DrawString(3, 31, (String("Deg:") + String(Ball_Deg == 510 ? "510" : String(Ball_Deg))).c_str(), u8g2_font_6x10_tr);
+  DrawString(3, 43, (String("Dis:") + String(Ball_Distance == 255 ? "255" : String(Ball_Distance))).c_str(), u8g2_font_6x10_tr);
+  DrawString(47, 43, (String("Deg:") + String(Gyro_Deg)).c_str(), u8g2_font_6x10_tr);
   u8g2.sendBuffer();
-  
-  //Process_LCD();
 }

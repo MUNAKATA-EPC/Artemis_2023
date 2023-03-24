@@ -1,3 +1,5 @@
+//[-1545,-1544] --> [-27,9]	[577,577] --> [-31,390]	[1049,1050] --> [16361,16389]	[-106,-105] --> [0,1]	[85,86] --> [0,1]	[11,12] --> [0,1]
+
 #include "I2Cdev.h"
 #include "MPU6050_6Axis_MotionApps20.h"
 
@@ -53,14 +55,14 @@ void setup() {
     #endif
 
     Serial.begin(9600);
-    
+    -
     Serial1.begin(115200);
 
     mpu.initialize();
     mpu.dmpInitialize();
 
-    mpu.setZGyroOffset(47); //64
-    mpu.setZAccelOffset(560); //724
+    mpu.setZGyroOffset(10); //64
+    mpu.setZAccelOffset(1046); //724
 
     if (devStatus == 0) {
       mpu.CalibrateAccel(6);

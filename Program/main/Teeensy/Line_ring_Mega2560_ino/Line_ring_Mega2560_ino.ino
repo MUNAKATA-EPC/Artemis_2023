@@ -25,6 +25,7 @@ void loop() {
     Line_Now = false;
     Line_Deg = 0;
     Serial1.write(255);
+    Serial1.flush();
   }
   else
   {
@@ -47,6 +48,7 @@ void loop() {
             Line_Now = true;
             
             Serial1.write(First_deg / 2);
+            Serial1.flush();    
             break;
         }
       }
@@ -104,7 +106,7 @@ void loop() {
           }
         }
         
-        Serial1.write(45);
+        Serial1.write(First_deg / 2);
         Serial1.flush();
     }
   }

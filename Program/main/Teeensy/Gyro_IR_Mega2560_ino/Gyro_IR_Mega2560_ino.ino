@@ -82,43 +82,11 @@ void setup() {
 
   pinMode(BUTTON_PIN, INPUT_PULLUP);
   
-  #if I2CDEV_IMPLEMENTATION == I2CDEV_ARDUINO_WIRE
-      Wire.begin();
-      Wire.setClock(400000); // 400kHz I2C clock. Comment this line if having compilation difficulties
-  #elif I2CDEV_IMPLEMENTATION == I2CDEV_BUILTIN_FASTWIRE
-      Fastwire::setup(400, true);
-  #endif
-  
   Serial.begin(9600);
-  Serial1.begin(115200);
   Serial2.begin(115200);
-
-  mpu.initialize();
-  mpu.dmpInitialize();
-
-  mpu.setZGyroOffset(-31); //64
-  mpu.setZAccelOffset(5384); //724
-
-  if (devStatus == 0) {
-    mpu.CalibrateAccel(6);
-    mpu.CalibrateGyro(6);
-    mpu.PrintActiveOffsets();
-   
-    mpu.setDMPEnabled(true);
-    mpuIntStatus = mpu.getIntStatus();
-
-    dmpReady = true;
-
-    packetSize = mpu.dmpGetFIFOPacketSize();
-  }
 }
 
 void loop() {
-  if(digitalRead(BUTTON_PIN) == LOW)
-    AttachOffset();
-  
-  CulcDegData();
-  
   for(int i = 0; i < 16; i++)
   {
     IR_Sen[i].value = analogRead(i);
@@ -148,9 +116,6 @@ void loop() {
     theta = 255;
     radius = 255;
   }
-
-  Serial1.write(DegData);
-  Serial1.flush();
   
   Serial2.write(255);
   Serial2.write(theta);

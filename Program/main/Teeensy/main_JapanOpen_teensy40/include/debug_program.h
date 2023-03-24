@@ -24,3 +24,11 @@ namespace LINE_PROG
         }
     }
 }
+
+namespace DEBUG_PROG
+{
+    void Main_Program()
+    {
+        Move(0, 20);
+    }
+}

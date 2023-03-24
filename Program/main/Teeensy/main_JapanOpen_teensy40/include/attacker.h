@@ -1,18 +1,18 @@
 namespace Attacker
 {
-    #define MOTOR_SPEED_A 14
+    #define MOTOR_SPEED_A 18
 
     Timer Line_Timer;
 
     float gains[3] = {0.60, 0, 15};
-    float gains_gyro[3] = {1.2, 0, 12};
+    float gains_gyro[3] = {0.50, 0, 26};
 
     int Line_Move_deg;
 
     int CulcSpeed()
     {
         // plus gain / minus gain
-        float deg_gain[2] = {0.04, 0.1};
+        float deg_gain[2] = {0.04, 0.05};
         float dis_gain = 0.12;
         int ball_change_deg = 40;
         int ball_deg_val;
@@ -36,17 +36,11 @@ namespace Attacker
 
     void Main_Program(bool yellow)
     {
+        PID_loop(Gyro_Deg, gains_gyro);
+
+        /*
         Line_Timer.tick();
         
-        if(Cam_GoalY_Deg != 255)
-        {
-            PID_loop(180 - Cam_GoalY_Deg, gains);
-        }
-        else
-        {
-            PID_loop(Gyro_Deg, gains_gyro);
-        }
-
         CulcSpeed();
 
         if(Line_Value != 510)
@@ -58,6 +52,7 @@ namespace Attacker
                 Line_Move_deg = Line_Value;
             }
         }
+        
 
         if(Line_Timer.isticking())
         {
@@ -72,6 +67,7 @@ namespace Attacker
             }
         }
         else
+        */
         {
             if(Ball_Deg >= 500 || Ball_Deg < 0)
             {
