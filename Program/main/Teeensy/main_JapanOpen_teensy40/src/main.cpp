@@ -52,7 +52,9 @@ void setup() {
 
   dsr1202.Init();
 
-  process_program = false;
+  process_program = true;
+
+  delay(3000);
 }
 
 void loop() {
@@ -79,7 +81,7 @@ void loop() {
   u8g2.clearBuffer();
   DrawString(0, LCD_TITLE_POINT_Y, "BallRing", u8g2_font_ncenB10_tr);
   DrawString(7, 31, (String("Deg:") + String(Ball_Deg == 510 ? "510" : String(Ball_Deg))).c_str(), u8g2_font_6x10_tr);
-  DrawString(7, 43, (String("Dis:") + String(Ball_Distance == 255 ? "255" : String(Ball_Distance))).c_str(), u8g2_font_6x10_tr);
+  DrawString(7, 43, (String("Val:") + String(Defencer::Ball_Wait.get_value())).c_str(), u8g2_font_6x10_tr);
 
   u8g2.drawCircle(100, 25, 6);
   u8g2.drawLine(100, 2, 100, 48);
