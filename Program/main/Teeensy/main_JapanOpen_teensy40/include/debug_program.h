@@ -27,7 +27,7 @@ namespace LINE_PROG
 
 namespace DEBUG_PROG
 {
-    void Main_Program()
+    void Main_Program(int debug)
     {
         Move(0, 20);
     }

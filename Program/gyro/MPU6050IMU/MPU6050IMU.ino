@@ -1,4 +1,4 @@
-//[-1545,-1544] --> [-27,9]	[577,577] --> [-31,390]	[1049,1050] --> [16361,16389]	[-106,-105] --> [0,1]	[85,86] --> [0,1]	[11,12] --> [0,1]
+//  [-4827,-4826] --> [-15,2]	[-1149,-1148] --> [-9,9]	[517,518] --> [16374,16399]	[85,86] --> [-1,2]	[10,11] --> [-1,3]	[34,35] --> [-2,1]
 
 #include "I2Cdev.h"
 #include "MPU6050_6Axis_MotionApps20.h"
@@ -24,15 +24,24 @@ void CulcDegData();
 void AttachOffset();
 
 void CulcDegData() {
-  if (!dmpReady) return;
-  if (mpu.dmpGetCurrentFIFOPacket(fifoBuffer)) {// Get the Latest packet
-    Quaternion _quaternion;
-    VectorFloat _gravity;
-    mpu.dmpGetQuaternion(&_quaternion, fifoBuffer);
-    mpu.dmpGetGravity(&_gravity, &_quaternion);
-    mpu.dmpGetYawPitchRoll(raw_ypr, &_quaternion, &_gravity);
+  mpuIntStatus = mpu.getIntStatus();
+  if ((mpuIntStatus & 0x10) || fifoCount == 1024) {
+    mpu.resetFIFO();
+    delay(10);
   }
+
+  while (fifoCount < packetSize) fifoCount = mpu.getFIFOCount();
   
+  fifoBuffer[64];
+  mpu.getFIFOBytes(fifoBuffer, packetSize);
+  fifoCount -= packetSize;
+
+  Quaternion _quaternion;
+  VectorFloat _gravity;
+  mpu.dmpGetQuaternion(&_quaternion, fifoBuffer);
+  mpu.dmpGetGravity(&_gravity, &_quaternion);
+  mpu.dmpGetYawPitchRoll(raw_ypr, &_quaternion, &_gravity);
+
   ypr[0] = raw_ypr[0] - offset_ypr[0];
   
   DegData = ypr[0] * 180/M_PI/2;
@@ -47,35 +56,23 @@ void AttachOffset(){
 void setup() {
     pinMode(BUTTON_PIN, INPUT_PULLUP);
 
-    #if I2CDEV_IMPLEMENTATION == I2CDEV_ARDUINO_WIRE
-        Wire.begin();
-        Wire.setClock(400000); // 400kHz I2C clock. Comment this line if having compilation difficulties
-    #elif I2CDEV_IMPLEMENTATION == I2CDEV_BUILTIN_FASTWIRE
-        Fastwire::setup(400, true);
-    #endif
+    Wire.begin();
+    Wire.setClock(400000);
 
     Serial.begin(9600);
-    -
     Serial1.begin(115200);
 
     mpu.initialize();
     mpu.dmpInitialize();
+    mpu.setDMPEnabled(true);
 
-    mpu.setZGyroOffset(10); //64
-    mpu.setZAccelOffset(1046); //724
+    mpu.setXGyroOffset(-30); //64
+    mpu.setYGyroOffset(29); //64
+    mpu.setZGyroOffset(15); //64
+    mpu.setZAccelOffset(1596); //724
 
-    if (devStatus == 0) {
-      mpu.CalibrateAccel(6);
-      mpu.CalibrateGyro(6);
-      mpu.PrintActiveOffsets();
-     
-      mpu.setDMPEnabled(true);
-      mpuIntStatus = mpu.getIntStatus();
-
-      dmpReady = true;
-
-      packetSize = mpu.dmpGetFIFOPacketSize();
-    }
+    mpuIntStatus = mpu.getIntStatus();
+    packetSize = mpu.dmpGetFIFOPacketSize();
 }
 
 void loop() {
@@ -83,7 +80,9 @@ void loop() {
       AttachOffset();
     
     CulcDegData();
+
     Serial.println(DegData);
     
     Serial1.write(DegData);
+    Serial1.flush();
 }

@@ -1,21 +1,23 @@
 import sensor, image, time, math
 from pyb import UART, LED, Pin, Timer
 
-threshold_for_court = (13, 56, -31, 9, -10, 25)# コートの色取り用変数
-threshold_for_goal_yellow = (83, 95, -31, 8, 21, 87)# ゴールの色取り用変数(黄色)
-threshold_for_goal_blue = (5, 22, -11, 8, -43, -12) # ゴールの色取り用変数(青色)
+threshold_for_court = (55, 84, -42, -9, -11, 26)# コートの色取り用変数
+threshold_for_goal_yellow = (60, 77, -19, 22, 49, 75)# ゴールの色取り用変数(黄色)
+threshold_for_goal_blue =  (32, 42, -23, -6, -18, 9)
+
+ # ゴールの色取り用変数(青色)
 threshold_for_wall = (0, 2, -3, 6, -2, 2)
-screen_center = [173, 130]                  # 画面の中央座標
+screen_center = [157, 108]                  # 画面の中央座標
 
 sensor.reset()
 sensor.set_pixformat(sensor.RGB565)#カラースケール
 sensor.set_framesize(sensor.QVGA)#解像度
 sensor.skip_frames(time = 400)
 sensor.set_contrast(0)#コントラスト
-sensor.set_brightness(-3)#明るさ
+sensor.set_brightness(-1)#明るさ
 sensor.set_saturation(1)#彩3~-3
 sensor.set_auto_gain(False) # must be turned off for color tracking
-sensor.set_auto_whitebal(False,(-2.502073, -3.219987, 0.6176831))
+sensor.set_auto_whitebal(False,(-4.502073, -6.21998, -2.6176831))
 
 uart = UART(3, 112500, timeout_char=1000)
 
@@ -69,7 +71,7 @@ while(True):
 
     #=======================コート色取りライン=======================
 
-    for blob in img.find_blobs([threshold_for_wall], pixels_threshold=10, area_threshold=10, merge=True, margin=30):
+    for blob in img.find_blobs([threshold_for_court], pixels_threshold=10, area_threshold=10, merge=True, margin=30):
         if read_count_court >= 3:              # コートの色を10回以上取った場合、それ以上コートの色取りをしない。
             break
         else:                                   # まだコートの色取りが10回行われていない場合、読み取り回数を増やす。
@@ -116,6 +118,9 @@ while(True):
             maximum_cy_court = cy_court[i]
             break
 
+    img.draw_cross(maximum_cx_court, maximum_cy_court)    # コートの中心を交差線で描画
+    img.draw_line(screen_center[0], screen_center[1], maximum_cx_court, maximum_cy_court, thickness=2)  # 画面中心からコート中心へのライン描画
+
     #==============================================
 
     maximum_cx_goal_yellow = (max(cx_goal_yellow[:]))
@@ -127,9 +132,6 @@ while(True):
             maximum_cx_goal_yellow = cx_goal_yellow[i]
             maximum_cy_goal_yellow = cy_goal_yellow[i]
             break
-
-    img.draw_cross(maximum_cx_goal_yellow, maximum_cy_goal_yellow)    # コートの中心を交差線で描画
-    img.draw_line(screen_center[0], screen_center[1], maximum_cx_goal_yellow, maximum_cy_goal_yellow, thickness=2)  # 画面中心からコート中心へのライン描画
 
     #==============================================
 
@@ -161,7 +163,7 @@ while(True):
         goal_yellow_deg = (2 * math.pi) - abs(goal_yellow_deg)
     goal_yellow_deg = (math.floor(goal_yellow_deg / (2 * math.pi) * 180))
 
-    goal_yellow_distance = math.sqrt(math.pow((maximum_cx_goal_yellow - screen_center[0]), 2) + math.pow((maximum_cy_goal_yellow - screen_center[1]), 2)) - 50;
+    goal_yellow_distance = math.sqrt(math.pow((maximum_cx_goal_yellow - screen_center[0]), 2) + math.pow((maximum_cy_goal_yellow - screen_center[1]), 2));
 
     #==============================================
 
@@ -201,7 +203,7 @@ while(True):
     uart.write(str(goal_blue_distance))
     uart.write("f")
 
-    print(goal_yellow_deg)
+    print(court_deg)
 
 
 

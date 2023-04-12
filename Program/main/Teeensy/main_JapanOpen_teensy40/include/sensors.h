@@ -59,6 +59,4 @@ void Read_Sensors(){
         if(test != -1)
             Gyro_Deg = test;
     }
-
-    Serial.println(Line_Value);
 }

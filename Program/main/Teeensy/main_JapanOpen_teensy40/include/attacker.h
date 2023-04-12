@@ -1,13 +1,17 @@
 namespace Attacker
 {
-    #define MOTOR_SPEED_A 18
+    #define MOTOR_SPEED_A 20
 
     Timer Line_Timer;
 
-    float gains[3] = {0.60, 0, 15};
-    float gains_gyro[3] = {0.50, 0, 26};
+    float gains[3] = {0.30, 0, 15};
+    float gains_gyro[3] = {0.30, 0, 15};
 
     int Line_Move_deg;
+
+    int Cam_Data[2];
+
+    bool Line_Moving;
 
     int CulcSpeed()
     {
@@ -36,38 +40,55 @@ namespace Attacker
 
     void Main_Program(bool yellow)
     {
-        PID_loop(Gyro_Deg, gains_gyro);
+        if(yellow)
+        {
+            Cam_Data[0] = Cam_GoalY_Deg;
+            Cam_Data[1] = Cam_GoalY_Dis;
 
-        /*
+            if(Cam_GoalY_Deg == 255)
+                PID_loop(Gyro_Deg / 2, gains_gyro);
+            else
+                PID_loop(180 - Cam_GoalY_Deg, gains);
+        }
+        else
+        {
+            Cam_Data[0] = Cam_GoalB_Deg;
+            Cam_Data[1] = Cam_GoalB_Dis;
+
+            if(Cam_GoalB_Deg == 255)
+                PID_loop(Gyro_Deg / 2, gains_gyro);
+            else
+                PID_loop(180 - Cam_GoalB_Deg, gains);
+        }
+
         Line_Timer.tick();
         
         CulcSpeed();
 
         if(Line_Value != 510)
         {
-            if(!Line_Timer.isticking())
+            if(!Line_Moving)
             {
                 Line_Timer.reset();
                 Line_Timer.start();
-                Line_Move_deg = Line_Value;
+                Line_Move_deg = Cam_Court_Deg;
+                Line_Moving = true;
             }
         }
-        
 
-        if(Line_Timer.isticking())
+        if(Line_Moving)
         {
-            if(Line_Timer.get_value() <= 400)
+            if(Line_Timer.get_value() <= 500)
             {
-                int move_deg = ((Line_Move_deg + 360) - 180) % 360;
-                Move(move_deg, MOTOR_SPEED_A);
+                Move(Cam_Court_Deg * 2, MOTOR_SPEED_A + 2);
             }
             else
             {
                 Line_Timer.reset();
+                Line_Moving = false;
             }
         }
         else
-        */
         {
             if(Ball_Deg >= 500 || Ball_Deg < 0)
             {
@@ -77,23 +98,32 @@ namespace Attacker
             {
                 if(Ball_Deg <= 32 || Ball_Deg >= 360)
                 {
-                    Move(0, MOTOR_SPEED_A);
+                    if(Cam_Data[1] <= 88)
+                    {
+                        Move(0, MOTOR_SPEED_A - 6);
+                    }
+                    else
+                    {
+                        Move(0, MOTOR_SPEED_A);
+                    }
                 }
                 else 
                 {
                     if(Ball_Deg <= 180)
                     {
                         int move_deg = Ball_Deg + (90 - min(max(Ball_Distance - 60, 0) / 15.0 * 80.0, 85));
-                        Move(move_deg, CulcSpeed());
+                        Move(move_deg, MOTOR_SPEED_A);
                     }
                     else
                     {
                         int move_deg = Ball_Deg - (90 - min(max(Ball_Distance - 60, 0) / 45.0 * 90.0, 70));
-                        Move(move_deg, CulcSpeed());
+                        Move(move_deg, MOTOR_SPEED_A);
                     }
         
                 }
             }
         }
+
+        Serial.println(Cam_Court_Deg);
     }
 }

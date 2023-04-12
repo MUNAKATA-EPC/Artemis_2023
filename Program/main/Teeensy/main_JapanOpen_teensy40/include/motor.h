@@ -1,7 +1,7 @@
 DSR1202 dsr1202(1);
 
 void Output_MotorPower(int A, int B, int C, int D){
-    dsr1202.move(-A, -B, -C, D, false);
+    dsr1202.move(-A, -B, -C, -D, false);
 }
 
 void Break(){
@@ -31,7 +31,6 @@ void Move(int deg, int power)
     power_B -= operation_PID;
     power_C += operation_PID;
     power_D -= operation_PID;
-
     if( abs(power_A) <= 5 && abs(power_B) <= 5 && 
         abs(power_C) <= 5 && abs(power_D) <= 5)
         Break();
