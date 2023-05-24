@@ -1,23 +1,22 @@
 import sensor, image, time, math
 from pyb import UART, LED, Pin, Timer
 
-threshold_for_court = (55, 84, -42, -9, -11, 26)# コートの色取り用変数
-threshold_for_goal_yellow = (60, 77, -19, 22, 49, 75)# ゴールの色取り用変数(黄色)
+threshold_for_court = (50, 91, -88, -55, 35, 62)# コートの色取り用変数
+threshold_for_goal_yellow = (63, 80, -29, 33, 43, 74)# ゴールの色取り用変数(黄色)
 threshold_for_goal_blue =  (32, 42, -23, -6, -18, 9)
 
  # ゴールの色取り用変数(青色)
 threshold_for_wall = (0, 2, -3, 6, -2, 2)
-screen_center = [157, 108]                  # 画面の中央座標
+screen_center = [150, 140]                  # 画面の中央座標
 
 sensor.reset()
 sensor.set_pixformat(sensor.RGB565)#カラースケール
-sensor.set_framesize(sensor.QVGA)#解像度
-sensor.skip_frames(time = 400)
+sensor.set_framesize(sensor.QVGA)#解像度Ss
 sensor.set_contrast(0)#コントラスト
 sensor.set_brightness(-1)#明るさ
 sensor.set_saturation(1)#彩3~-3
 sensor.set_auto_gain(False) # must be turned off for color tracking
-sensor.set_auto_whitebal(False,(-4.502073, -6.21998, -2.6176831))
+sensor.set_auto_whitebal(False,(-6.502073, -6.21998, -2.6176831))
 
 uart = UART(3, 112500, timeout_char=1000)
 
@@ -71,7 +70,7 @@ while(True):
 
     #=======================コート色取りライン=======================
 
-    for blob in img.find_blobs([threshold_for_court], pixels_threshold=10, area_threshold=10, merge=True, margin=30):
+    for blob in img.find_blobs([threshold_for_court], pixels_threshold=400, area_threshold=10, merge=True, margin=10):
         if read_count_court >= 3:              # コートの色を10回以上取った場合、それ以上コートの色取りをしない。
             break
         else:                                   # まだコートの色取りが10回行われていない場合、読み取り回数を増やす。
@@ -203,7 +202,7 @@ while(True):
     uart.write(str(goal_blue_distance))
     uart.write("f")
 
-    print(court_deg)
+    print(goal_yellow_deg)
 
 
 
