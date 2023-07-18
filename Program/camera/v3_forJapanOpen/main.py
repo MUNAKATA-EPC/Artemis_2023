@@ -2,7 +2,7 @@ import sensor, image, time, math
 from pyb import UART, LED, Pin, Timer
 
 threshold_for_court =(23, 73, -27, 39, -48, 54)# コートの色取り用変数
-threshold_for_goal_yellow =(65, 96, -83, -9, 35, 82)# ゴールの色取り用変数(黄色)
+threshold_for_goal_yellow =(34, 76, -50, -8, -15, 38)# ゴールの色取り用変数(黄色)
 threshold_for_goal_blue =(25, 76, 4, 41, -87, -50)
  # ゴールの色取り用変数(青色)
 threshold_for_wall = (0, 2, -3, 6, -2, 2)
@@ -15,7 +15,7 @@ sensor.set_contrast(1)#コントラスト
 sensor.set_brightness(-1)#明るさ
 sensor.set_saturation(1)#彩3~-3
 sensor.set_auto_gain(False) # must be turned off for color tracking
-sensor.set_auto_whitebal(False,(-6.502073, -6.21998, -2.6176831))
+sensor.set_auto_whitebal(False,(-7.502073, -7.21998, -3.6176831))
 
 uart = UART(3, 112500, timeout_char=1000)
 
@@ -201,7 +201,7 @@ while(True):
     uart.write(str(goal_blue_distance))
     uart.write("f")
 
-    print(goal_yellow_deg)
+    print(court_deg)
 
 
 

@@ -41,7 +41,7 @@ namespace Attacker
 
     void Main_Program(bool yellow)
     {
-        rainbow(50);
+
 
         Line_Timer.tick();
 
@@ -54,7 +54,7 @@ namespace Attacker
             if(Cam_GoalY_Deg == 255)
                 PID_loop(Gyro_Deg - 90, gains_gyro, 180);
             else
-                PID_loop(180 - Cam_GoalY_Deg, gains, 180);
+                PID_loop(180 - Cam_GoalY_Deg, gains);
         }
         else
         {
@@ -62,16 +62,13 @@ namespace Attacker
             Cam_Data[1] = Cam_GoalB_Dis;
 
             if(Cam_GoalB_Deg == 255)
-                PID_loop(Gyro_Deg - 90, gains_gyro);
+                PID_loop(Gyro_Deg - 90, gains_gyro, 180);
             else
-                PID_loop(180 - Cam_GoalB_Deg, gains, 180);
+                PID_loop(180 - Cam_GoalB_Deg, gains);
 
         }
 
-
-        
-
-        if(Line_Value < 10 && !Line_Moving)
+        if(Line_Value < 500 && !Line_Moving)
         {
             Line_Moving = true;
             Line_Timer.reset();
@@ -87,7 +84,7 @@ namespace Attacker
         }
         else if(Line_Timer.get_value() <= 1000)
         {
-            Move((Before_Move_Deg + 180) % 360, 20);
+            Move(Cam_Court_Deg * 2, 20);
         }
         else if(Ball_Deg >= 500 || Ball_Deg < 0)
         {
