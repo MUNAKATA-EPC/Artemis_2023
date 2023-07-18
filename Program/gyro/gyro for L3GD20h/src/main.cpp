@@ -135,7 +135,7 @@ void loop() {
   }
 
   int micro = analogRead(analogpin);
-  Serial.print((micro - 512) / 50);
+  Serial.print((micro - 512) / 50 / 5);// 10 ~ -10
   Serial.print(" ");
   Serial.println(outputdata);
 
