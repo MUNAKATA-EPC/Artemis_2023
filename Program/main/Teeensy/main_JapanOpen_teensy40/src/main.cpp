@@ -47,6 +47,7 @@ int SelectPos = 0;
 void setup() {
   Serial.begin(115200);
 
+
   Initialize_Sensors();
   Initialize_NeoPixel();
   Initialize_LCD();

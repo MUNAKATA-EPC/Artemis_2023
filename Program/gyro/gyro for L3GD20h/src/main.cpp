@@ -23,9 +23,9 @@ const byte L3GD20_Z_H = 0x2D;
 
 #define ledpin 13
 #define ledpin2 12
-#define analogpin 1
+#define analogpin 2
 #define outputpin 0
-#define resetpin 6
+#define resetpin 1
 #define CAL_TIMEMS 1000
 #define UPDATE_MS 10
 
@@ -67,7 +67,7 @@ void GetDegdata(){
   float microcaldata = analogRead(analogpin);
   microcaldata = (microcaldata - 512) / 10;
   
-  degdata += z + (bCalNow ? 0 : caldata) + microcaldata;
+  degdata += z + (bCalNow ? 0 : caldata + microcaldata);
 }
 
 void Calibration(){
@@ -100,11 +100,12 @@ void Calibration(){
 void setup() {
   analogWriteResolution(10);
   
-  pinMode(resetpin, INPUT);
+  pinMode(resetpin, INPUT_PULLDOWN);
   pinMode(ledpin, OUTPUT);
   pinMode(ledpin2, OUTPUT);
 
   Serial.begin(9600);
+  Serial1.begin(9600);
   Wire.begin();
   
   Writegyro(L3GD20_CTRL1, B00001111);
@@ -119,7 +120,7 @@ void setup() {
 }
 
 void loop() {
-  if(digitalRead(resetpin) == LOW){
+  if(digitalRead(resetpin) == HIGH){
     degdata = 0;
     Calibration();
   }
@@ -138,7 +139,9 @@ void loop() {
   Serial.print(" ");
   Serial.println(outputdata);
 
-  analogWrite(outputpin, outputdata);
+  int data = outputdata / 1023.0 * 180.0;
+
+  Serial1.write(data);
 
   delay(UPDATE_MS);
 }

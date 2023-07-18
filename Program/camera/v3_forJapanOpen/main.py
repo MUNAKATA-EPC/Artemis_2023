@@ -1,18 +1,18 @@
 import sensor, image, time, math
 from pyb import UART, LED, Pin, Timer
 
-threshold_for_court = (50, 91, -88, -55, 35, 62)# コートの色取り用変数
-threshold_for_goal_yellow = (63, 80, -29, 33, 43, 74)# ゴールの色取り用変数(黄色)
-threshold_for_goal_blue =  (32, 42, -23, -6, -18, 9)
+threshold_for_court =(45, 68, -35, -2, -10, 32)# コートの色取り用変数
+threshold_for_goal_yellow =(75, 96, -55, 1, 48, 90)# ゴールの色取り用変数(黄色)
+threshold_for_goal_blue =(13, 36, -5, 44, -74, -33)
 
  # ゴールの色取り用変数(青色)
 threshold_for_wall = (0, 2, -3, 6, -2, 2)
-screen_center = [150, 140]                  # 画面の中央座標
+screen_center = [155, 120]                  # 画面の中央座標
 
 sensor.reset()
 sensor.set_pixformat(sensor.RGB565)#カラースケール
 sensor.set_framesize(sensor.QVGA)#解像度Ss
-sensor.set_contrast(0)#コントラスト
+sensor.set_contrast(1)#コントラスト
 sensor.set_brightness(-1)#明るさ
 sensor.set_saturation(1)#彩3~-3
 sensor.set_auto_gain(False) # must be turned off for color tracking
