@@ -1,14 +1,15 @@
 namespace Attacker
 {
-    #define MOTOR_SPEED_A 25
+    #define MOTOR_SPEED_A 15
 
     Timer Line_Timer;
 
-    float gains[3] = {0.50, 0, 24};
+    float gains[3] = {0.55, 0, 24};
     float gains_gyro[3] = {0.51, 0, 38};
 
     int Line_Move_deg;
     int Before_Move_Deg;
+    int front_Line = 0;
 
     int Cam_Data[2];
 
@@ -41,8 +42,6 @@ namespace Attacker
 
     void Main_Program(bool yellow)
     {
-
-
         Line_Timer.tick();
 
         if(yellow)
@@ -52,19 +51,21 @@ namespace Attacker
             Cam_Data[1] = Cam_GoalY_Dis;
 
             if(Cam_GoalY_Deg == 255)
-                PID_loop(Gyro_Deg - 90, gains_gyro, 180);
+                PID_loop(Gyro_Deg - 90, gains_gyro);
             else
-                PID_loop(180 - Cam_GoalY_Deg, gains);
+                PID_loop(180 - Cam_GoalY_Deg, gains, 180);
         }
         else
         {
             Cam_Data[0] = Cam_GoalB_Deg;
             Cam_Data[1] = Cam_GoalB_Dis;
 
-            if(Cam_GoalB_Deg == 255)
-                PID_loop(Gyro_Deg - 90, gains_gyro, 180);
-            else
-                PID_loop(180 - Cam_GoalB_Deg, gains);
+            PID_loop(Gyro_Deg - 90, gains_gyro);
+
+            //if(Cam_GoalB_Deg == 255)
+
+            //else
+                //PID_loop(180 - Cam_GoalB_Deg, gains, 180);
 
         }
 
@@ -78,13 +79,29 @@ namespace Attacker
         }
 
 
-        if(Line_Timer.get_value() <= 500)
+        else if(Line_Value < 500)
         {
-            Move(0, 0);
-        }
-        else if(Line_Timer.get_value() <= 1000)
-        {
-            Move(Cam_Court_Deg * 2, 20);
+            if(Cam_Data[1] <= 90)
+            {
+                front_Line = 1;
+            }
+            else
+            {
+                Move(Cam_Court_Deg * 2, 20);
+            }
+
+            if(front_Line == 1)
+            {
+                Move(180, 30);
+            }
+
+            if(front_Line == 1 && Cam_Data[1] > 90)
+            {
+                front_Line = 0;
+            }
+
+
+
         }
         else if(Ball_Deg >= 500 || Ball_Deg < 0)
         {
@@ -102,21 +119,18 @@ namespace Attacker
             }
             else 
             {
-                if(Ball_Deg <= 202)
+                if(Ball_Deg <= 192)
                 {
-                    int move_deg = Ball_Deg + (90 - min(max(Ball_Distance - 55, 0) / 15.0 * 80.0, 85));
-                    int move_speed = min(Ball_Distance / 2.5, 30);
+                    int move_deg = Ball_Deg + (90 - min(max(Ball_Distance - 50, 0) / 15.0 * 80.0, 85));
+                    int move_speed = min(Ball_Distance / 2.0, 15);
                     Move(move_deg, move_speed);
-                    Before_Move_Deg = move_deg;
                 }
                 else
                 {
-                    int move_deg = Ball_Deg - (90 - min(max(Ball_Distance - 55, 0) / 45.0 * 90.0, 70));
-                    int move_speed = min(Ball_Distance / 2.5, 30);
+                    int move_deg = Ball_Deg - (90 - min(max(Ball_Distance - 55, 0) / 45.0 * 80.0, 60));
+                    int move_speed = min(Ball_Distance / 2.0, 15);
                     Move(move_deg, move_speed);
-                    Before_Move_Deg = move_deg;
                 }
-    
             }
         }
     }
