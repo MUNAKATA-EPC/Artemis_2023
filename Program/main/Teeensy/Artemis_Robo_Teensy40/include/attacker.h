@@ -1,13 +1,13 @@
 namespace Attacker
 {
-    #define MOTOR_SPEED_A 15
+    #define MOTOR_SPEED_A 30
 
     Timer Line_Timer;
 
-    float gains[3] = {0.55, 0, 24};
-    float gains_gyro[3] = {0.51, 0, 38};
+    float gains[3] = {0.49, 0, 20};
+    float gains_gyro[3] = {0.53, 0, 29};
 
-    int Line_Move_deg;
+    int Line_Move_deg = Cam_Court_Deg * 2;
     int Before_Move_Deg;
     int front_Line = 0;
 
@@ -46,7 +46,6 @@ namespace Attacker
 
         if(yellow)
         {
-            
             Cam_Data[0] = Cam_GoalY_Deg;
             Cam_Data[1] = Cam_GoalY_Dis;
 
@@ -60,10 +59,9 @@ namespace Attacker
             Cam_Data[0] = Cam_GoalB_Deg;
             Cam_Data[1] = Cam_GoalB_Dis;
 
-            PID_loop(Gyro_Deg - 90, gains_gyro);
-
+           
             //if(Cam_GoalB_Deg == 255)
-
+                PID_loop(Gyro_Deg - 90, gains_gyro);
             //else
                 //PID_loop(180 - Cam_GoalB_Deg, gains, 180);
 
@@ -79,29 +77,13 @@ namespace Attacker
         }
 
 
-        else if(Line_Value < 500)
+        if(Line_Timer.get_value() <= 200)
         {
-            if(Cam_Data[1] <= 90)
-            {
-                front_Line = 1;
-            }
-            else
-            {
-                Move(Cam_Court_Deg * 2, 20);
-            }
-
-            if(front_Line == 1)
-            {
-                Move(180, 30);
-            }
-
-            if(front_Line == 1 && Cam_Data[1] > 90)
-            {
-                front_Line = 0;
-            }
-
-
-
+            Move(0, 0);
+        }
+        else if(Line_Timer.get_value() <= 500)
+        {
+            Move(Cam_Court_Deg * 2, 30);
         }
         else if(Ball_Deg >= 500 || Ball_Deg < 0)
         {
@@ -114,21 +96,20 @@ namespace Attacker
             
             if(Ball_Deg <= 32 || Ball_Deg >= 360)
             {
-                Move(0, MOTOR_SPEED_A);  
-                Before_Move_Deg = 0;
+                Move(0, 30);  
             }
             else 
             {
                 if(Ball_Deg <= 192)
                 {
-                    int move_deg = Ball_Deg + (90 - min(max(Ball_Distance - 50, 0) / 15.0 * 80.0, 85));
-                    int move_speed = min(Ball_Distance / 2.0, 15);
+                    int move_deg = Ball_Deg + (90 - min(max(Ball_Distance - 50, 0) / 15.0 * 80.0, 70));
+                    int move_speed = min(Ball_Distance / 2.0, 23);
                     Move(move_deg, move_speed);
                 }
                 else
                 {
-                    int move_deg = Ball_Deg - (90 - min(max(Ball_Distance - 55, 0) / 45.0 * 80.0, 60));
-                    int move_speed = min(Ball_Distance / 2.0, 15);
+                    int move_deg = Ball_Deg - (90 - min(max(Ball_Distance - 55, 0) / 45.0 * 80.0, 70));
+                    int move_speed = min(Ball_Distance / 2.0, 23);
                     Move(move_deg, move_speed);
                 }
             }

@@ -74,7 +74,15 @@ void loop() {
 
   if(process_program)
   {
-    Attacker::Main_Program(SelectPos == 0);
+    //rainbow(10);
+    if(digitalRead(32) == 0)
+    {
+      Attacker::Main_Program(SelectPos == 0);
+    }
+    else
+    {
+      Output_MotorPower(0, 0, 0, 0);
+    }
   }
   else
   {
@@ -109,7 +117,7 @@ void loop() {
     {
       DrawString(0, 15, (String("Y:") + String(Cam_GoalY_Deg) + String(":") + String(Cam_GoalY_Dis)).c_str(), u8g2_font_ncenB08_tr);
       DrawString(0, 30, (String("B:") + String(Cam_GoalB_Deg) + String(":") + String(Cam_GoalB_Dis)).c_str(), u8g2_font_ncenB08_tr);
-      DrawString(0, 45, (String("I:") + String(Ball_Deg) + String(":") + String(Ball_Distance)).c_str(), u8g2_font_ncenB08_tr);
+      DrawString(0, 45, (String("I:") + String(Cam_Court_Deg) + String(":") + String(Ball_Deg)).c_str(), u8g2_font_ncenB08_tr);
       DrawString(70, 30, (String("G:") + String(Gyro_Deg)).c_str(), u8g2_font_ncenB08_tr);
       DrawString(70, 45, (String("L:") + String(Line_Value)).c_str(), u8g2_font_ncenB08_tr);
     }
@@ -117,5 +125,6 @@ void loop() {
     u8g2.sendBuffer();
     u8g2.clearBuffer();
 
+    //Serial.println(PIN_LCD_PRGB);
   }
 }

@@ -34,7 +34,7 @@ void Bright(uint32_t color){
 void Initialize_NeoPixel()
 {
     strip.begin();
-    strip.setBrightness(50);
+    strip.setBrightness(20);
     strip.show();
 }
 

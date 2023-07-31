@@ -57,6 +57,4 @@ void Read_Sensors(){
     }
 
     Line_Value = analogRead(16);
-    
-    Serial.println(Line_Value);
 }

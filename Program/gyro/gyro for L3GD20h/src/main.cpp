@@ -65,7 +65,7 @@ void GetDegdata(){
   float z = Z = (Z << 8) | Readgyro(L3GD20_Z_L);
 
   float microcaldata = analogRead(analogpin);
-  microcaldata = (microcaldata - 512) / 10;
+  microcaldata = (microcaldata - 512) / 20;
   
   degdata += z + (bCalNow ? 0 : caldata + microcaldata);
 }
