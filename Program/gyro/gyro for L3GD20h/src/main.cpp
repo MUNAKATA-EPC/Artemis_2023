@@ -144,4 +144,6 @@ void loop() {
   Serial1.write(data);
 
   delay(UPDATE_MS);
+
+  Serial.println(analogRead(1));
 }

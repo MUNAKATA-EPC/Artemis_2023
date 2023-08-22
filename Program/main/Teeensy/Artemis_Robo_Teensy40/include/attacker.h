@@ -49,10 +49,10 @@ namespace Attacker
             Cam_Data[0] = Cam_GoalY_Deg;
             Cam_Data[1] = Cam_GoalY_Dis;
 
-            if(Cam_GoalY_Deg == 255)
+            //if(Cam_GoalY_Deg == 255)
                 PID_loop(Gyro_Deg - 90, gains_gyro);
-            else
-                PID_loop(180 - Cam_GoalY_Deg, gains, 180);
+           // else
+                //PID_loop(180 - Cam_GoalY_Deg, gains, 180);
         }
         else
         {
@@ -60,9 +60,9 @@ namespace Attacker
             Cam_Data[1] = Cam_GoalB_Dis;
 
            
-            //if(Cam_GoalB_Deg == 255)
+           // if(Cam_GoalB_Deg == 255)
                 PID_loop(Gyro_Deg - 90, gains_gyro);
-            //else
+           // else
                 //PID_loop(180 - Cam_GoalB_Deg, gains, 180);
 
         }
@@ -103,13 +103,13 @@ namespace Attacker
                 if(Ball_Deg <= 192)
                 {
                     int move_deg = Ball_Deg + (90 - min(max(Ball_Distance - 50, 0) / 15.0 * 80.0, 70));
-                    int move_speed = min(Ball_Distance / 2.0, 23);
+                    int move_speed = min(Ball_Distance / 2.0, 30);
                     Move(move_deg, move_speed);
                 }
                 else
                 {
                     int move_deg = Ball_Deg - (90 - min(max(Ball_Distance - 55, 0) / 45.0 * 80.0, 70));
-                    int move_speed = min(Ball_Distance / 2.0, 23);
+                    int move_speed = min(Ball_Distance / 2.0, 30);
                     Move(move_deg, move_speed);
                 }
             }

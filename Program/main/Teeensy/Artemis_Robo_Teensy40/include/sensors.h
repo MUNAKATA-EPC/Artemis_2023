@@ -11,6 +11,9 @@ int Cam_GoalY_Deg;
 int Cam_GoalY_Dis;
 int Cam_GoalB_Deg;
 int Cam_GoalB_Dis;
+int Cam_Ball_Deg;
+int Cam_Ball_Distance;
+
 
 void Initialize_Sensors(){
     Serial3.begin(115200);      //Mega(Ball) ======> Teensy
@@ -57,4 +60,7 @@ void Read_Sensors(){
     }
 
     Line_Value = analogRead(16);
+
+
+    Serial.println(Cam_Court_Dis);
 }
