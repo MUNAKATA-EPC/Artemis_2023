@@ -67,7 +67,7 @@ void GetDegdata(){
   float microcaldata = analogRead(analogpin);
   microcaldata = (microcaldata - 512) / 20;
   
-  degdata += z + (bCalNow ? 0 : caldata + microcaldata);
+  degdata += z + (bCalNow == true ? 0 : caldata + microcaldata);
 }
 
 void Calibration(){
@@ -78,8 +78,6 @@ void Calibration(){
 
   Serial.println("####[Calibration Started]####");
 
-  before_deg = degdata;
-
   for(int i = 0; i < (CAL_TIMEMS / UPDATE_MS); i++){
     GetDegdata();
     delay(UPDATE_MS);
@@ -87,7 +85,7 @@ void Calibration(){
   
   now_deg = degdata;
 
-  caldata = (before_deg - now_deg) / (CAL_TIMEMS / UPDATE_MS);
+  caldata = (-now_deg) / (CAL_TIMEMS / UPDATE_MS);
 
   degdata = 0;
   bCalNow = false;
